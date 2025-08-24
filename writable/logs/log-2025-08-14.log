@@ -1,0 +1,396 @@
+ERROR - 2025-08-14 14:49:14 --> mysqli_sql_exception: Invalid default value for 'created_at' in C:\xampp\htdocs\Sejiwa\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Sejiwa\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `o...', 0)
+#1 C:\xampp\htdocs\Sejiwa\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `o...')
+#2 C:\xampp\htdocs\Sejiwa\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `o...')
+#3 C:\xampp\htdocs\Sejiwa\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `o...')
+#4 C:\xampp\htdocs\Sejiwa\app\Database\Migrations\2025-08-14-055328_CreateOtpCodesTable.php(42): CodeIgniter\Database\Forge->createTable('otp_codes')
+#5 C:\xampp\htdocs\Sejiwa\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateOtpCodesTable->up()
+#6 C:\xampp\htdocs\Sejiwa\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\Sejiwa\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\Sejiwa\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\Sejiwa\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\Sejiwa\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\Sejiwa\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\Sejiwa\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-08-14 17:19:22 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 17:19:28 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 17:19:50 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 17:19:56 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 17:19:59 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 17:20:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 17:20:18 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 17:20:31 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 17:20:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 17:23:24 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 17:23:39 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 18:26:27 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 18:26:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 18:26:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 18:26:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 18:26:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 18:26:40 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 18:29:10 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 18:29:12 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 18:30:59 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+ERROR - 2025-08-14 18:44:09 --> mysqli_sql_exception: Duplicate column name 'phone' in C:\xampp\htdocs\Sejiwa\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Sejiwa\system\Database\MySQLi\Connection.php(327): mysqli->query('ALTER TABLE `us...', 0)
+#1 C:\xampp\htdocs\Sejiwa\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `us...')
+#2 C:\xampp\htdocs\Sejiwa\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `us...')
+#3 C:\xampp\htdocs\Sejiwa\system\Database\Forge.php(772): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `us...')
+#4 C:\xampp\htdocs\Sejiwa\app\Database\Migrations\2025-08-14-055329_AddPhoneAndDOBToUsers.php(11): CodeIgniter\Database\Forge->addColumn('users', Array)
+#5 C:\xampp\htdocs\Sejiwa\system\Database\MigrationRunner.php(876): App\Database\Migrations\AddPhoneAndDOBToUsers->up()
+#6 C:\xampp\htdocs\Sejiwa\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\Sejiwa\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\Sejiwa\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\Sejiwa\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\Sejiwa\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\Sejiwa\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\Sejiwa\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-08-14 18:46:36 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 18:48:42 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 18:48:46 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 18:50:22 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 18:50:55 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 18:50:56 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 18:50:56 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
+CRITICAL - 2025-08-14 18:50:56 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/verifyEmail.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verifyEmail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/verifyEmail', [], true)
+ 3 APPPATH\Controllers\AuthController.php(58): view('auth/verifyEmail')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Sejiwa\\public\\index.php')
