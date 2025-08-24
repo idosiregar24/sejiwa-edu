@@ -6,6 +6,6 @@
     <title>Dashboard SeJiwa</title>
 </head>
 <body>
-    ini adalah dashboard Sejiwa || Tinggal Menunggu Dari Front End
+    ini adalah dashboard Sejiwa || Uji Coba Github Collaboration
 </body>
 </html>
