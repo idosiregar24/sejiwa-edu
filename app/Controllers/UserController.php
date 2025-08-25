@@ -10,7 +10,7 @@ class UserController extends BaseController
 {
 
 public function dashboard(){
-        return view('user/dashboard');
+        return view('user/dashboard_user');
     }
 
 
