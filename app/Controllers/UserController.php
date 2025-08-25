@@ -8,10 +8,7 @@ use CodeIgniter\I18n\Time;
 
 class UserController extends BaseController
 {
-
 public function dashboard(){
         return view('user/dashboard_user');
     }
-
-
 }
