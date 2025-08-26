@@ -23,28 +23,28 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                    <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link active" href="<?= base_url('dashboard') ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="<?= base_url('dashboard') ?>">About Us</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Komunitas</a>
+                    <a class="nav-link" href="<?= base_url('dashboard') ?>">Komunitas</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="<?= base_url('dashboard') ?>">About Us</a>
                     </li>
                 </ul>
                 
-                <div class="d-flex">
-                    <?php if(session()->get('logged_in')): ?>
-                    <span class="me-3">Halo, <?= session()->get('nama_lengkap') ?></span>
-                        <a href="<?= base_url('logout') ?>" class="btn btn-login">Logout</a>
-                    <?php else: ?>
-                        <a href="<?= base_url('login') ?>" class="btn btn-login">Login</a>
-                        <a href="<?= base_url('register') ?>" class="btn btn-register">Register</a>
-                    <?php endif; ?>
-                </div>
+                    <div class="d-flex">
+                            <?php if(session()->get('isLoggedIn')): ?>
+                                <span class="me-3">Halo, <?= session()->get('name') ?></span>
+                                <a href="<?= base_url('logout') ?>" class="btn btn-login">Logout</a>
+                            <?php else: ?>
+                                <a href="<?= base_url('login') ?>" class="btn btn-login">Login</a>
+                                <a href="<?= base_url('register') ?>" class="btn btn-register">Register</a>
+                            <?php endif; ?>
+                    </div>
                 </div>
             </div>
             </nav>
@@ -66,10 +66,13 @@
             </div>
         </section>
 
-        <!-- <section class="content-section">
+        <section class="content-section">
             <div class="section-header">
                 <h2>Ruang Edukatif Sejiwa</h2>
-                <a href="#">See All</a>
+                <div class="subtitle">
+                    <h5>Tempat teduh untuk ibu belajar, mengenal, dan memahami dengan kasih</h5>
+                    <a href="#">See All</a>
+                </div>
             </div>
             <div class="horizontal-scroll-container">
                 <div class="content-card">
@@ -85,7 +88,7 @@
                     <span>⭐️ 4.5 | Tag</span>
                 </div>
                 </div>
-        </section> -->
+        </section>
 <!-- 
         <section class="bisikan-bunda-section">
             <div class="section-header">

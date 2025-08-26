@@ -42,7 +42,7 @@
                 <?php endif; ?>
 
 
-                <form id="otpForm" action="<?= site_url('verifyOtp') ?>" method="post">
+                <form id="otpForm" action="<?= site_url('resendVerification') ?>" method="post">
                     <?= csrf_field() ?>
                     
                     <!-- Kotak Verifikasi -->
@@ -58,7 +58,7 @@
                     <input type="hidden" name="otp" id="otp">
 
                     <!-- Tidak menerima -->
-                    <p class="resend-text">Tidak menerima Kode Verifikasi? <a href="#" class="resend-link">Kirim Ulang</a> atau coba <a href="#" class="resend-link">Metode lain</a></p>
+                    <p class="resend-text">Tidak menerima Kode Verifikasi? <a href="<?= base_url('resendVerification') ?>" class="resend-link">Kirim Ulang</a> atau coba <a href="#" class="resend-link">Metode lain</a></p>
                     
                     <!-- Tombol Konfirmasi -->
                     <button type="submit" class="submit-button">Confirm</button>

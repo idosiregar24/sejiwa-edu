@@ -20,9 +20,11 @@ class AuthController extends BaseController
 
     public function login()
     {
+
+        
         helper('url');
         if (strtolower($this->request->getMethod()) === 'post') {
-            $email    = $this->request->getPost('email');
+             $email    = $this->request->getPost('email');
             $password = $this->request->getPost('password');
 
             $user = $this->userModel->where('email', $email)->first();
@@ -32,7 +34,10 @@ class AuthController extends BaseController
                     return redirect()->back()->with('error', 'Akun belum diverifikasi.');
                 }
 
+                session()->regenerate();
                 $this->setSession($user);
+
+                echo "Test pemanggilan method"; 
                 return redirect()->to('dashboard');
             } else {
                 return redirect()->back()->with('error', 'Email atau password salah.');
@@ -42,11 +47,13 @@ class AuthController extends BaseController
         return view('auth/login');
     }
 
-    public function logout()
-    {
-        $this->session->destroy();
-        return redirect()->to('/login');
-    }
+public function logout()
+{
+    $session = session();
+    $session->destroy(); // hapus semua data session
+
+    return redirect()->to('/login');
+}
 
     public function register()
 {
@@ -295,5 +302,48 @@ private function sendWhatsappOtp($phone, $otp)
         ];
 
         $this->session->set($data);
+        return true;
     }
+
+    public function resendVerification()
+{
+    helper(['url', 'form']);
+
+    if ($this->request->getMethod() === 'post') {
+        $email = $this->request->getPost('email');
+        $user  = $this->userModel->where('email', $email)->first();
+
+        if (!$user) {
+            return redirect()->back()->with('error', 'Email tidak terdaftar.');
+        }
+
+        if ($user['is_verified']) {
+            return redirect()->back()->with('error', 'Akun sudah terverifikasi.');
+        }
+
+        // Generate token/OTP baru
+        $token = bin2hex(random_bytes(16));
+
+        // Simpan ke tabel otp/token_verifikasi
+        $otpModel = new \App\Models\OtpModel();
+        $otpModel->save([
+            'user_id' => $user['id'],
+            'token'   => $token,
+            'expired_at' => date('Y-m-d H:i:s', strtotime('+10 minutes'))
+        ]);
+
+        // Kirim email (pseudo-code)
+        service('email')
+            ->setTo($email)
+            ->setSubject('Verifikasi Ulang Akun')
+            ->setMessage("Klik link berikut untuk verifikasi ulang: " . base_url("auth/verify/".$token))
+            ->send();
+
+        return redirect()->back()->with('success', 'Link verifikasi ulang sudah dikirim ke email.');
+    }
+
+    return view('verify');
 }
+
+}
+

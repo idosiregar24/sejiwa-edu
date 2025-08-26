@@ -27,7 +27,22 @@
             <h1 class="form-title">Login</h1>
             <p class="form-subtitle">Silahkan Masukkan Email/No HP dan Kata Sandi Anda!</p>
 
-            <form action="login" method="post">
+
+            <!-- Alert Error / Sukses -->
+            <?php if (session()->getFlashdata('error')): ?>
+                <div class="alert alert-danger">
+                    <?= session()->getFlashdata('error') ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if (session()->getFlashdata('success')): ?>
+                <div class="alert alert-success">
+                    <?= session()->getFlashdata('success') ?>
+                </div>
+            <?php endif; ?>
+            
+    
+    <form action="<?= base_url('login') ?>" method="post">
                 <!-- Email / No HP -->
                 <div class="form-group">
                     <label for="email" class="label-text">Email/No HP <span class="required">*</span></label>

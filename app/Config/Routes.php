@@ -16,6 +16,10 @@ $routes->get('verify', 'AuthController::verifyOtp');
 $routes->post('verify', 'AuthController::verifyOtp');
 $routes->get('verifyOtp', 'AuthController::verifyOtp');
 $routes->post('verifyOtp', 'AuthController::verifyOtp');
+$routes->get('logout', 'AuthController::logout');
+$routes->post('logout', 'AuthController::logout');
+$routes->get('resendVerification', 'AuthController::resendVerification');
+$routes->post('resendVerification', 'AuthController::resendVerification');
 
 
 //Routes Untuk UserController

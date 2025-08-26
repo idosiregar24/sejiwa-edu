@@ -25,6 +25,10 @@ body {
     font-weight: 500;
 }
 
+.nav-item :hover{
+transition: transform 0.3s ease;
+}
+
 .nav-link.active {
     color: #000 !important;
     font-weight: 600;
@@ -49,6 +53,12 @@ body {
     font-weight: 500;
 }
 
+.btn-login:hover {
+  background-color: #ffb2d5;
+  color: #fff;
+  transform: scale(1.05);
+}
+
 .btn-register {
     background-color: var(--primary);
     border-radius: 50px;
@@ -71,11 +81,13 @@ body {
 
 .btn-about-2 :hover{
     background-color: #a85f80;
+    transform: scale(1.08);
 }
 
 .btn-register:hover {
-    background-color: #a85f80;
+    background-color: #ffb2d5;
     color: #fff;
+    transform: scale(1.08);
 }
 
 /* Brand text */
@@ -152,14 +164,33 @@ body {
 }
 
 
-/* Section title */
-.section-title {
-  font-weight: 700;
-  margin-bottom: 10px;
+.hero-image img :hover {
+    width: 150%;
+    height: auto;
 }
+
+
+/* Section title */
+.content-section{
+    padding: 25px;
+}
+
+.section-header h2 {
+    padding-top: 1cap;    
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
 .subtitle {
-  color: #666;
-  margin-bottom: 30px;
+    color: #666;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 600px;
+}
+
+.subtitle h5 {
+    border: #0700c6;
+    border-radius: 1cap;
 }
 
 /* Cards */
@@ -171,6 +202,9 @@ body {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
+
+
+
 
 /* Footer */
 .footer {
