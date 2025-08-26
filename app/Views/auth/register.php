@@ -22,7 +22,7 @@
 <div class="register-container">
     <div class="left-panel">
         <div class="gradient-bg"></div>
-        <img class="register-image" src="<?= base_url('assets/img/Register.svg')?>" alt="Ilustrasi Ibu dan Anak" />
+        <img class="register-image" src="<?= base_url('assets/img/ilustrasi_ibu_dan_anak.svg')?>" alt="Ilustrasi Ibu dan Anak" />
     </div>
 
     <div class="right-panel">

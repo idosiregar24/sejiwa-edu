@@ -17,7 +17,7 @@
 <body>
     <!-- Panel Kiri: Gambar dan Gradasi -->
     <div class="left-panel">
-        <img class="login-image" src="<?= base_url('assets/img/Register.svg')?>" alt="Ilustrasi Login">
+        <img class="login-image" src="<?= base_url('assets/img/ilustrasi_ibu_dan_anak.svg')?>" alt="Ilustrasi Login">
     </div>
 
     <!-- Panel Kanan: Formulir Login -->
@@ -27,7 +27,7 @@
             <h1 class="form-title">Login</h1>
             <p class="form-subtitle">Silahkan Masukkan Email/No HP dan Kata Sandi Anda!</p>
 
-            <form action="#" method="post">
+            <form action="login" method="post">
                 <!-- Email / No HP -->
                 <div class="form-group">
                     <label for="email" class="label-text">Email/No HP <span class="required">*</span></label>

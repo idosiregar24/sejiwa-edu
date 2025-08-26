@@ -36,7 +36,7 @@ body {
     position: relative;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
     .left-panel {
         display: flex;
         width:45%;
