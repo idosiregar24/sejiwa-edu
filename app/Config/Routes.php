@@ -25,3 +25,7 @@ $routes->post('resendVerification', 'AuthController::resendVerification');
 //Routes Untuk UserController
 $routes->get('dashboard', 'UserController::dashboard');
 $routes->post('dashboard', 'UserController::dashboard');
+
+//Routes Untuk AdminControllers
+$routes->get('dashboard_admin', 'AdminController::dashboard_admin');
+$routes->post('dashboard_admin', 'AdminController::dashboard_admin');

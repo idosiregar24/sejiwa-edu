@@ -10,72 +10,16 @@
     <title>Dashboard SeJiwa</title>
 </head>
 <body>
-
+    
 <body>
-    <header>
-            <nav class="navbar navbar-expand-lg 
-                 <?= session()->get('isLoggedIn') ? 'navbar-loggedin' : 'navbar-default' ?>">
-                    <div class="container">
-                        <!-- Brand -->
-                        <a class="navbar-brand" href="<?= base_url('dashboard') ?>">Sejiwa</a>
-
-                        <!-- Toggler (mobile) -->
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
-                        <!-- Menu -->
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav mx-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="<?= base_url('dashboard') ?>">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?= base_url('about') ?>">About Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?= base_url('komunitas') ?>">Komunitas</a>
-                                </li>
-                            </ul>
-
-                            <!-- Right Side -->
-                            <div class="d-flex align-items-center">
-                                <?php if(session()->get('isLoggedIn')): ?>
-                                    <!-- Ikon Search -->
-                                    <a href="<?= base_url('search') ?>" class="nav-icon me-3">
-                                        <i class="bi bi-search"></i>
-                                    </a>
-
-                                    <!-- Ikon Notifikasi -->
-                                    <a href="<?= base_url('notifications') ?>" class="nav-icon me-3">
-                                        <i class="bi bi-bell"></i>
-                                    </a>
-
-                                    <!-- Dropdown Profil -->
-                                    <div class="dropdown">
-                                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" 
-                                        id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <img src="<?= base_url('uploads/profile/' . session()->get('photo')) ?>" 
-                                                alt="Profile" width="32" height="32" class="rounded-circle">
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
-                                            <li><span class="dropdown-item-text">Halo, <?= session()->get('name') ?></span></li>
-                                            <li><a class="dropdown-item" href="<?= base_url('profile') ?>">Profil Saya</a></li>
-                                            <li><a class="dropdown-item" href="<?= base_url('logout') ?>">Logout</a></li>
-                                        </ul>
-                                    </div>
-                                <?php else: ?>
-                                    <a href="<?= base_url('login') ?>" class="btn btn-login">Login</a>
-                                    <a href="<?= base_url('register') ?>" class="btn btn-register">Register</a>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-    </header>
-
     <main>
-        <section class="hero-section">
+    <section class="hero-section">
+        
+    
+    <!-- Menambahkan Navbar -->
+    <?= $this->include('layouts/navbar') ?>
+
+    
             <div class="hero-content">
                 <h1>Sejiwa:</h1>
                 <div class="subjudul">
@@ -99,19 +43,54 @@
                 </div>
             </div>
             <div class="horizontal-scroll-container">
-                <div class="content-card">
-                    <img src="path/to/image1.jpg" alt="Konten 1">
-                    <h3>Judul Konten 1</h3>
-                    <p>Deskripsi singkat konten...</p>
-                    <span>⭐️ 4.5 | Tag</span>
-                </div>
-                <div class="content-card">
-                    <img src="path/to/image2.jpg" alt="Konten 2">
-                    <h3>Judul Konten 2</h3>
-                    <p>Deskripsi singkat konten...</p>
-                    <span>⭐️ 4.5 | Tag</span>
-                </div>
-                </div>
+                <div class="slider-container">
+                            <!-- <button class="btn left" onclick="slideLeft()">&#10094;</button> -->
+                            <div class="slider" id="slider">
+                            <div class="content-card">
+                                <img src="https://fastly.picsum.photos/id/586/200/120.jpg?hmac=6hlpn-k3YsaEggp011FvIvsJUz-JfupDzFSz0P6TKRY" alt="Konten 1">
+                                <h3>Judul Konten 1</h3>
+                                <p>Deskripsi singkat konten...</p>
+                                <span>⭐️ 4.5 | Tag</span>
+                            </div>
+                            <div class="content-card">
+                                <img src="https://fastly.picsum.photos/id/586/200/120.jpg?hmac=6hlpn-k3YsaEggp011FvIvsJUz-JfupDzFSz0P6TKRY" alt="Konten 1">
+                                <h3>Judul Konten 2</h3>
+                                <p>Deskripsi singkat konten...</p>
+                                <span>⭐️ 4.0 | Tag</span>
+                            </div>
+                            <div class="content-card">
+                                <img src="https://fastly.picsum.photos/id/586/200/120.jpg?hmac=6hlpn-k3YsaEggp011FvIvsJUz-JfupDzFSz0P6TKRY" alt="Konten 1">
+                                <h3>Judul Konten 3</h3>
+                                <p>Deskripsi singkat konten...</p>
+                                <span>⭐️ 5.0 | Tag</span>
+                            </div>
+                            <div class="content-card">
+                                <img src="https://fastly.picsum.photos/id/586/200/120.jpg?hmac=6hlpn-k3YsaEggp011FvIvsJUz-JfupDzFSz0P6TKRY" alt="Konten 1">
+                                <h3>Judul Konten 4</h3>
+                                <p>Deskripsi singkat konten...</p>
+                                <span>⭐️ 4.7 | Tag</span>
+                            </div>
+                            <div class="content-card">
+                                <img src="https://fastly.picsum.photos/id/586/200/120.jpg?hmac=6hlpn-k3YsaEggp011FvIvsJUz-JfupDzFSz0P6TKRY" alt="Konten 1">
+                                <h3>Judul Konten 2</h3>
+                                <p>Deskripsi singkat konten...</p>
+                                <span>⭐️ 4.0 | Tag</span>
+                            </div>
+                            <div class="content-card">
+                                <img src="https://fastly.picsum.photos/id/586/200/120.jpg?hmac=6hlpn-k3YsaEggp011FvIvsJUz-JfupDzFSz0P6TKRY" alt="Konten 1">
+                                <h3>Judul Konten 2</h3>
+                                <p>Deskripsi singkat konten...</p>
+                                <span>⭐️ 4.0 | Tag</span>
+                            </div>
+                            <div class="content-card">
+                                <img src="https://fastly.picsum.photos/id/586/200/120.jpg?hmac=6hlpn-k3YsaEggp011FvIvsJUz-JfupDzFSz0P6TKRY" alt="Konten 1">
+                                <h3>Judul Konten 2</h3>
+                                <p>Deskripsi singkat konten...</p>
+                                <span>⭐️ 4.0 | Tag</span>
+                            </div>
+                            </div>
+                        <!-- <button class="btn right" onclick="slideRight()">&#10095;</button> -->
+                    </div>
         </section>
 <!-- 
         <section class="bisikan-bunda-section">
@@ -168,4 +147,24 @@
     </footer> -->
 
 </body>
+  <script>
+    let slider = document.getElementById("slider");
+    let scrollAmount = 0;
+
+    function slideLeft() {
+      slider.scrollBy({
+        left: -300,
+        behavior: "smooth"
+      });
+    }
+
+    function slideRight() {
+      slider.scrollBy({
+        left: 300,
+        behavior: "smooth"
+      });
+    }
+  </script>
+
+
 </html>

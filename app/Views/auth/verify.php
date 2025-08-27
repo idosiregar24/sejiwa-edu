@@ -17,11 +17,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Panel Kiri: Gambar dan Gradasi -->
-    <div class="left-panel">
-        <img class="login-image" src="<?= base_url('assets/img/Register.svg')?>" alt="Ilustrasi Login">
-    </div>
 
+    <!-- left-panel -->
+    <?= $this->include('layouts/left-panel') ?>
+    
     <!-- Panel Kanan: Formulir Verifikasi -->
         <div class="right-panel">
             <div class="form-content">

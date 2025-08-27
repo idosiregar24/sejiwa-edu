@@ -6,8 +6,12 @@ use App\Models\UserModel;
 use App\Models\OtpModel;
 use CodeIgniter\I18n\Time;
 
+
+
 class AuthController extends BaseController
 {
+
+    
     protected $session;
     protected $userModel;
 
@@ -20,11 +24,9 @@ class AuthController extends BaseController
 
     public function login()
     {
-
-        
         helper('url');
         if (strtolower($this->request->getMethod()) === 'post') {
-             $email    = $this->request->getPost('email');
+            $email    = $this->request->getPost('email');
             $password = $this->request->getPost('password');
 
             $user = $this->userModel->where('email', $email)->first();
@@ -36,9 +38,16 @@ class AuthController extends BaseController
 
                 session()->regenerate();
                 $this->setSession($user);
+            
+                $role = strtolower(trim($user['role']));
 
-                echo "Test pemanggilan method"; 
-                return redirect()->to('dashboard');
+                if ($role === 'admin') {
+                    return redirect()->to('dashboard_admin');
+                } else {
+                    return redirect()->to('dashboard');
+                }
+
+
             } else {
                 return redirect()->back()->with('error', 'Email atau password salah.');
             }
@@ -300,7 +309,7 @@ private function sendWhatsappOtp($phone, $otp)
             'role'       => $userData['role'],
             'isLoggedIn' => true
         ];
-
+        
         $this->session->set($data);
         return true;
     }
