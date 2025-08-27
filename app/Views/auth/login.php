@@ -17,7 +17,8 @@
 <body>
     <!-- Panel Kiri: Gambar dan Gradasi -->
     <div class="left-panel">
-        <img class="login-image" src="<?= base_url('assets/img/ilustrasi_ibu_dan_anak.svg')?>" alt="Ilustrasi Login">
+        <div class="gradient-bg"></div>
+        <img class="login-image" src="<?= base_url('assets/img/ilustrasi_ibu_dan_anak.svg')?>" alt="Ilustrasi Ibu dan Anak" />
     </div>
 
     <!-- Panel Kanan: Formulir Login -->
