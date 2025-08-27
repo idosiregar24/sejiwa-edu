@@ -12,6 +12,46 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Default navbar (belum login) */
+.navbar-default {
+    background: rgba(255, 255, 255, 0.8); /* putih transparan */
+    backdrop-filter: blur(8px); /* efek blur kaca (opsional, modern browser) */
+    -webkit-backdrop-filter: blur(8px); /* untuk Safari */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    border-bottom: 1px solid #f3d6e0; /* garis pink */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* supaya full width */
+    z-index: 1000; /* biar tidak ketutup konten */
+}
+
+/* Navbar setelah login (transparan) */
+.navbar-loggedin {
+    background: transparent; /* Transparan */
+    backdrop-filter: blur(2px); /* efek blur kaca (opsional, modern browser) */
+    -webkit-backdrop-filter: blur(8px); /* untuk Safari */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    border-bottom: 1px solid #f3d6e0; /* garis pink */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* supaya full width */
+    z-index: 1000; /* biar tidak ketutup konten */
+}
+
+/* Pastikan semua background default bootstrap ketimpa */
+.navbar.navbar-loggedin,
+.navbar.navbar-loggedin.bg-white,
+.navbar.navbar-loggedin.bg-light,
+.navbar.navbar-loggedin.bg-body-tertiary {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+
 .navbar-brand {
     font-weight: 600;
     color: var(--primary) !important;
@@ -202,9 +242,6 @@ transition: transform 0.3s ease;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-
-
-
 
 /* Footer */
 .footer {

@@ -52,7 +52,7 @@ public function logout()
     $session = session();
     $session->destroy(); // hapus semua data session
 
-    return redirect()->to('/login');
+    return redirect()->to('dashboard');
 }
 
     public function register()
