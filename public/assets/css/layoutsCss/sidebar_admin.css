@@ -7,6 +7,7 @@ body {
 
 /* Sidebar */
 .sidebar {
+    position: fixed;
     width: 240px;
     height: 98vh;
     background: #fff;
@@ -19,6 +20,7 @@ body {
 
 .sidebar h2 {
     font-size: 22px;
+    font-weight: 700;
     color: #a55c7d;
     margin-bottom: 30px;
     padding-left: 15px;
@@ -97,4 +99,12 @@ body {
     font-size: 20px;
     cursor: pointer;
     color: #a55c7d;
+}
+
+.title-navbar{
+    font-weight: 800;
+}
+
+h3{
+    font-weight: 800;
 }

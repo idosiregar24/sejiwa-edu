@@ -27,5 +27,11 @@ $routes->get('dashboard', 'UserController::dashboard');
 $routes->post('dashboard', 'UserController::dashboard');
 
 //Routes Untuk AdminControllers
-$routes->get('dashboard_admin', 'AdminController::dashboard_admin');
-$routes->post('dashboard_admin', 'AdminController::dashboard_admin');
+$routes->get('dashboard-admin', 'AdminController::dashboard_admin');
+$routes->post('dashboard-admin', 'AdminController::dashboard_admin');
+
+$routes->get('content-management', 'ContentController::index');
+$routes->post('content-management', 'ContentController::index');
+
+$routes->get('content/content_form', 'ContentController::create');
+$routes->post('content/content_form', 'ContentController::create');
