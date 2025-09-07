@@ -13,7 +13,7 @@
     <div>
       <h2>Sejiwa</h2>
       <ul class="menu">
-        <li><a href="<?= base_url('dashboard-admin') ?>" class="active"><i class="bi bi-grid"></i> Dashboard</a></li>
+        <li><a href="<?= base_url('dashboard_admin') ?>" class="active"><i class="bi bi-grid"></i> Dashboard</a></li>
         <li><a href="#"><i class="bi bi-person"></i> Account</a></li>
         <li><a href="<?= base_url('content-management') ?>"><i class="bi bi-mortarboard"></i> Educational</a></li>
         <li><a href="#"><i class="bi bi-chat-dots"></i> Forum</a></li>
@@ -24,7 +24,7 @@
     <div class="user-profile">
       <img src="https://via.placeholder.com/40" alt="User">
       <div class="user-info">
-        <h4>Haaaninnsss</h4>
+        <h4><?= session()->get('name') ?></h4>
         <p>Admin</p>
       </div>
       <a href="<?= base_url('logout') ?>">

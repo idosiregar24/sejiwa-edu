@@ -17,7 +17,7 @@ $routes->post('verify', 'AuthController::verifyOtp');
 $routes->get('verifyOtp', 'AuthController::verifyOtp');
 $routes->post('verifyOtp', 'AuthController::verifyOtp');
 $routes->get('logout', 'AuthController::logout');
-$routes->post('logout', 'AuthController::logout');
+// $routes->post('logout', 'AuthController::logout');
 $routes->get('resendVerification', 'AuthController::resendVerification');
 $routes->post('resendVerification', 'AuthController::resendVerification');
 
@@ -27,8 +27,8 @@ $routes->get('dashboard', 'UserController::dashboard');
 $routes->post('dashboard', 'UserController::dashboard');
 
 //Routes Untuk AdminControllers
-$routes->get('dashboard-admin', 'AdminController::dashboard_admin');
-$routes->post('dashboard-admin', 'AdminController::dashboard_admin');
+$routes->get('dashboard_admin', 'AdminController::dashboard_admin');
+$routes->post('dashboard_admin', 'AdminController::dashboard_admin');
 
 $routes->get('content-management', 'ContentController::index');
 $routes->post('content-management', 'ContentController::index');

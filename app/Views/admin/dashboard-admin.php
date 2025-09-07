@@ -11,7 +11,6 @@
       <div class="content">
         <div class="header">
             <h2>
-              Dashboard dsdfdasf
             </h2>
             
         </div>
