@@ -21,7 +21,7 @@ class CreateContentsTable extends Migration
             ],
             'type' => [
                 'type'       => 'ENUM',
-                'constraint' => ['Artikel','Video','Podcast'],
+                'constraint' => ['Artikel','Infografis','Video','Audio'],
                 'default'    => 'Artikel',
             ],
             'category' => [
@@ -47,7 +47,7 @@ class CreateContentsTable extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-            'updated_at' => [
+            'updated_at_content' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],

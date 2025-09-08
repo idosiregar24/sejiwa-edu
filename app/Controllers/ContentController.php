@@ -29,16 +29,54 @@ class ContentController extends BaseController
     }
 
     public function store()
-    {
-        $this->contentModel->insertContent([
-            'title'    => $this->request->getPost('title'),
-            'type'     => $this->request->getPost('type'),
-            'category' => $this->request->getPost('category'),
-            'body'     => $this->request->getPost('body'),
-            'status'   => $this->request->getPost('status'),
-        ]);
+{
+    $type = $this->request->getPost('type');
+    $title = $this->request->getPost('title');
+    $category = $this->request->getPost('category');
+    $body = $this->request->getPost('body');
+    $status = $this->request->getPost('status');
 
-        return redirect()->to('/content');
+    // Tentukan folder upload berdasarkan tipe
+    $uploadDir = WRITEPATH . '../public/uploads/';
+    $filePath = null;
+
+    if ($type === 'Infografis' && $this->request->getFile('infographic')->isValid()) {
+        $file = $this->request->getFile('infographic');
+        $newName = uniqid() . '_' . $file->getName();
+        $file->move($uploadDir . 'infografis/', $newName);
+        $filePath = 'uploads/infografis/' . $newName;
+    } elseif ($type === 'Video' && $this->request->getFile('video')->isValid()) {
+        $file = $this->request->getFile('video');
+        $newName = uniqid() . '_' . $file->getName();
+        $file->move($uploadDir . 'video/', $newName);
+        $filePath = 'uploads/video/' . $newName;
+    } elseif ($type === 'Audio' && $this->request->getFile('audio')->isValid()) {
+        $file = $this->request->getFile('audio');
+        $newName = uniqid() . '_' . $file->getName();
+        $file->move($uploadDir . 'audio/', $newName);
+        $filePath = 'uploads/audio/' . $newName;
+    }
+
+    // Thumbnail (opsional)
+    $thumbnailPath = null;
+    if ($this->request->getFile('thumbnail')->isValid()) {
+        $thumb = $this->request->getFile('thumbnail');
+        $thumbName = uniqid() . '_' . $thumb->getName();
+        $thumb->move($uploadDir . 'thumbnail/', $thumbName);
+        $thumbnailPath = 'uploads/thumbnail/' . $thumbName;
+    }
+
+    $this->contentModel->insertContent([
+        'title'      => $title,
+        'type'       => $type,
+        'category'   => $category,
+        'body'       => $body,
+        'status'     => $status,
+        'file_path'  => $filePath,
+        'thumbnail'  => $thumbnailPath,
+    ]);
+
+    return redirect()->to('content');
     }
 
     public function edit($id)

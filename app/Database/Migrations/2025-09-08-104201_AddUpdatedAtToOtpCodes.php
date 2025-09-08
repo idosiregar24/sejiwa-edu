@@ -9,10 +9,10 @@ class AddUpdatedAtToOtpCodes extends Migration
     public function up()
     {
         $fields = [
-            'updated_at' => [
+            'updated_at_otp' => [
                 'type'    => 'DATETIME',
                 'null'    => true,
-                'after'   => 'created_at', // Tambahkan setelah created_at (opsional)
+                'after'   => 'created_at', 
             ]
         ];
 
@@ -21,6 +21,6 @@ class AddUpdatedAtToOtpCodes extends Migration
 
     public function down()
     {
-        $this->forge->dropColumn('otp_codes', 'updated_at');
+        $this->forge->dropColumn('otp_codes', 'updated_at_otp');
     }
 }
