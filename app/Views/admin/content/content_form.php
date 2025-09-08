@@ -116,7 +116,7 @@
                     </script>
 
 
-                    <!-- Upload Infografis -->
+                  <!-- Upload Infografis -->
                   <div class="mb-6 type-field" id="field-infografis" style="display:none;">
                       <label for="infographic" class="block text-gray-700 font-semibold mb-2">Upload Infografis <span class="text-pink-500">*</span></label>
                       <label class="file-upload-box block cursor-pointer relative">
@@ -131,35 +131,31 @@
                       </label>
                   </div>
 
-                  <!-- Upload Video -->
-                  <div class="mb-6 type-field" id="field-video" style="display:none;">
-                      <label for="video" class="block text-gray-700 font-semibold mb-2">Upload Video <span class="text-pink-500">*</span></label>
+                    <!-- Upload Audio -->
+                    <div class="mb-6 type-field" id="field-audio" style="display:none;">                      <label for="infographic" class="block text-gray-700 font-semibold mb-2">Upload Audio <span class="text-pink-500">*</span></label>
                       <label class="file-upload-box block cursor-pointer relative">
-                          <input type="file" name="video" id="video" class="hidden" accept=".mp4,.mov,.avi,.wmv">
-                          <div class="flex flex-col items-center" id="video-upload-box">
+                              <input type="file" name="audio" id="audio" class="hidden" accept=".mp3,.wav,.aac,.ogg">                          <div class="flex flex-col items-center" id="infografis-upload-box">
                               <i class="fas fa-cloud-upload-alt text-4xl upload-icon"></i>
                               <span class="mt-2 text-gray-600">Klik untuk upload file atau drag & drop</span>
-                              <span class="text-sm text-gray-500">(MP4, MOV, AVI, WMV)</span>
+                              <span class="text-sm text-gray-500">(mp3, WAV, AAC)</span>
                           </div>
-                          <!-- Preview Video (di dalam kotak upload) -->
-                          <div id="preview-video" class="absolute inset-0 flex items-center justify-center"></div>
+                          <!-- Preview Image (di dalam kotak upload) -->
+                          <div id="preview-infografis" class="absolute inset-0 flex items-center justify-center"></div>
                       </label>
                   </div>
 
-                  <!-- Upload Audio -->
-                  <div class="mb-6 type-field" id="field-audio" style="display:none;">
-                      <label for="audio" class="block text-gray-700 font-semibold mb-2">Upload Audio <span class="text-pink-500">*</span></label>
-                      <label class="file-upload-box block cursor-pointer relative">
-                          <input type="file" name="audio" id="audio" class="hidden" accept=".mp3,.wav,.aac">
-                          <div class="flex flex-col items-center" id="audio-upload-box">
-                              <i class="fas fa-cloud-upload-alt text-4xl upload-icon"></i>
-                              <span class="mt-2 text-gray-600">Klik untuk upload file atau drag & drop</span>
-                              <span class="text-sm text-gray-500">(MP3, WAV, AAC)</span>
-                          </div>
-                          <!-- Preview Audio (di dalam kotak upload) -->
-                          <div id="preview-audio" class="absolute inset-0 flex items-center justify-center"></div>
-                      </label>
-                  </div>
+                  <!-- Upload Video -->
+                  <div class="mb-6 type-field" id="field-video" style="display:none;">
+                    <label for="video" class="block text-gray-700 font-semibold mb-2">Upload Video <span class="text-pink-500">*</span></label>
+                    <label class="file-upload-box block cursor-pointer relative" id="video-upload-label">
+                            <input type="file" name="video" id="video" class="absolute opacity-0 w-full h-full" accept=".mp4,.mov,.avi,.wmv">                        <div class="flex flex-col items-center" id="video-upload-box">
+                            <i class="fas fa-cloud-upload-alt text-4xl upload-icon"></i>
+                            <span class="mt-2 text-gray-600">Klik untuk upload file atau drag & drop</span>
+                            <span class="text-sm text-gray-500">(MP4, MOV, AVI, WMV)</span>
+                        </div>
+                        <div id="preview-video" class="absolute inset-0 flex items-center justify-center"></div>
+                    </label>
+                </div>
 
                 <!-- Thumbnail (Opsional) -->
                 <div class="mb-6">
@@ -177,6 +173,31 @@
                     <div id="preview-thumbnail" class="absolute inset-0 flex items-center justify-center"></div>
                   </div>
                 </div>
+
+                    <div id="loading-spinner" style="display:none;">
+                      <i class="fas fa-spinner fa-spin"></i> Uploading...
+                    </div>
+
+                    <!-- Tambahkan di dalam form, sebelum tombol submit -->
+                        <div id="video-loading" style="display:none; text-align:center; margin-bottom:16px;">
+                          <div class="loader"></div>
+                        </div>
+                        <style>
+                        .loader {
+                          border: 6px solid #f3f3f3;
+                          border-top: 6px solid #3498db;
+                          border-radius: 50%;
+                          width: 36px;
+                          height: 36px;
+                          animation: spin 1s linear infinite;
+                          display: inline-block;
+                          margin-bottom: 8px;
+                        }
+                        @keyframes spin {
+                          0% { transform: rotate(0deg);}
+                          100% { transform: rotate(360deg);}
+                        }
+                        </style>
 
                     <!-- Tombol Aksi -->
                     <div class="flex justify-end space-x-4 mt-8">
@@ -199,16 +220,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const fields = document.querySelectorAll(".type-field");
 
   function toggleFields() {
-    fields.forEach(field => field.style.display = "none");
-    const selected = typeSelect.value.toLowerCase();
-    if (selected === "infografis") {
-      document.getElementById("field-infografis").style.display = "block";
-    } else if (selected === "video") {
-      document.getElementById("field-video").style.display = "block";
-    } else if (selected === "audio") {
-      document.getElementById("field-audio").style.display = "block";
-    }
+  fields.forEach(field => field.style.display = "none");
+  const selected = typeSelect.value.toLowerCase();
+  if (selected === "infografis") {
+    document.getElementById("field-infografis").style.display = "block";
+  } else if (selected === "video") {
+    document.getElementById("field-video").style.display = "block";
+  } else if (selected === "audio") {
+    document.getElementById("field-audio").style.display = "block";
   }
+}
 
   typeSelect.addEventListener("change", toggleFields);
   toggleFields();
@@ -264,6 +285,40 @@ window.removePreview = function(inputId, previewId, boxId) {
   if (boxId) document.getElementById(boxId).style.opacity = '1';
 }
 });
+
+//Fungsi Loader
+document.querySelector('form').addEventListener('submit', function(e) {
+  const type = document.getElementById('type').value;
+  if (type === 'Video') {
+    document.getElementById('video-loading').style.display = 'block';
+  }
+});
+
+</script>
+<script>
+document.getElementById('video-upload-label').addEventListener('click', function(e) {
+    if (e.target.id !== 'video') {
+        document.getElementById('video').click();
+    }
+});
+const videoInput = document.getElementById('video');
+const previewVideo = document.getElementById('preview-video');
+const videoBox = document.getElementById('video-upload-box');
+if (videoInput) {
+  videoInput.addEventListener('change', function(e) {
+    previewVideo.innerHTML = '';
+    videoBox.style.opacity = '1';
+    const file = e.target.files[0];
+    if (file && file.type.startsWith('video/')) {
+      const url = URL.createObjectURL(file);
+      previewVideo.innerHTML = `
+        <video src="${url}" controls class="preview-video" style="max-width:100%;max-height:120px;"></video>
+        <button type="button" class="remove-preview" title="Hapus" onclick="removePreview('video', 'preview-video', 'video-upload-box')">&times;</button>
+      `;
+      videoBox.style.opacity = '0.2';
+    }
+  });
+}
 </script>
 
 </body>

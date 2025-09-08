@@ -49,7 +49,7 @@ class ContentController extends BaseController
         $file = $this->request->getFile('video');
         $newName = uniqid() . '_' . $file->getName();
         $file->move($uploadDir . 'video/', $newName);
-        $filePath = 'uploads/video/' . $newName;
+        $filePath = 'uploads/video/' . $newName;    
     } elseif ($type === 'Audio' && $this->request->getFile('audio')->isValid()) {
         $file = $this->request->getFile('audio');
         $newName = uniqid() . '_' . $file->getName();
