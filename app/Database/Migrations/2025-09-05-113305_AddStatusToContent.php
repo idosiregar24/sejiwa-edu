@@ -21,7 +21,7 @@ class CreateContentsTable extends Migration
             ],
             'type' => [
                 'type'       => 'ENUM',
-                'constraint' => ['Artikel','Infografis','Video','Audio'],
+                'constraint' => ['Artikel','Video','Podcast'],
                 'default'    => 'Artikel',
             ],
             'category' => [

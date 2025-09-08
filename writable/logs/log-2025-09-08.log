@@ -88,3 +88,81 @@ DEBUG - 2025-09-08 03:12:22 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-09-08 03:12:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-09-08 03:12:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-09-08 03:13:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-08 03:19:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-08 03:20:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-08 03:20:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-08 03:20:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-08 03:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-08 03:21:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-08 03:24:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-08 03:24:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-08 03:24:37 --> mysqli_sql_exception: Unknown column 'file_path' in 'field list' in C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\sejiwa\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\sejiwa\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\sejiwa\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\sejiwa\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\sejiwa\app\Models\ContentModel.php(28): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\sejiwa\app\Controllers\ContentController.php(69): App\Models\ContentModel->insertContent(Array)
+#9 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(933): App\Controllers\ContentController->store()
+#10 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContentController))
+#11 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\sejiwa\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\sejiwa\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\sejiwa\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\sejiwa\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-09-08 03:24:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'file_path' in 'field list'
+[Method: POST, Route: store]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `contents` (`title`, `type`, `category`, `body`, `status`, `file_path`, `thumbnail`, `created_at`, `updated_at`) VALUES (:title:, :type:, :category:, :body:, :status:, :file_path:, :thumbnail:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\ContentModel.php(28): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\ContentController.php(69): App\Models\ContentModel->insertContent([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ContentController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContentController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+CRITICAL - 2025-09-08 03:24:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'file_path' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `contents` (`title`, `type`, `category`, `body`, `status`, `file_path`, `thumbnail`, `created_at`, `updated_at`) VALUES (\'asdasda\', \'Infografis\', \'sdadasdasdasd\', \'\', \'Publish\', \'uploads/infografis/68be4c75344dd_Desaign Baju Badminton.png\', \'uploads/thumbnail/68be4c7534911_5f07f81a93b5f34c537fa129fbede8e3.jpg\', \'2025-09-08 03:24:37\', \'2025-09-08 03:24:37\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `contents` (`title`, `type`, `category`, `body`, `status`, `file_path`, `thumbnail`, `created_at`, `updated_at`) VALUES (\'asdasda\', \'Infografis\', \'sdadasdasdasd\', \'\', \'Publish\', \'uploads/infografis/68be4c75344dd_Desaign Baju Badminton.png\', \'uploads/thumbnail/68be4c7534911_5f07f81a93b5f34c537fa129fbede8e3.jpg\', \'2025-09-08 03:24:37\', \'2025-09-08 03:24:37\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `contents` (`title`, `type`, `category`, `body`, `status`, `file_path`, `thumbnail`, `created_at`, `updated_at`) VALUES (:title:, :type:, :category:, :body:, :status:, :file_path:, :thumbnail:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Models\ContentModel.php(28): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\ContentController.php(69): App\Models\ContentModel->insertContent([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ContentController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContentController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+CRITICAL - 2025-09-08 03:24:37 --> [Caused by] mysqli_sql_exception: Unknown column 'file_path' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `contents` (`title`, `type`, `category`, `body`, `status`, `file_path`, `thumbnail`, `created_at`, `updated_at`) VALUES (\'asdasda\', \'Infografis\', \'sdadasdasdasd\', \'\', \'Publish\', \'uploads/infografis/68be4c75344dd_Desaign Baju Badminton.png\', \'uploads/thumbnail/68be4c7534911_5f07f81a93b5f34c537fa129fbede8e3.jpg\', \'2025-09-08 03:24:37\', \'2025-09-08 03:24:37\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `contents` (`title`, `type`, `category`, `body`, `status`, `file_path`, `thumbnail`, `created_at`, `updated_at`) VALUES (\'asdasda\', \'Infografis\', \'sdadasdasdasd\', \'\', \'Publish\', \'uploads/infografis/68be4c75344dd_Desaign Baju Badminton.png\', \'uploads/thumbnail/68be4c7534911_5f07f81a93b5f34c537fa129fbede8e3.jpg\', \'2025-09-08 03:24:37\', \'2025-09-08 03:24:37\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `contents` (`title`, `type`, `category`, `body`, `status`, `file_path`, `thumbnail`, `created_at`, `updated_at`) VALUES (\'asdasda\', \'Infografis\', \'sdadasdasdasd\', \'\', \'Publish\', \'uploads/infografis/68be4c75344dd_Desaign Baju Badminton.png\', \'uploads/thumbnail/68be4c7534911_5f07f81a93b5f34c537fa129fbede8e3.jpg\', \'2025-09-08 03:24:37\', \'2025-09-08 03:24:37\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `contents` (`title`, `type`, `category`, `body`, `status`, `file_path`, `thumbnail`, `created_at`, `updated_at`) VALUES (:title:, :type:, :category:, :body:, :status:, :file_path:, :thumbnail:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\ContentModel.php(28): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\ContentController.php(69): App\Models\ContentModel->insertContent([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ContentController->store()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContentController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')

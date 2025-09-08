@@ -9,7 +9,7 @@ class ContentModel extends Model
     protected $table = 'contents';
     protected $primaryKey = 'id';
     protected $allowedFields = [
-        'title', 'type', 'category', 'body', 'thumbnail', 'status', 'created_at', 'updated_at'
+        'title', 'type', 'category', 'body', 'thumbnail', 'file_path', 'status', 'created_at', 'updated_at'
     ];
     protected $useTimestamps = true;
 

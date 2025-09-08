@@ -33,5 +33,8 @@ $routes->post('dashboard_admin', 'AdminController::dashboard_admin');
 $routes->get('content-management', 'ContentController::index');
 $routes->post('content-management', 'ContentController::index');
 
+//Routes untuk ContentController
 $routes->get('content/content_form', 'ContentController::create');
 $routes->post('content/content_form', 'ContentController::create');
+$routes->get('store', 'ContentController::store');
+$routes->post('store', 'ContentController::store');

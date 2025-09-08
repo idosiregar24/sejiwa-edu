@@ -61,7 +61,7 @@
             <h2 class="text-2xl font-bold mb-6">Tambah Konten Edukasi</h2>
 
             <div class="bg-white shadow-lg p-8 rounded-lg">
-                <form action="<?= base_url('content/store') ?>" method="post" enctype="multipart/form-data">
+                <form action="<?= base_url('store') ?>" method="post" enctype="multipart/form-data">
 
                     <!-- Pilih Tipe Konten -->
                     <div class="mb-6">
@@ -90,17 +90,30 @@
 
                     <!-- Content -->
                     <div class="mb-6">
-                    <label for="body" class="block text-gray-700 font-semibold mb-2">
-                      Content <span class="text-pink-500">*</span>
-                    </label>
-                    <div class="main-container">
-                      <div class="editor-container editor-container_inline-editor" id="editor-container">
-                        <div class="editor-container__editor"><div id="editor"></div></div>
+                      <label for="body" class="block text-gray-700 font-semibold mb-2">
+                        Content <span class="text-pink-500">*</span>
+                      </label>
+                      <div class="main-container">
+                        <div class="editor-container editor-container_inline-editor" id="editor-container">
+                          <div class="editor-container__editor"><div id="editor"></div></div>
+                        </div>
                       </div>
+                      <textarea name="body" id="body" style="display:none"></textarea>
                     </div>
-                  </div>
-                  <script src="https://cdn.ckeditor.com/ckeditor5/46.0.3/ckeditor5.umd.js" crossorigin></script>
-		              <script src="./main.js"></script>
+                    <script src="https://cdn.ckeditor.com/ckeditor5/46.0.3/ckeditor5.umd.js" crossorigin></script>
+                    <script>
+                    let editorInstance;
+                    ClassicEditor.create(document.querySelector('#editor'))
+                      .then(editor => {
+                        editorInstance = editor;
+                      });
+
+                    document.querySelector('form').addEventListener('submit', function(e) {
+                      if (editorInstance) {
+                        document.getElementById('body').value = editorInstance.getData();
+                      }
+                    });
+                    </script>
 
 
                     <!-- Upload Infografis -->

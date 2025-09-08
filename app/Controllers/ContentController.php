@@ -76,7 +76,7 @@ class ContentController extends BaseController
         'thumbnail'  => $thumbnailPath,
     ]);
 
-    return redirect()->to('content');
+    return redirect()->to('content-management');
     }
 
     public function edit($id)
