@@ -47,46 +47,27 @@
                             <!-- <button class="btn left" onclick="slideLeft()">&#10094;</button> -->
                             <div class="slider" id="slider">
                             <div class="content-card">
-                                <img src="https://fastly.picsum.photos/id/586/200/120.jpg?hmac=6hlpn-k3YsaEggp011FvIvsJUz-JfupDzFSz0P6TKRY" alt="Konten 1">
-                                <h3>Judul Konten 1</h3>
-                                <p>Deskripsi singkat konten...</p>
-                                <span>⭐️ 4.5 | Tag</span>
+                                <div class="container py-4">
+                                    <div class="row">
+                                <?php if (!empty($videos)): ?>
+                                    <?php foreach ($videos as $video): ?>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="content-card">
+                                                <video width="100%" height="200" controls>
+                                                    <source src="<?= base_url('uploads/videos/' . $video['path']) ?>" type="video/mp4">
+                                                    Browser Anda tidak mendukung pemutar video.
+                                                </video>
+                                                <h3><?= esc($video['title']) ?></h3>
+                                                <p><?= esc($video['description']) ?></p>
+                                                <span>⭐️ <?= esc($video['rating']) ?> | <?= esc($video['tag']) ?></span>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <p>Belum ada video yang dipublish.</p>
+                                <?php endif; ?>
                             </div>
-                            <div class="content-card">
-                                <img src="https://fastly.picsum.photos/id/586/200/120.jpg?hmac=6hlpn-k3YsaEggp011FvIvsJUz-JfupDzFSz0P6TKRY" alt="Konten 1">
-                                <h3>Judul Konten 2</h3>
-                                <p>Deskripsi singkat konten...</p>
-                                <span>⭐️ 4.0 | Tag</span>
-                            </div>
-                            <div class="content-card">
-                                <img src="https://fastly.picsum.photos/id/586/200/120.jpg?hmac=6hlpn-k3YsaEggp011FvIvsJUz-JfupDzFSz0P6TKRY" alt="Konten 1">
-                                <h3>Judul Konten 3</h3>
-                                <p>Deskripsi singkat konten...</p>
-                                <span>⭐️ 5.0 | Tag</span>
-                            </div>
-                            <div class="content-card">
-                                <img src="https://fastly.picsum.photos/id/586/200/120.jpg?hmac=6hlpn-k3YsaEggp011FvIvsJUz-JfupDzFSz0P6TKRY" alt="Konten 1">
-                                <h3>Judul Konten 4</h3>
-                                <p>Deskripsi singkat konten...</p>
-                                <span>⭐️ 4.7 | Tag</span>
-                            </div>
-                            <div class="content-card">
-                                <img src="https://fastly.picsum.photos/id/586/200/120.jpg?hmac=6hlpn-k3YsaEggp011FvIvsJUz-JfupDzFSz0P6TKRY" alt="Konten 1">
-                                <h3>Judul Konten 2</h3>
-                                <p>Deskripsi singkat konten...</p>
-                                <span>⭐️ 4.0 | Tag</span>
-                            </div>
-                            <div class="content-card">
-                                <img src="https://fastly.picsum.photos/id/586/200/120.jpg?hmac=6hlpn-k3YsaEggp011FvIvsJUz-JfupDzFSz0P6TKRY" alt="Konten 1">
-                                <h3>Judul Konten 2</h3>
-                                <p>Deskripsi singkat konten...</p>
-                                <span>⭐️ 4.0 | Tag</span>
-                            </div>
-                            <div class="content-card">
-                                <img src="https://fastly.picsum.photos/id/586/200/120.jpg?hmac=6hlpn-k3YsaEggp011FvIvsJUz-JfupDzFSz0P6TKRY" alt="Konten 1">
-                                <h3>Judul Konten 2</h3>
-                                <p>Deskripsi singkat konten...</p>
-                                <span>⭐️ 4.0 | Tag</span>
+
                             </div>
                             </div>
                         <!-- <button class="btn right" onclick="slideRight()">&#10095;</button> -->

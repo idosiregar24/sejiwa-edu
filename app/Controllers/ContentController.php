@@ -13,12 +13,22 @@ class ContentController extends BaseController
         $this->contentModel = new ContentModel();
     }
 
-    public function index()
-    {
-        $data = [
-            'contents' => $this->contentModel->getAllContent(),
-            'stats'    => $this->contentModel->getContentStats()
-        ];
+public function index()
+{
+    // Ambil semua konten
+    $contents = $this->contentModel->getAllContent();
+
+    // Ambil hanya konten dengan type 'Video' dan status 'Published'
+    $videos = $this->contentModel
+                   ->where('type', 'Video')
+                   ->where('status', 'Published')
+                   ->findAll();
+
+    $data = [
+        'contents' => $contents,
+        'stats'    => $this->contentModel->getContentStats(),
+        'videos'   => $videos
+    ];
 
         return view('admin/content-management', $data);
     }
@@ -36,8 +46,10 @@ class ContentController extends BaseController
     $body = $this->request->getPost('body');
     $status = $this->request->getPost('status');
 
+
     // Tentukan folder upload berdasarkan tipe
-    $uploadDir = WRITEPATH . '../public/uploads/';
+    // $uploadDir = WRITEPATH . '../public/uploads/';
+    $uploadDir = FCPATH . 'uploads/';
     $filePath = null;
 
     if ($type === 'Infografis' && $this->request->getFile('infographic')->isValid()) {

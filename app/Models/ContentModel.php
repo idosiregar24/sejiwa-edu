@@ -47,4 +47,13 @@ class ContentModel extends Model
             'archived'  => $this->where('status', 'Archived')->countAllResults(),
         ];
     }
+
+    public function getPublishedVideos(): array
+    {
+        return $this->where('type', 'video')
+                    ->where('published', 1)
+                    ->orderBy('created_at', 'DESC')
+                    ->findAll();
+    }
+
 }
