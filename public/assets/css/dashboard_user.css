@@ -367,3 +367,35 @@ transition: transform 0.3s ease;
   color: #555;
 }
 
+/* Styling untuk video di dalam card */
+.content-card video {
+  width: 100%;
+  height: 180px;              /* atur tinggi tetap */
+  border-radius: 8px;
+  object-fit: cover;          /* biar proporsional */
+  margin-bottom: 10px;
+  background: #000;           /* fallback kalau thumbnail belum muncul */
+}
+
+/* Saat hover, kasih efek biar interaktif */
+.content-card:hover video {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+/* Judul video */
+.content-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 5px 0;
+  text-align: left;
+}
+
+/* Deskripsi singkat video */
+.content-card p {
+  font-size: 13px;
+  color: #666;
+  text-align: left;
+  margin: 0;
+}

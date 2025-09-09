@@ -203,7 +203,7 @@
                     <div class="flex justify-end space-x-4 mt-8">
                         <a href="<?= base_url('content') ?>" class="btn px-6 py-3 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400 transition-colors">Batal</a>
                         <button type="submit" name="status" value="Draft" class="btn px-6 py-3 bg-gray-400 text-white rounded-lg hover:bg-gray-500 transition-colors">Save as Draft</button>
-                        <button type="submit" name="status" value="Publish" class="btn px-6 py-3 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-colors">Simpan</button>
+                        <button type="submit" name="status" value="Published" class="btn px-6 py-3 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-colors">Simpan</button>
                     </div>
 
                 </form>

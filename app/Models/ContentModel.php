@@ -42,7 +42,7 @@ class ContentModel extends Model
     {
         return [
             'total'     => $this->countAll(),
-            'published' => $this->where('status', 'Publish')->countAllResults(),
+            'published' => $this->where('status', 'Published')->countAllResults(),
             'draft'     => $this->where('status', 'Draft')->countAllResults(),
             'archived'  => $this->where('status', 'Archived')->countAllResults(),
         ];
@@ -50,8 +50,8 @@ class ContentModel extends Model
 
     public function getPublishedVideos(): array
     {
-        return $this->where('type', 'video')
-                    ->where('published', 1)
+        return $this->where('type', 'Video')
+                    ->where('Published', 1)
                     ->orderBy('created_at', 'DESC')
                     ->findAll();
     }

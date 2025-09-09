@@ -26,3 +26,4 @@ class UserController extends BaseController
         return view('user/dashboard_user', ['videos' => $videos]);
     }
 }
+    

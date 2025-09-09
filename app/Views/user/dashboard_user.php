@@ -34,99 +34,54 @@
             </div>
         </section>
 
-        <section class="content-section">
-            <div class="section-header">
-                <h2>Ruang Edukatif Sejiwa</h2>
-                <div class="subtitle">
-                    <h5>Tempat teduh untuk ibu belajar, mengenal, dan memahami dengan kasih</h5>
-                    <a href="#">See All</a>
-                </div>
-            </div>
-            <div class="horizontal-scroll-container">
-                <div class="slider-container">
-                            <!-- <button class="btn left" onclick="slideLeft()">&#10094;</button> -->
-                            <div class="slider" id="slider">
-                            <div class="content-card">
-                                <div class="container py-4">
-                                    <div class="row">
-                                <?php if (!empty($videos)): ?>
-                                    <?php foreach ($videos as $video): ?>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="content-card">
-                                                <video width="100%" height="200" controls>
-                                                    <source src="<?= base_url('uploads/videos/' . $video['path']) ?>" type="video/mp4">
-                                                    Browser Anda tidak mendukung pemutar video.
-                                                </video>
-                                                <h3><?= esc($video['title']) ?></h3>
-                                                <p><?= esc($video['description']) ?></p>
-                                                <span>⭐️ <?= esc($video['rating']) ?> | <?= esc($video['tag']) ?></span>
-                                            </div>
-                                        </div>
-                                    <?php endforeach; ?>
-                                <?php else: ?>
-                                    <p>Belum ada video yang dipublish.</p>
-                                <?php endif; ?>
-                            </div>
-
-                            </div>
-                            </div>
-                        <!-- <button class="btn right" onclick="slideRight()">&#10095;</button> -->
-                    </div>
-        </section>
-<!-- 
-        <section class="bisikan-bunda-section">
-            <div class="section-header">
-                <h2>Bisikan Bunda</h2>
-            </div>
-            <div class="quote-card">
-                <p>"Saat dunia terasa terlalu terang, terlalu keras, atau terlalu cepat, pelukan yang menenangkan dari orang yang kita cintai terasa seperti rumah."</p>
-                <h4>Dazzle Healer</h4>
-                <p>Front End Developer</p>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <div class="section-header">
-                <h2>Teduh Jiwa</h2>
-                <a href="#">See All</a>
-            </div>
-            <div class="horizontal-scroll-container">
-                <div class="content-card">
-                    <img src="path/to/music-image1.jpg" alt="Musik 1">
-                    <h3>Judul Musik 1</h3>
-                    <span>Label</span>
-                </div>
-                <div class="content-card">
-                    <img src="path/to/music-image2.jpg" alt="Musik 2">
-                    <h3>Judul Musik 2</h3>
-                    <span>Label</span>
-                </div>
-                </div>
-        </section> -->
-    </main>
-
-    <!-- <footer>
-        <div class="footer-links">
-            <a href="#">Home</a>
-            <a href="#">Find a Therapist</a>
-            <a href="#">My Concerns</a>
-            <a href="#">About</a>
-            <a href="#">Register with us</a>
-            <a href="#">Contact us</a>
-            <a href="#">Sitemap</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
+        <!-- Content Section -->
+    <section class="content-section py-4">
+      <!-- Header -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h2 class="fw-bold">Ruang Edukatif Sejiwa</h2>
+          <h6 class="text-muted">Tempat teduh untuk ibu belajar, mengenal, dan memahami dengan kasih</h6>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Sejiwa. All right reserved</p>
-            <div class="social-icons">
-                <a href="#"><img src="path/to/twitter.svg" alt="Twitter"></a>
-                <a href="#"><img src="path/to/instagram.svg" alt="Instagram"></a>
-            </div>
-            <p class="developer-credit">Design & Developed by Idex Solutions</p>
-        </div>
-    </footer> -->
+        <a href="#" class="btn btn-outline-secondary btn-sm">See All <i class="bi bi-chevron-down"></i></a>
+      </div>
 
+      <!-- Slider Section -->
+      <div class="position-relative">
+        <!-- Tombol kiri -->
+        <button class="btn btn-light position-absolute top-50 start-0 translate-middle-y shadow rounded-circle"
+                onclick="slideLeft()" style="z-index:10">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <!-- Container Scroll -->
+        <div class="d-flex overflow-auto px-2" id="videoSlider" style="scroll-behavior:smooth; gap:1rem;">
+          <?php if (!empty($videos)): ?>
+            <?php foreach ($videos as $video): ?>
+              <div class="card shadow-sm" style="min-width:300px; flex:0 0 auto;">
+                <video class="w-100 rounded-top" height="180" controls>
+                  <source src="<?= base_url($video['file_path']) ?>" type="video/mp4">
+                  Browser Anda tidak mendukung pemutar video.
+                </video>
+                <div class="card-body">
+                  <h6 class="fw-bold"><?= esc($video['title']) ?></h6>
+                  <p class="card-text small text-muted text-truncate"><?= esc($video['body']) ?></p>
+                  <span class="badge bg-success"><?= esc($video['category']) ?></span>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <p class="text-muted">Belum ada video yang dipublish.</p>
+          <?php endif; ?>
+        </div>
+
+        <!-- Tombol kanan -->
+        <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y shadow rounded-circle"
+                onclick="slideRight()" style="z-index:10">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+  </main>
 </body>
   <script>
     let slider = document.getElementById("slider");
