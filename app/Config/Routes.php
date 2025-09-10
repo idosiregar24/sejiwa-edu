@@ -24,21 +24,24 @@ $routes->post('resendVerification', 'AuthController::resendVerification');
 
 //Routes Untuk UserController
 $routes->get('dashboard', 'UserController::dashboard');
-$routes->get('user_management', 'UserController::index');
-$routes->get('user/addForm', 'UserController::addForm');
-$routes->post('/user/store', 'UserController::store');
-$routes->get('/user/delete/(:num)', 'UserController::delete/$1');
-
+$routes->post('dashboard', 'UserController::dashboard');
 
 //Routes Untuk AdminControllers
 $routes->get('dashboard_admin', 'AdminController::dashboard_admin');
 $routes->post('dashboard_admin', 'AdminController::dashboard_admin');
-
+ 
 $routes->get('content-management', 'ContentController::index');
 $routes->post('content-management', 'ContentController::index');
+
+$routes->get('forum-management', 'forumController::index');
+$routes->post('forum-management', 'forumController::index');
 
 //Routes untuk ContentController
 $routes->get('content/content_form', 'ContentController::create');
 $routes->post('content/content_form', 'ContentController::create');
 $routes->get('store', 'ContentController::store');
 $routes->post('store', 'ContentController::store');
+
+$routes->get('content/delete/(:num)', 'ContentController::delete/$1');
+$routes->post('content/delete/(:num)', 'ContentController::delete/$1');
+

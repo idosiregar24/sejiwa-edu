@@ -27,21 +27,4 @@ class UserModel extends Model
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
-
-     // Fungsi untuk mengambil semua data user
-    public function getAllUsers()
-    {
-        return $this->findAll();
-    }
-
-    // Fungsi untuk mengambil user berdasarkan ID
-    public function getUserById($id)
-    {
-        return $this->find($id);
-    }
-
-    public function deleteUserById($id)
-    {
-        return $this->delete($id);
-    }
 }

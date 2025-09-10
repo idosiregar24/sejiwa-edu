@@ -30,7 +30,7 @@ public function index()
         'videos'   => $videos
     ];
 
-        return view('admin/content-management', $data);
+        return view('admin/content/content-management', $data);
     }
 
     public function create()
@@ -112,7 +112,13 @@ public function index()
 
     public function delete($id)
     {
-        $this->contentModel->deleteContent($id);
-        return redirect()->to('/content');
+        if ($this->contentModel->delete($id)) {
+            return redirect()->to(base_url('content-management'))
+                            ->with('success', 'Konten berhasil dihapus');
+        } else {
+            return redirect()->to(base_url('content-management'))
+                            ->with('error', 'Konten gagal dihapus');
+        }
     }
+
 }

@@ -399,3 +399,59 @@ transition: transform 0.3s ease;
   text-align: left;
   margin: 0;
 }
+
+.bisikan-section {
+  background: linear-gradient(135deg, #f9d9e6, #f0a4c5);
+  border-radius: 12px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.testimonial-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.testimonial-card img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.testimonial-text {
+  font-style: italic;
+  color: #333;
+  margin-top: 20px;
+}
+.bg-mom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 600%;
+  max-height: 320px;
+}
+.nav-btn {
+  background: #fff;
+  border-radius: 50%;
+  border: none;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.nav-btn:hover {
+  background: #f1f1f1;
+}
+.nav-left {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.nav-right {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}

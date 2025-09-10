@@ -20,7 +20,7 @@
     <?= $this->include('layouts/navbar') ?>
 
     
-            <div class="hero-content">
+    <div class="hero-content">
                 <h1>Sejiwa:</h1>
                 <div class="subjudul">
                     <h1>Sentra Edukasi Jiwa Ibu Welas Asih</h1>
@@ -32,9 +32,9 @@
             <div class="hero-image">
                 <img src="<?= base_url('assets/img/ilustrasi_ibu_dan_anak.svg')?>" alt="Ilustrasi Ibu dan Anak"/>
             </div>
-        </section>
+    </section>
 
-        <!-- Content Section -->
+    <!-- Content Section -->
     <section class="content-section py-4">
       <!-- Header -->
       <div class="d-flex justify-content-between align-items-center mb-4">
@@ -81,8 +81,99 @@
         </button>
       </div>
     </section>
+
+    <!-- Bisikan Bunda -->
+    <section class="content-section py-2">
+        <div class="bisikan-section">
+        
+          <!-- Header -->
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+              <h3 class="fw-bold">Bisikan Bunda</h3>
+            </div>
+          </div>
+          
+          <!-- Tombol Navigasi -->
+          <button class="nav-btn nav-left">&lt;</button>
+
+          <!-- Card Testimoni -->
+          <div class="testimonial-card">
+            <div class="d-flex align-items-center">
+              <img src="https://i.pravatar.cc/100?img=32" alt="avatar">
+              <div>
+                <h6 class="mb-0 fw-bold">Dazzle Healer</h6>
+                <small class="text-muted">Front End Developer</small>
+              </div>
+            </div>
+            <hr>
+            <p class="testimonial-text">
+              “Saat dunia terasa terlalu terang, terlalu keras, atau terlalu cepat...<br>
+              pelukanmu menjadi jeda yang menyelamatkan.”
+            </p>
+          </div>
+
+          <!-- Gambar Ibu -->
+          <img src="<?= base_url('assets/img/bisikan-bunda.svg')?>" alt="mom" class="bg-mom">
+
+          <!-- Tombol Navigasi -->
+          <button class="nav-btn nav-right">&gt;</button>
+        </div>
+    </section>
+
+    <!-- Teduh Jiwa -->
+    <section class="content-section py-4">
+      <!-- Header -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h2 class="fw-bold">Teduh Jiwa</h2>        </div>
+        <a href="#" class="btn btn-outline-secondary btn-sm">See All <i class="bi bi-chevron-down"></i></a>
+      </div>
+
+      <!-- Slider Section -->
+      <div class="position-relative">
+        <!-- Tombol kiri -->
+        <button class="btn btn-light position-absolute top-50 start-0 translate-middle-y shadow rounded-circle"
+                onclick="slideLeft()" style="z-index:10">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <!-- Container Scroll -->
+        <div class="d-flex overflow-auto px-2" id="videoSlider" style="scroll-behavior:smooth; gap:1rem;">
+          <?php if (!empty($videos)): ?>
+            <?php foreach ($videos as $video): ?>
+              <div class="card shadow-sm" style="min-width:300px; flex:0 0 auto;">
+                <video class="w-100 rounded-top" height="180" controls>
+                  <source src="<?= base_url($video['file_path']) ?>" type="video/mp4">
+                  Browser Anda tidak mendukung pemutar video.
+                </video>
+                <div class="card-body">
+                  <h6 class="fw-bold"><?= esc($video['title']) ?></h6>
+                  <p class="card-text small text-muted text-truncate"><?= esc($video['body']) ?></p>
+                  <span class="badge bg-success"><?= esc($video['category']) ?></span>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <p class="text-muted">Belum ada video yang dipublish.</p>
+          <?php endif; ?>
+        </div>
+
+        <!-- Tombol kanan -->
+        <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y shadow rounded-circle"
+                onclick="slideRight()" style="z-index:10">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- Menambahkan Navbar -->
+    <?= $this->include('layouts/footer') ?>
   </main>
 </body>
+
+
+
+
   <script>
     let slider = document.getElementById("slider");
     let scrollAmount = 0;

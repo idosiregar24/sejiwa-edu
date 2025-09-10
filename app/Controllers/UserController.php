@@ -16,57 +16,6 @@ class UserController extends BaseController
         $this->contentModel = new ContentModel();
     }
 
-    public function index()
-    {
-        $userModel = new UserModel();
-        $data['users'] = $userModel->getAllUsers();
-        return view('admin/user/user_management',$data);
-    }
-
-    public function addForm()
-    {
-        return view('admin/user/addForm');
-    }
-
-    public function store()
-    {
-        $userModel = new UserModel();
-
-        // Ambil data dari form
-        $data = [
-            'name' => $this->request->getPost('name'),
-            'email' => $this->request->getPost('email'),
-            'phone' => $this->request->getPost('phone'),
-            'date_of_birth' => $this->request->getPost('date_of_birth'),
-            'password' => password_hash($this->request->getPost('password'), PASSWORD_BCRYPT),
-            'role' => $this->request->getPost('role'),
-            'is_verified' => $this->request->getPost('is_verified') ? 1 : 0,
-        ];
-
-        // Simpan data ke database
-        $userModel->save($data);
-
-        // Redirect ke halaman user management dengan pesan sukses
-        return redirect()->to('/user_management')->with('success', 'User berhasil ditambahkan.');
-    }
-
-    public function delete($id)
-    {
-        $userModel = new UserModel();
-
-        // Pastikan user ada
-        $user = $userModel->getUserById($id);
-        if (!$user) {
-            return redirect()->to('/user_management')->with('error', 'User tidak ditemukan');
-        }
-
-        // Hapus user
-        $userModel->deleteUserById($id);
-
-        // Redirect dengan pesan sukses
-        return redirect()->to('/user_management')->with('success', 'User berhasil dihapus');
-    }
-
     public function dashboard()
     {
         $videos = $this->contentModel
