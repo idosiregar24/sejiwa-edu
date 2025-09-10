@@ -19,7 +19,6 @@
     <!-- Header -->
     <header class="text-white d-flex justify-content-between align-items-center py-4 px-4 rounded-bottom shadow" style="background-color: #b9226eff;">
       <div class="d-flex align-items-center gap-3">
-        <span class="fs-2">📚</span>
         <h1 class="fs-4 fw-semibold mb-0">Forum Management</h1>
       </div>
       <div class="position-relative">

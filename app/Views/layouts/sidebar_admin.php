@@ -14,7 +14,7 @@
       <h2>Sejiwa</h2>
       <ul class="menu">
         <li><a href="<?= base_url('dashboard_admin') ?>" class="active"><i class="bi bi-grid"></i> Dashboard</a></li>
-        <li><a href="#"><i class="bi bi-person"></i> Account</a></li>
+        <li><a href="<?= base_url('user_management') ?>"><i class="bi bi-person"></i> Account</a></li>
         <li><a href="<?= base_url('content-management') ?>"><i class="bi bi-mortarboard"></i> Educational</a></li>
         <li><a href="<?= base_url('forum-management') ?>"><i class="bi bi-chat-dots"></i> Forum</a></li>
         <li><a href="#"><i class="bi bi-bar-chart"></i> Statistics</a></li>
