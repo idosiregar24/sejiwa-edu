@@ -94,7 +94,7 @@ public function index()
     public function edit($id)
     {
         $data['content'] = $this->contentModel->getContentById($id);
-        return view('admin/content-edit', $data);
+        return view('admin/content/edit-content', $data);
     }
 
     public function update($id)
@@ -107,7 +107,7 @@ public function index()
             'status'   => $this->request->getPost('status'),
         ]);
 
-        return redirect()->to('/content');
+        return redirect()->to('content-management');
     }
 
     public function delete($id)

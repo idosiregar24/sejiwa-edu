@@ -49,3 +49,8 @@ $routes->post('store', 'ContentController::store');
 $routes->get('content/delete/(:num)', 'ContentController::delete/$1');
 $routes->post('content/delete/(:num)', 'ContentController::delete/$1');
 
+$routes->get('content/edit/(:num)', 'ContentController::edit/$1');
+$routes->post('content/edit/(:num)', 'ContentController::edit/$1');
+
+$routes->get('content/update/(:num)', 'ContentController::update/$1');
+$routes->post('content/update/(:num)', 'ContentController::update/$1');

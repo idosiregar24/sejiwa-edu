@@ -2,10 +2,10 @@
 
 namespace App\Controllers;
 
+
 use App\Models\UserModel;
 use App\Models\OtpModel;
 use CodeIgniter\I18n\Time;
-
 
 
 class AuthController extends BaseController
@@ -145,8 +145,10 @@ class AuthController extends BaseController
                 'purpose'    => 'register',
                 'is_used'    => 0,
                 'expires_at' => date('Y-m-d H:i:s', strtotime('+5 minutes')),
-                'created_at' => date('Y-m-d H:i:s')
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_otp_code' => date('Y-m-d H:i:s')
             ]);
+
             // Kirim OTP
             if ($channel === 'email') {
                 $email = \Config\Services::email();

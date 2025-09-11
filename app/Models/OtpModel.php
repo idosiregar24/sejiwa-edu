@@ -16,7 +16,8 @@ class OtpModel extends Model
         'expires_at',
         'is_used',
         'is_verified',
-        'purpose'
+        'purpose',
+        'updated_at_otp'
     ];
 
     protected $useTimestamps = true;
