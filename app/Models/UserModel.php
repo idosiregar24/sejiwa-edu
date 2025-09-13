@@ -44,4 +44,9 @@ class UserModel extends Model
     {
         return $this->delete($id);
     }
+
+    public function updateUserById($id, $data)
+    {
+        return $this->update($id, $data);
+    }
 }
