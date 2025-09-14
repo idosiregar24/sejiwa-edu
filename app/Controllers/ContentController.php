@@ -15,23 +15,44 @@ class ContentController extends BaseController
 
 public function index()
 {
-    // Ambil semua konten
-    $contents = $this->contentModel->getAllContent();
+    $jenis  = $this->request->getGet('jenis') ?? 'all';
+    $status = $this->request->getGet('status') ?? 'all';
+    $search = $this->request->getGet('search') ?? '';
 
-    // Ambil hanya konten dengan type 'Video' dan status 'Published'
-    $videos = $this->contentModel
-                   ->where('type', 'Video')
-                   ->where('status', 'Published')
-                   ->findAll();
+    // Mulai query
+    $query = $this->contentModel;
+
+    // Filter jenis
+    if ($jenis !== 'all') {
+        $query = $query->where('type', ucfirst($jenis));
+    }
+
+    // Filter status
+    if ($status !== 'all') {
+        $query = $query->where('status', ucfirst($status));
+    }
+
+    // Filter pencarian
+    if (!empty($search)) {
+        $query = $query->like('title', $search)
+                       ->orLike('description', $search);
+    }
+
+    $contents = $query->findAll();
 
     $data = [
         'contents' => $contents,
         'stats'    => $this->contentModel->getContentStats(),
-        'videos'   => $videos
+        'jenis'    => $jenis,
+        'status'   => $status,
+        'search'   => $search,
     ];
 
-        return view('admin/content/content-management', $data);
-    }
+    return view('admin/content/content-management', $data);
+}
+
+    
+
 
     public function create()
     {

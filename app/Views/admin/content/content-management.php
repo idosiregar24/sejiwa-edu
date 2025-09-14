@@ -58,12 +58,34 @@
 
       <!-- Search + Action -->
       <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-        <input type="text" class="form-control w-auto" style="min-width:200px;" placeholder="Search..." aria-label="Search Konten">
-        <div class="d-flex gap-2">
-          <a href="#" class="btn btn-secondary">Filter Jenis Konten</a>
-          <a href="<?= base_url('/content/content_form') ?>" class="btn btn-primary">+ Tambah Konten</a>
-        </div>
+      <input type="text" class="form-control w-auto" style="min-width:200px;" placeholder="Search..." aria-label="Search Konten">
+
+      <form method="get" action="<?= base_url('content-management') ?>" 
+          class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+
+      <div class="d-flex gap-2">
+        <!-- Filter Jenis Konten -->
+        <select name="jenis" class="form-select w-auto" onchange="this.form.submit()">
+          <option value="all" <?= ($jenis == 'all' ? 'selected' : '') ?>>Semua Jenis</option>
+          <option value="artikel" <?= ($jenis == 'artikel' ? 'selected' : '') ?>>Artikel</option>
+          <option value="video" <?= ($jenis == 'video' ? 'selected' : '') ?>>Video</option>
+          <option value="infografis" <?= ($jenis == 'infografis' ? 'selected' : '') ?>>Infografis</option>
+          <option value="audio" <?= ($jenis == 'audio' ? 'selected' : '') ?>>Audio</option>
+        </select>
+
+        <!-- Filter Status -->
+        <select name="status" class="form-select w-auto" onchange="this.form.submit()">
+          <option value="all" <?= ($status == 'all' ? 'selected' : '') ?>>Semua Status</option>
+          <option value="draft" <?= ($status == 'draft' ? 'selected' : '') ?>>Draft</option>
+          <option value="published" <?= ($status == 'published' ? 'selected' : '') ?>>Published</option>
+        </select>
+
+        <a href="<?= base_url('/content/content_form') ?>" class="btn btn-primary">+ Tambah Konten</a>
       </div>
+    </form>
+
+    </div>
+
 
       <!-- Table -->
       <div class="card">
@@ -109,5 +131,24 @@
       </div>
     </main>
   </div>
+
+  <script>
+  document.getElementById("filterKonten").addEventListener("change", function () {
+    let filter = this.value.toLowerCase();
+    let rows = document.querySelectorAll("table tbody tr");
+
+    rows.forEach(row => {
+      let jenis = row.cells[1]?.textContent.toLowerCase(); // kolom "Jenis"
+      
+      if (filter === "all" || jenis === filter) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  });
+</script>
+
+
 </body>
 </html>
