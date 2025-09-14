@@ -18,16 +18,16 @@
     <?= $this->include('layouts/sidebar_admin') ?>
 
     <div class="content">
-    <!-- Header -->
-    <header class="text-white d-flex justify-content-between align-items-center py-4 px-4 rounded-bottom shadow" style="background-color: #b9226eff;">
-      <div class="d-flex align-items-center gap-3">
-        <h1 class="fs-4 fw-semibold mb-0">Manajemen Pengguna</h1>
-      </div>
-      <div class="position-relative">
-        <i class="fas fa-bell fs-4"></i>
-        <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
-      </div>
-    </header>
+        <!-- Header -->
+        <header class="text-white d-flex justify-content-between align-items-center py-4 px-4 rounded-bottom shadow" style="background-color: #b9226eff;">
+            <div class="d-flex align-items-center gap-3">
+                <h1 class="fs-4 fw-semibold mb-0">Manajemen Pengguna</h1>
+            </div>
+            <div class="position-relative">
+                <i class="fas fa-bell fs-4"></i>
+                <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+            </div>
+        </header>
 
         <main class="container-fluid my-4 px-4">
             <!-- Title -->
@@ -76,10 +76,16 @@
                                         <td><?= ucfirst($user['role']); ?></td>
                                         <td><?= $user['is_verified'] ? '<span class="badge bg-success">Verified</span>' : '<span class="badge bg-danger">Not Verified</span>'; ?></td>
                                         <td>
+                                            <a href="<?= base_url('user/editForm/' . $user['id']); ?>"
+                                                class="btn btn-sm btn-warning me-1"
+                                                title="Edit User">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
                                             <a href="<?= base_url('user/delete/' . $user['id']); ?>"
                                                 class="btn btn-sm btn-danger"
+                                                title="Hapus User"
                                                 onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?');">
-                                                Hapus
+                                                <i class="fas fa-trash-alt"></i>
                                             </a>
                                         </td>
                                     </tr>

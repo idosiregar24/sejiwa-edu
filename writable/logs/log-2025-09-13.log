@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 DEBUG - 2025-09-13 08:51:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-09-13 08:57:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-09-13 08:57:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
@@ -55,11 +56,152 @@ in APPPATH\Views\admin\content\content-management.php on line 66.
  5 APPPATH\Controllers\ContentController.php(33): view('admin/content/content-management', [...])
  6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ContentController->index()
  7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContentController))
+=======
+DEBUG - 2025-09-13 09:04:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:04:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:04:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:04:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:04:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:04:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:11:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:12:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:12:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:13:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:13:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:13:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:15:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:16:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-13 09:16:48 --> mysqli_sql_exception: Duplicate entry '' for key 'phone' in C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `users` ...', 0)
+#1 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `users` ...')
+#2 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `users` ...')
+#3 C:\xampp\htdocs\sejiwa\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `users` ...', Array, false)
+#4 C:\xampp\htdocs\sejiwa\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\sejiwa\system\BaseModel.php(1025): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\sejiwa\system\Model.php(860): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\sejiwa\app\Models\UserModel.php(50): CodeIgniter\Model->update('4', Array)
+#8 C:\xampp\htdocs\sejiwa\app\Controllers\UserController.php(107): App\Models\UserModel->updateUserById('4', Array)
+#9 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(933): App\Controllers\UserController->update('4')
+#10 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#11 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\sejiwa\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\sejiwa\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\sejiwa\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\sejiwa\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-09-13 09:16:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'phone'
+[Method: POST, Route: user/update/4]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `users` SET `name` = :name:, `email` = :email:, `phone` = :phone:, `date_of_birth` = :date_of_birth:, `role` = :role:, `is_verified` = :is_verified:, `updated_at` = :updated_at:
+WHERE `users`.`id` IN :users.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1025): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Models\UserModel.php(50): CodeIgniter\Model->update('4', [...])
+ 6 APPPATH\Controllers\UserController.php(107): App\Models\UserModel->updateUserById('4', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->update('4')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+CRITICAL - 2025-09-13 09:16:48 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'phone'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `users` SET `name` = \'Kidyoo\', `email` = \'rudiowinaldo1295@gmail.com\', `phone` = \'\', `date_of_birth` = \'2005-09-12\', `role` = \'admin\', `is_verified` = 1, `updated_at` = \'2025-09-13 09:16:48\'
+WHERE `users`.`id` IN (\'4\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `users` SET `name` = \'Kidyoo\', `email` = \'rudiowinaldo1295@gmail.com\', `phone` = \'\', `date_of_birth` = \'2005-09-12\', `role` = \'admin\', `is_verified` = 1, `updated_at` = \'2025-09-13 09:16:48\'
+WHERE `users`.`id` IN (\'4\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `users` SET `name` = :name:, `email` = :email:, `phone` = :phone:, `date_of_birth` = :date_of_birth:, `role` = :role:, `is_verified` = :is_verified:, `updated_at` = :updated_at:
+WHERE `users`.`id` IN :users.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1025): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Models\UserModel.php(50): CodeIgniter\Model->update('4', [...])
+ 8 APPPATH\Controllers\UserController.php(107): App\Models\UserModel->updateUserById('4', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->update('4')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+CRITICAL - 2025-09-13 09:16:48 --> [Caused by] mysqli_sql_exception: Duplicate entry '' for key 'phone'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `users` SET `name` = \'Kidyoo\', `email` = \'rudiowinaldo1295@gmail.com\', `phone` = \'\', `date_of_birth` = \'2005-09-12\', `role` = \'admin\', `is_verified` = 1, `updated_at` = \'2025-09-13 09:16:48\'
+WHERE `users`.`id` IN (\'4\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `users` SET `name` = \'Kidyoo\', `email` = \'rudiowinaldo1295@gmail.com\', `phone` = \'\', `date_of_birth` = \'2005-09-12\', `role` = \'admin\', `is_verified` = 1, `updated_at` = \'2025-09-13 09:16:48\'
+WHERE `users`.`id` IN (\'4\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `users` SET `name` = \'Kidyoo\', `email` = \'rudiowinaldo1295@gmail.com\', `phone` = \'\', `date_of_birth` = \'2005-09-12\', `role` = \'admin\', `is_verified` = 1, `updated_at` = \'2025-09-13 09:16:48\'
+WHERE `users`.`id` IN (\'4\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `users` SET `name` = :name:, `email` = :email:, `phone` = :phone:, `date_of_birth` = :date_of_birth:, `role` = :role:, `is_verified` = :is_verified:, `updated_at` = :updated_at:
+WHERE `users`.`id` IN :users.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1025): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Models\UserModel.php(50): CodeIgniter\Model->update('4', [...])
+ 9 APPPATH\Controllers\UserController.php(107): App\Models\UserModel->updateUserById('4', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->update('4')
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+DEBUG - 2025-09-13 09:16:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:22:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:22:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:22:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:23:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:23:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:23:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:24:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:24:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:30:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:30:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:30:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:30:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:30:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-13 09:31:34 --> mysqli_sql_exception: Lock wait timeout exceeded; try restarting transaction in C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php(327): mysqli->query('DELETE FROM `us...', 0)
+#1 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `us...')
+#2 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `us...')
+#3 C:\xampp\htdocs\sejiwa\system\Database\BaseBuilder.php(2848): CodeIgniter\Database\BaseConnection->query('DELETE FROM `us...', Array, false)
+#4 C:\xampp\htdocs\sejiwa\system\Model.php(521): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\sejiwa\system\BaseModel.php(1152): CodeIgniter\Model->doDelete(Array, false)
+#6 C:\xampp\htdocs\sejiwa\app\Models\UserModel.php(45): CodeIgniter\BaseModel->delete(Array)
+#7 C:\xampp\htdocs\sejiwa\app\Controllers\UserController.php(64): App\Models\UserModel->deleteUserById('9')
+#8 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(933): App\Controllers\UserController->delete('9')
+#9 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#10 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sejiwa\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\sejiwa\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\sejiwa\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\sejiwa\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-09-13 09:31:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Lock wait timeout exceeded; try restarting transaction
+[Method: GET, Route: user/delete/9]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2848): CodeIgniter\Database\BaseConnection->query('DELETE FROM `users`
+WHERE `id` IN :id:', [...], false)
+ 2 SYSTEMPATH\Model.php(521): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH\BaseModel.php(1152): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH\Models\UserModel.php(45): CodeIgniter\BaseModel->delete([...])
+ 5 APPPATH\Controllers\UserController.php(64): App\Models\UserModel->deleteUserById('9')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->delete('9')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+>>>>>>> 172f9a30f4f2eaacee59a3058c2d35e015fa35d1
  8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+<<<<<<< HEAD
 DEBUG - 2025-09-13 09:21:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 CRITICAL - 2025-09-13 09:21:50 --> ErrorException: Undefined property: CodeIgniter\View\View::$request
 [Method: GET, Route: content-management]
@@ -71,11 +213,85 @@ in APPPATH\Views\admin\content\content-management.php on line 66.
  5 APPPATH\Controllers\ContentController.php(40): view('admin/content/content-management', [...])
  6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ContentController->index()
  7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContentController))
+=======
+CRITICAL - 2025-09-13 09:31:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Lock wait timeout exceeded; try restarting transaction
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `users`
+WHERE `id` IN (\'9\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `users`
+WHERE `id` IN (\'9\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2848): CodeIgniter\Database\BaseConnection->query('DELETE FROM `users`
+WHERE `id` IN :id:', [...], false)
+ 4 SYSTEMPATH\Model.php(521): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH\BaseModel.php(1152): CodeIgniter\Model->doDelete([...], false)
+ 6 APPPATH\Models\UserModel.php(45): CodeIgniter\BaseModel->delete([...])
+ 7 APPPATH\Controllers\UserController.php(64): App\Models\UserModel->deleteUserById('9')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->delete('9')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+CRITICAL - 2025-09-13 09:31:34 --> [Caused by] mysqli_sql_exception: Lock wait timeout exceeded; try restarting transaction
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('DELETE FROM `users`
+WHERE `id` IN (\'9\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `users`
+WHERE `id` IN (\'9\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `users`
+WHERE `id` IN (\'9\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2848): CodeIgniter\Database\BaseConnection->query('DELETE FROM `users`
+WHERE `id` IN :id:', [...], false)
+ 5 SYSTEMPATH\Model.php(521): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH\BaseModel.php(1152): CodeIgniter\Model->doDelete([...], false)
+ 7 APPPATH\Models\UserModel.php(45): CodeIgniter\BaseModel->delete([...])
+ 8 APPPATH\Controllers\UserController.php(64): App\Models\UserModel->deleteUserById('9')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->delete('9')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+DEBUG - 2025-09-13 09:31:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:31:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-13 09:32:49 --> mysqli_sql_exception: Lock wait timeout exceeded; try restarting transaction in C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php(327): mysqli->query('DELETE FROM `us...', 0)
+#1 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `us...')
+#2 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `us...')
+#3 C:\xampp\htdocs\sejiwa\system\Database\BaseBuilder.php(2848): CodeIgniter\Database\BaseConnection->query('DELETE FROM `us...', Array, false)
+#4 C:\xampp\htdocs\sejiwa\system\Model.php(521): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\sejiwa\system\BaseModel.php(1152): CodeIgniter\Model->doDelete(Array, false)
+#6 C:\xampp\htdocs\sejiwa\app\Models\UserModel.php(45): CodeIgniter\BaseModel->delete(Array)
+#7 C:\xampp\htdocs\sejiwa\app\Controllers\UserController.php(64): App\Models\UserModel->deleteUserById('9')
+#8 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(933): App\Controllers\UserController->delete('9')
+#9 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#10 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sejiwa\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\sejiwa\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\sejiwa\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\sejiwa\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-09-13 09:32:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Lock wait timeout exceeded; try restarting transaction
+[Method: GET, Route: user/delete/9]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2848): CodeIgniter\Database\BaseConnection->query('DELETE FROM `users`
+WHERE `id` IN :id:', [...], false)
+ 2 SYSTEMPATH\Model.php(521): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH\BaseModel.php(1152): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH\Models\UserModel.php(45): CodeIgniter\BaseModel->delete([...])
+ 5 APPPATH\Controllers\UserController.php(64): App\Models\UserModel->deleteUserById('9')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->delete('9')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+>>>>>>> 172f9a30f4f2eaacee59a3058c2d35e015fa35d1
  8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+<<<<<<< HEAD
 DEBUG - 2025-09-13 09:21:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 CRITICAL - 2025-09-13 09:21:51 --> ErrorException: Undefined property: CodeIgniter\View\View::$request
 [Method: GET, Route: content-management]
@@ -212,3 +428,366 @@ DEBUG - 2025-09-13 09:32:34 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-09-13 09:32:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-09-13 09:32:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-09-13 09:34:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+=======
+CRITICAL - 2025-09-13 09:32:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Lock wait timeout exceeded; try restarting transaction
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `users`
+WHERE `id` IN (\'9\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `users`
+WHERE `id` IN (\'9\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2848): CodeIgniter\Database\BaseConnection->query('DELETE FROM `users`
+WHERE `id` IN :id:', [...], false)
+ 4 SYSTEMPATH\Model.php(521): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH\BaseModel.php(1152): CodeIgniter\Model->doDelete([...], false)
+ 6 APPPATH\Models\UserModel.php(45): CodeIgniter\BaseModel->delete([...])
+ 7 APPPATH\Controllers\UserController.php(64): App\Models\UserModel->deleteUserById('9')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->delete('9')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+CRITICAL - 2025-09-13 09:32:49 --> [Caused by] mysqli_sql_exception: Lock wait timeout exceeded; try restarting transaction
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('DELETE FROM `users`
+WHERE `id` IN (\'9\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `users`
+WHERE `id` IN (\'9\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `users`
+WHERE `id` IN (\'9\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2848): CodeIgniter\Database\BaseConnection->query('DELETE FROM `users`
+WHERE `id` IN :id:', [...], false)
+ 5 SYSTEMPATH\Model.php(521): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH\BaseModel.php(1152): CodeIgniter\Model->doDelete([...], false)
+ 7 APPPATH\Models\UserModel.php(45): CodeIgniter\BaseModel->delete([...])
+ 8 APPPATH\Controllers\UserController.php(64): App\Models\UserModel->deleteUserById('9')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->delete('9')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+ERROR - 2025-09-13 09:33:59 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sejiwa', 3306, '', 0)
+#1 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\sejiwa\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sejiwa\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sejiwa\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, '9')
+#6 C:\xampp\htdocs\sejiwa\app\Models\UserModel.php(40): CodeIgniter\BaseModel->find('9')
+#7 C:\xampp\htdocs\sejiwa\app\Controllers\UserController.php(58): App\Models\UserModel->getUserById('9')
+#8 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(933): App\Controllers\UserController->delete('9')
+#9 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#10 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sejiwa\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\sejiwa\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\sejiwa\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\sejiwa\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\sejiwa\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\sejiwa\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\sejiwa\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, '9')
+#5 C:\xampp\htdocs\sejiwa\app\Models\UserModel.php(40): CodeIgniter\BaseModel->find('9')
+#6 C:\xampp\htdocs\sejiwa\app\Controllers\UserController.php(58): App\Models\UserModel->getUserById('9')
+#7 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(933): App\Controllers\UserController->delete('9')
+#8 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sejiwa\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\sejiwa\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\sejiwa\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\sejiwa\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-09-13 09:33:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: user/delete/9]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `users`.`id` = :users.id:', [...], false)
+ 3 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, '9')
+ 5 APPPATH\Models\UserModel.php(40): CodeIgniter\BaseModel->find('9')
+ 6 APPPATH\Controllers\UserController.php(58): App\Models\UserModel->getUserById('9')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->delete('9')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+ERROR - 2025-09-13 09:34:07 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sejiwa', 3306, '', 0)
+#1 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\sejiwa\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sejiwa\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sejiwa\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sejiwa\app\Models\UserModel.php(34): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sejiwa\app\Controllers\UserController.php(22): App\Models\UserModel->getAllUsers()
+#8 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(933): App\Controllers\UserController->index()
+#9 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#10 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sejiwa\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\sejiwa\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\sejiwa\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\sejiwa\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\sejiwa\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\sejiwa\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\sejiwa\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\sejiwa\app\Models\UserModel.php(34): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\sejiwa\app\Controllers\UserController.php(22): App\Models\UserModel->getAllUsers()
+#7 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(933): App\Controllers\UserController->index()
+#8 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sejiwa\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\sejiwa\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\sejiwa\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\sejiwa\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-09-13 09:34:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: user_management]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\UserModel.php(34): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\UserController.php(22): App\Models\UserModel->getAllUsers()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+DEBUG - 2025-09-13 09:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-13 09:34:15 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sejiwa', 3306, '', 0)
+#1 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\sejiwa\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sejiwa\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sejiwa\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sejiwa\app\Models\UserModel.php(34): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sejiwa\app\Controllers\UserController.php(22): App\Models\UserModel->getAllUsers()
+#8 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(933): App\Controllers\UserController->index()
+#9 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#10 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sejiwa\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\sejiwa\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\sejiwa\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\sejiwa\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\sejiwa\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\sejiwa\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\sejiwa\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\sejiwa\app\Models\UserModel.php(34): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\sejiwa\app\Controllers\UserController.php(22): App\Models\UserModel->getAllUsers()
+#7 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(933): App\Controllers\UserController->index()
+#8 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sejiwa\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\sejiwa\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\sejiwa\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\sejiwa\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-09-13 09:34:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: user_management]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\UserModel.php(34): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\UserController.php(22): App\Models\UserModel->getAllUsers()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+DEBUG - 2025-09-13 09:34:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:34:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-13 09:34:44 --> mysqli_sql_exception: Duplicate entry 'rudio24si@mahasiswa.pcr.ac.id' for key 'email' in C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\sejiwa\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\sejiwa\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\sejiwa\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\sejiwa\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\sejiwa\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\sejiwa\app\Controllers\UserController.php(47): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(933): App\Controllers\UserController->store()
+#10 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#11 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\sejiwa\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\sejiwa\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\sejiwa\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\sejiwa\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-09-13 09:34:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'rudio24si@mahasiswa.pcr.ac.id' for key 'email'
+[Method: POST, Route: user/store]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `email`, `phone`, `date_of_birth`, `password`, `role`, `is_verified`, `created_at`, `updated_at`) VALUES (:name:, :email:, :phone:, :date_of_birth:, :password:, :role:, :is_verified:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\UserController.php(47): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+CRITICAL - 2025-09-13 09:34:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'rudio24si@mahasiswa.pcr.ac.id' for key 'email'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`name`, `email`, `phone`, `date_of_birth`, `password`, `role`, `is_verified`, `created_at`, `updated_at`) VALUES (\'Kidyoo\', \'rudio24si@mahasiswa.pcr.ac.id\', \'\', \'2025-09-13\', \'$2y$10$e9zQxm0L8AjklRalkDhvkO5zYYX9FPJUEJ2okzVsXmq55mN4LKW4m\', \'admin\', 1, \'2025-09-13 09:34:44\', \'2025-09-13 09:34:44\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`name`, `email`, `phone`, `date_of_birth`, `password`, `role`, `is_verified`, `created_at`, `updated_at`) VALUES (\'Kidyoo\', \'rudio24si@mahasiswa.pcr.ac.id\', \'\', \'2025-09-13\', \'$2y$10$e9zQxm0L8AjklRalkDhvkO5zYYX9FPJUEJ2okzVsXmq55mN4LKW4m\', \'admin\', 1, \'2025-09-13 09:34:44\', \'2025-09-13 09:34:44\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `email`, `phone`, `date_of_birth`, `password`, `role`, `is_verified`, `created_at`, `updated_at`) VALUES (:name:, :email:, :phone:, :date_of_birth:, :password:, :role:, :is_verified:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\UserController.php(47): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+CRITICAL - 2025-09-13 09:34:44 --> [Caused by] mysqli_sql_exception: Duplicate entry 'rudio24si@mahasiswa.pcr.ac.id' for key 'email'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `users` (`name`, `email`, `phone`, `date_of_birth`, `password`, `role`, `is_verified`, `created_at`, `updated_at`) VALUES (\'Kidyoo\', \'rudio24si@mahasiswa.pcr.ac.id\', \'\', \'2025-09-13\', \'$2y$10$e9zQxm0L8AjklRalkDhvkO5zYYX9FPJUEJ2okzVsXmq55mN4LKW4m\', \'admin\', 1, \'2025-09-13 09:34:44\', \'2025-09-13 09:34:44\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`name`, `email`, `phone`, `date_of_birth`, `password`, `role`, `is_verified`, `created_at`, `updated_at`) VALUES (\'Kidyoo\', \'rudio24si@mahasiswa.pcr.ac.id\', \'\', \'2025-09-13\', \'$2y$10$e9zQxm0L8AjklRalkDhvkO5zYYX9FPJUEJ2okzVsXmq55mN4LKW4m\', \'admin\', 1, \'2025-09-13 09:34:44\', \'2025-09-13 09:34:44\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`name`, `email`, `phone`, `date_of_birth`, `password`, `role`, `is_verified`, `created_at`, `updated_at`) VALUES (\'Kidyoo\', \'rudio24si@mahasiswa.pcr.ac.id\', \'\', \'2025-09-13\', \'$2y$10$e9zQxm0L8AjklRalkDhvkO5zYYX9FPJUEJ2okzVsXmq55mN4LKW4m\', \'admin\', 1, \'2025-09-13 09:34:44\', \'2025-09-13 09:34:44\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `email`, `phone`, `date_of_birth`, `password`, `role`, `is_verified`, `created_at`, `updated_at`) VALUES (:name:, :email:, :phone:, :date_of_birth:, :password:, :role:, :is_verified:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\UserController.php(47): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->store()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+DEBUG - 2025-09-13 09:34:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-13 09:35:05 --> mysqli_sql_exception: Duplicate entry '' for key 'phone' in C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\sejiwa\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\sejiwa\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\sejiwa\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\sejiwa\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\sejiwa\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\sejiwa\app\Controllers\UserController.php(47): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(933): App\Controllers\UserController->store()
+#10 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#11 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\sejiwa\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\sejiwa\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\sejiwa\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\sejiwa\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-09-13 09:35:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'phone'
+[Method: POST, Route: user/store]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `email`, `phone`, `date_of_birth`, `password`, `role`, `is_verified`, `created_at`, `updated_at`) VALUES (:name:, :email:, :phone:, :date_of_birth:, :password:, :role:, :is_verified:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\UserController.php(47): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+CRITICAL - 2025-09-13 09:35:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'phone'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`name`, `email`, `phone`, `date_of_birth`, `password`, `role`, `is_verified`, `created_at`, `updated_at`) VALUES (\'Kidyoo\', \'rudiowinaldo66@gmail.com\', \'\', \'2025-09-13\', \'$2y$10$K22pnKu5zJws9G181FUS4epSnKP0/u.qbzORjfb2yufyyiaFIEN0C\', \'admin\', 1, \'2025-09-13 09:35:05\', \'2025-09-13 09:35:05\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`name`, `email`, `phone`, `date_of_birth`, `password`, `role`, `is_verified`, `created_at`, `updated_at`) VALUES (\'Kidyoo\', \'rudiowinaldo66@gmail.com\', \'\', \'2025-09-13\', \'$2y$10$K22pnKu5zJws9G181FUS4epSnKP0/u.qbzORjfb2yufyyiaFIEN0C\', \'admin\', 1, \'2025-09-13 09:35:05\', \'2025-09-13 09:35:05\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `email`, `phone`, `date_of_birth`, `password`, `role`, `is_verified`, `created_at`, `updated_at`) VALUES (:name:, :email:, :phone:, :date_of_birth:, :password:, :role:, :is_verified:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\UserController.php(47): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+CRITICAL - 2025-09-13 09:35:05 --> [Caused by] mysqli_sql_exception: Duplicate entry '' for key 'phone'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `users` (`name`, `email`, `phone`, `date_of_birth`, `password`, `role`, `is_verified`, `created_at`, `updated_at`) VALUES (\'Kidyoo\', \'rudiowinaldo66@gmail.com\', \'\', \'2025-09-13\', \'$2y$10$K22pnKu5zJws9G181FUS4epSnKP0/u.qbzORjfb2yufyyiaFIEN0C\', \'admin\', 1, \'2025-09-13 09:35:05\', \'2025-09-13 09:35:05\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`name`, `email`, `phone`, `date_of_birth`, `password`, `role`, `is_verified`, `created_at`, `updated_at`) VALUES (\'Kidyoo\', \'rudiowinaldo66@gmail.com\', \'\', \'2025-09-13\', \'$2y$10$K22pnKu5zJws9G181FUS4epSnKP0/u.qbzORjfb2yufyyiaFIEN0C\', \'admin\', 1, \'2025-09-13 09:35:05\', \'2025-09-13 09:35:05\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`name`, `email`, `phone`, `date_of_birth`, `password`, `role`, `is_verified`, `created_at`, `updated_at`) VALUES (\'Kidyoo\', \'rudiowinaldo66@gmail.com\', \'\', \'2025-09-13\', \'$2y$10$K22pnKu5zJws9G181FUS4epSnKP0/u.qbzORjfb2yufyyiaFIEN0C\', \'admin\', 1, \'2025-09-13 09:35:05\', \'2025-09-13 09:35:05\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `email`, `phone`, `date_of_birth`, `password`, `role`, `is_verified`, `created_at`, `updated_at`) VALUES (:name:, :email:, :phone:, :date_of_birth:, :password:, :role:, :is_verified:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\UserController.php(47): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->store()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+DEBUG - 2025-09-13 09:36:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:36:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:36:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:36:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:36:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:36:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:36:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:36:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:37:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:37:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:37:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:37:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-13 09:37:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+>>>>>>> 172f9a30f4f2eaacee59a3058c2d35e015fa35d1

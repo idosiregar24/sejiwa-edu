@@ -29,6 +29,8 @@ $routes->get('user_management', 'UserController::index');
 $routes->get('user/addForm', 'UserController::addForm');
 $routes->post('/user/store', 'UserController::store');
 $routes->get('/user/delete/(:num)', 'UserController::delete/$1');
+$routes->get('user/editForm/(:num)', 'UserController::editForm/$1');
+$routes->post('user/update/(:num)', 'UserController::update/$1');
 
 //Routes Untuk AdminControllers
 $routes->get('dashboard_admin', 'AdminController::dashboard_admin');

@@ -20,7 +20,7 @@ class UserController extends BaseController
     {
         $userModel = new UserModel();
         $data['users'] = $userModel->getAllUsers();
-        return view('admin/user/user_management',$data);
+        return view('admin/user/user_management', $data);
     }
 
     public function addForm()
@@ -67,14 +67,55 @@ class UserController extends BaseController
         return redirect()->to('/user_management')->with('success', 'User berhasil dihapus');
     }
 
+    public function editForm($id)
+    {
+        $userModel = new UserModel();
+        $user = $userModel->getUserById($id);
+
+        if (!$user) {
+            return redirect()->to('/user_management')->with('error', 'User tidak ditemukan');
+        }
+
+        return view('admin/user/editForm', ['user' => $user]);
+    }
+
+    // Proses update user
+    public function update($id)
+    {
+        $userModel = new UserModel();
+
+        $user = $userModel->getUserById($id);
+        if (!$user) {
+            return redirect()->to('/user_management')->with('error', 'User tidak ditemukan');
+        }
+
+        $data = [
+            'name' => $this->request->getPost('name'),
+            'email' => $this->request->getPost('email'),
+            // 'phone' => $this->request->getPost('phone'),
+            'date_of_birth' => $this->request->getPost('date_of_birth'),
+            'role' => $this->request->getPost('role'),
+            'is_verified' => $this->request->getPost('is_verified') ? 1 : 0,
+        ];
+
+        // Jika password diisi, update password
+        $password = $this->request->getPost('password');
+        if (!empty($password)) {
+            $data['password'] = password_hash($password, PASSWORD_BCRYPT);
+        }
+
+        $userModel->updateUserById($id, $data);
+
+        return redirect()->to('/user_management')->with('success', 'User berhasil diupdate');
+    }
+
     public function dashboard()
     {
         $videos = $this->contentModel
-                       ->where('type', 'Video')
-                       ->where('status', 'Published')
-                       ->findAll();
+            ->where('type', 'Video')
+            ->where('status', 'Published')
+            ->findAll();
 
         return view('user/dashboard_user', ['videos' => $videos]);
     }
 }
-    
