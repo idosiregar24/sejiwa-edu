@@ -3,14 +3,21 @@
 namespace App\Controllers;
 
 use App\Models\ContentModel;
+use App\Models\LikeModel;
+use App\Models\CommentsModel;
 
 class ContentController extends BaseController
 {
     protected $contentModel;
+    protected $commentModel;
+    protected $likeModel;
 
     public function __construct()
     {
         $this->contentModel = new ContentModel();
+        $this->likeModel    = new LikeModel();
+        $this->commentModel = new CommentsModel();
+        
     }
 
 public function index()
@@ -141,5 +148,35 @@ public function index()
                             ->with('error', 'Konten gagal dihapus');
         }
     }
+
+    public function view($id) {
+        $content = $this->contentModel->find($id);
+        $comments = $this->commentModel->where('content_id', $id)->findAll();
+        $related = $this->contentModel->where('id !=', $id)->orderBy('created_at', 'DESC')->limit(5)->findAll();
+
+        return view('user/content_detail', [
+            'content' => $content,
+            'comments' => $comments,
+            'related' => $related
+        ]);
+    }
+
+    public function comment($id) {
+        $this->commentModel->save([
+            'content_id' => $id,
+            'user_id' => session()->get('id'),
+            'comment' => $this->request->getPost('comment')
+        ]);
+        return redirect()->back();
+    }
+
+    public function like($id) {
+        $this->likeModel->save([
+            'content_id' => $id,
+            'user_id' => session()->get('id')
+        ]);
+        return $this->response->setJSON(['success' => true]);
+    }
+
 
 }

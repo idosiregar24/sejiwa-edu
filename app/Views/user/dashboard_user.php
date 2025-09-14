@@ -54,91 +54,106 @@
         </button>
 
         <!-- Container Scroll -->
-        <div class="d-flex overflow-auto px-2" id="videoSlider" style="scroll-behavior:smooth; gap:1rem;">
-          <?php if (!empty($videos)): ?>
-            <?php foreach ($videos as $video): ?>
-              <div class="card shadow-sm" style="min-width:300px; flex:0 0 auto;">
-                <video class="w-100 rounded-top" height="180" controls>
-                  <source src="<?= base_url($video['file_path']) ?>" type="video/mp4">
-                  Browser Anda tidak mendukung pemutar video.
-                </video>
-                <div class="card-body">
-                  <h6 class="fw-bold"><?= esc($video['title']) ?></h6>
-                  <p class="card-text small text-muted text-truncate"><?= esc($video['body']) ?></p>
+        <div class="row">
+        <?php foreach ($videos as $video): ?>
+          <div class="col-md-3 mb-4">
+            <div class="card shadow-sm h-100">
+              
+              <!-- Thumbnail -->
+              <a href="<?= base_url('content/view/'.$video['id']) ?>">
+                <img src="<?= base_url($video['thumbnail']) ?>" 
+                    class="card-img-top" 
+                    alt="<?= esc($video['title']) ?>" 
+                    style="height:180px; object-fit:cover;">
+              </a>  
+              
+              <div class="card-body">
+                <h6 class="fw-bold text-truncate">
+                  <a href="<?= base_url('content/detail/'.$video['id']) ?>" 
+                    class="text-decoration-none text-dark">
+                    <?= esc($video['title']) ?>
+                  </a>
+                </h6>
+                
+                <div class="d-flex justify-content-between align-items-center">
                   <span class="badge bg-success"><?= esc($video['category']) ?></span>
+                  <span class="text-muted small">
+                    <i class="bi bi-heart-fill text-danger"></i> <?= $video['like_count'] ?? 0 ?>
+                  </span>
                 </div>
               </div>
-            <?php endforeach; ?>
-          <?php else: ?>
-            <p class="text-muted">Belum ada video yang dipublish.</p>
-          <?php endif; ?>
-        </div>
-
-        <!-- Tombol kanan -->
-        <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y shadow rounded-circle"
-                onclick="slideRight()" style="z-index:10">
-          <i class="bi bi-chevron-right"></i>
-        </button>
-      </div>
-    </section>
-
-    <!-- Bisikan Bunda -->
-    <section class="content-section py-2">
-        <div class="bisikan-section">
-        
-          <!-- Header -->
-          <div class="d-flex justify-content-between align-items-center mb-4">
-            <div>
-              <h3 class="fw-bold">Bisikan Bunda</h3>
             </div>
           </div>
-          
-          <!-- Tombol Navigasi -->
-          <button class="nav-btn nav-left">&lt;</button>
+        <?php endforeach; ?>
+      </div>
 
-          <!-- Card Testimoni -->
-          <div class="testimonial-card">
-            <div class="d-flex align-items-center">
-              <img src="https://i.pravatar.cc/100?img=32" alt="avatar">
-              <div>
-                <h6 class="mb-0 fw-bold">Dazzle Healer</h6>
-                <small class="text-muted">Front End Developer</small>
+
+
+              <!-- Tombol kanan -->
+              <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y shadow rounded-circle"
+                      onclick="slideRight()" style="z-index:10">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- Bisikan Bunda -->
+          <section class="content-section py-2">
+              <div class="bisikan-section">
+              
+                <!-- Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <div>
+                    <h3 class="fw-bold">Bisikan Bunda</h3>
+                  </div>
+                </div>
+                
+                <!-- Tombol Navigasi -->
+                <button class="nav-btn nav-left">&lt;</button>
+
+                <!-- Card Testimoni -->
+                <div class="testimonial-card">
+                  <div class="d-flex align-items-center">
+                    <img src="https://i.pravatar.cc/100?img=32" alt="avatar">
+                    <div>
+                      <h6 class="mb-0 fw-bold">Dazzle Healer</h6>
+                      <small class="text-muted">Front End Developer</small>
+                    </div>
+                  </div>
+                  <hr>
+                  <p class="testimonial-text">
+                    “Saat dunia terasa terlalu terang, terlalu keras, atau terlalu cepat...<br>
+                    pelukanmu menjadi jeda yang menyelamatkan.”
+                  </p>
+                </div>
+
+                <!-- Gambar Ibu -->
+                <img src="<?= base_url('assets/img/bisikan-bunda.svg')?>" alt="mom" class="bg-mom">
+
+                <!-- Tombol Navigasi -->
+                <button class="nav-btn nav-right">&gt;</button>
               </div>
+          </section>
+
+          <!-- Teduh Jiwa -->
+          <section class="content-section py-4">
+            <!-- Header -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div>
+                <h2 class="fw-bold">Teduh Jiwa</h2>        </div>
+              <a href="#" class="btn btn-outline-secondary btn-sm">See All <i class="bi bi-chevron-down"></i></a>
             </div>
-            <hr>
-            <p class="testimonial-text">
-              “Saat dunia terasa terlalu terang, terlalu keras, atau terlalu cepat...<br>
-              pelukanmu menjadi jeda yang menyelamatkan.”
-            </p>
-          </div>
 
-          <!-- Gambar Ibu -->
-          <img src="<?= base_url('assets/img/bisikan-bunda.svg')?>" alt="mom" class="bg-mom">
+            <!-- Slider Section -->
+            <div class="position-relative">
+              <!-- Tombol kiri -->
+              <button class="btn btn-light position-absolute top-50 start-0 translate-middle-y shadow rounded-circle"
+                      onclick="slideLeft()" style="z-index:10">
+                <i class="bi bi-chevron-left"></i>
+              </button>
 
-          <!-- Tombol Navigasi -->
-          <button class="nav-btn nav-right">&gt;</button>
-        </div>
-    </section>
-
-    <!-- Teduh Jiwa -->
-    <section class="content-section py-4">
-      <!-- Header -->
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <div>
-          <h2 class="fw-bold">Teduh Jiwa</h2>        </div>
-        <a href="#" class="btn btn-outline-secondary btn-sm">See All <i class="bi bi-chevron-down"></i></a>
-      </div>
-
-      <!-- Slider Section -->
-      <div class="position-relative">
-        <!-- Tombol kiri -->
-        <button class="btn btn-light position-absolute top-50 start-0 translate-middle-y shadow rounded-circle"
-                onclick="slideLeft()" style="z-index:10">
-          <i class="bi bi-chevron-left"></i>
-        </button>
-
-        <!-- Container Scroll -->
-        <div class="d-flex overflow-auto px-2" id="videoSlider" style="scroll-behavior:smooth; gap:1rem;">
+              <!-- Container Scroll -->
+              <div class="d-flex overflow-auto px-2" id="videoSlider" style="scroll-behavior:smooth; gap:1rem;">
           <?php if (!empty($videos)): ?>
             <?php foreach ($videos as $video): ?>
               <div class="card shadow-sm" style="min-width:300px; flex:0 0 auto;">
@@ -192,6 +207,38 @@
       });
     }
   </script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll(".like-btn").forEach(btn => {
+        let contentId = btn.dataset.id;
+
+        // Load jumlah like saat halaman dibuka
+        fetch(`/content/likes/${contentId}`)
+            .then(res => res.json())
+            .then(data => {
+                btn.querySelector(".like-count").textContent = data.likes;
+            });
+
+        // Event klik tombol like
+        btn.addEventListener("click", function() {
+            fetch(`/content/like/${contentId}`, {
+                method: "POST"
+            })
+            .then(res => res.json())
+            .then(data => {
+                // Refresh jumlah like
+                fetch(`/content/likes/${contentId}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        btn.querySelector(".like-count").textContent = data.likes;
+                    });
+            });
+        });
+    });
+});
+</script>
+
 
 
 </html>

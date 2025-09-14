@@ -56,3 +56,11 @@ $routes->post('content/edit/(:num)', 'ContentController::edit/$1');
 
 $routes->get('content/update/(:num)', 'ContentController::update/$1');
 $routes->post('content/update/(:num)', 'ContentController::update/$1');
+
+$routes->get('content/view/(:num)', 'ContentController::view/$1');
+$routes->post('content/comment/(:num)', 'ContentController::comment/$1');
+$routes->post('content/like/(:num)', 'ContentController::like/$1');
+
+
+//Routes Like dan Comment
+$routes->get('content/like/(:num)', 'ContentController::like/$1');
