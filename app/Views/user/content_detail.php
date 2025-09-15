@@ -42,13 +42,16 @@
       </div>
       
       <div class="d-flex align-items-center gap-4">
-        <a href="#" class="text-decoration-none text-white">
-          <i class="bi bi-share me-1"></i> Share
-        </a>
-        <a href="#" class="text-decoration-none text-white">
-          <i class="bi bi-heart me-1"></i> <?= $content['like_count'] ?? 0 ?> Like
-        </a>
-      </div>
+            <a href="#" class="text-decoration-none text-white share-btn">
+                <i class="bi bi-share me-1"></i> Share
+            </a>
+            <a href="<?= base_url('content/like/'.$content['id']) ?>" class="text-decoration-none text-white like-btn">
+                <i class="bi bi-heart me-1"></i>
+                <span class="like-count"><?= $content['like_count'] ?? 0 ?></span> Like
+            </a>
+
+        </div>
+
     </div>
   </div>
 </div>
@@ -273,5 +276,32 @@
     <?= $this->include('layouts/footer') ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+   document.querySelectorAll('.like-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const url = this.getAttribute('href');
+        const likeCountSpan = this.querySelector('.like-count');
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                '<?= csrf_header() ?>': '<?= csrf_hash() ?>' // jika CSRF aktif
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                likeCountSpan.textContent = data.like_count;
+                this.querySelector('i').classList.toggle('bi-heart-fill', data.action === 'like');
+                this.querySelector('i').classList.toggle('bi-heart', data.action === 'unlike');
+            }
+        });
+    });
+});
+
+
+</script>
 </body>
 </html>

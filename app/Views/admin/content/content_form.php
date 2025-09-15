@@ -102,6 +102,7 @@
                       </div>
                       <textarea name="body" id="body" style="display:none"></textarea>
                     </div>
+                    
                     <script src="https://cdn.ckeditor.com/ckeditor5/46.0.3/ckeditor5.umd.js" crossorigin></script>
                     <script>
                     let editorInstance;

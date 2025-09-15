@@ -85,7 +85,7 @@ public function index()
     } elseif ($type === 'Video') {
     // Ambil dari hidden input yang diisi Resumable.js
     $filePath = $this->request->getPost('video_path');
-    
+
     } elseif ($type === 'Audio' && $this->request->getFile('audio')->isValid()) {
         $file = $this->request->getFile('audio');
         $newName = uniqid() . '_' . $file->getName();
@@ -166,13 +166,30 @@ public function index()
         return redirect()->back();
     }
 
-    public function like($id) {
-        $this->likeModel->save([
+    public function like($id)
+{
+    $userId = session()->get('id');
+
+    // Cek apakah user sudah like konten
+    $existing = $this->likeModel
+                     ->where('content_id', $id)
+                     ->where('user_id', $userId)
+                     ->first();
+
+    if ($existing) {
+        // Jika sudah like, hapus
+        $this->likeModel->delete($existing['id']);
+        return $this->response->setJSON(['success' => true, 'action' => 'unlike']);
+    } else {
+        // Jika belum like, tambah
+        $this->likeModel->insert([
             'content_id' => $id,
-            'user_id' => session()->get('id')
+            'user_id' => $userId
         ]);
-        return $this->response->setJSON(['success' => true]);
+        return $this->response->setJSON(['success' => true, 'action' => 'like']);
     }
+}
+
 
 
 }
