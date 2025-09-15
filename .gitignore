@@ -1,0 +1,13 @@
+/writable/logs/
+/writable/cache/
+*.log
+
+# Ignore environment file
+.env
+
+# Ignore writable files
+/writable/*
+!/writable/index.html
+
+# Ignore debugbar json files
+writable/debugbar/*.json
