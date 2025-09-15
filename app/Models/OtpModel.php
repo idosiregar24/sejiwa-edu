@@ -20,5 +20,11 @@ class OtpModel extends Model
         'updated_at_otp'
     ];
 
+    // aktifkan otomatis timestamp
     protected $useTimestamps = true;
+
+    // mapping ke nama kolom yang sesuai
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at_otp';
+    protected $deletedField  = null; // kalau tidak pakai soft delete
 }
