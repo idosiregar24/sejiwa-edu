@@ -58,9 +58,6 @@ public function index()
     return view('admin/content/content-management', $data);
 }
 
-    
-
-
     public function create()
     {
         return view('admin/content/content_form');

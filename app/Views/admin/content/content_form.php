@@ -132,51 +132,60 @@
                   </div>
 
                     <!-- Upload Audio -->
-                    <div class="mb-6 type-field" id="field-audio" style="display:none;">                      <label for="infographic" class="block text-gray-700 font-semibold mb-2">Upload Audio <span class="text-pink-500">*</span></label>
+                    <div class="mb-6 type-field" id="field-audio" style="display:none;">                      
+                      <label for="audio" class="block text-gray-700 font-semibold mb-2">Upload Audio <span class="text-pink-500">*</span></label>
                       <label class="file-upload-box block cursor-pointer relative">
-                              <input type="file" name="audio" id="audio" class="hidden" accept=".mp3,.wav,.aac,.ogg">                          <div class="flex flex-col items-center" id="infografis-upload-box">
+                              <input type="file" name="audio" id="audio" class="hidden" accept=".mp3,.wav,.aac,.ogg">                          
+                              <div class="flex flex-col items-center" id="infografis-upload-box">
                               <i class="fas fa-cloud-upload-alt text-4xl upload-icon"></i>
                               <span class="mt-2 text-gray-600">Klik untuk upload file atau drag & drop</span>
                               <span class="text-sm text-gray-500">(mp3, WAV, AAC)</span>
                           </div>
                           <!-- Preview Image (di dalam kotak upload) -->
-                          <div id="preview-infografis" class="absolute inset-0 flex items-center justify-center"></div>
+                          <div id="preview-audio" class="absolute inset-0 flex items-center justify-center"></div>
                       </label>
                   </div>
 
-                  <!-- Upload Video -->
-                  <div class="mb-6 type-field" id="field-video" style="display:none;">
-                    <label for="video" class="block text-gray-700 font-semibold mb-2">Upload Video <span class="text-pink-500">*</span></label>
-                    <label class="file-upload-box block cursor-pointer relative" id="video-upload-label">
-                            <input type="file" name="video" id="video" class="absolute opacity-0 w-full h-full" accept=".mp4,.mov,.avi,.wmv">                        <div class="flex flex-col items-center" id="video-upload-box">
-                            <i class="fas fa-cloud-upload-alt text-4xl upload-icon"></i>
-                            <span class="mt-2 text-gray-600">Klik untuk upload file atau drag & drop</span>
-                            <span class="text-sm text-gray-500">(MP4, MOV, AVI, WMV)</span>
-                        </div>
-                        <div id="preview-video" class="absolute inset-0 flex items-center justify-center"></div>
-                    </label>
+                <!-- Upload Video -->
+                <div class="mb-6 type-field" id="field-video" style="display:none;">
+                  <label for="video" class="block text-gray-700 font-semibold mb-2">
+                    Upload Video <span class="text-pink-500">*</span>
+                  </label>
+                  <label for="video" class="file-upload-box block cursor-pointer relative">
+                    <input type="file" name="video" id="video" class="hidden" accept=".mp4,.mov,.avi,.wmv">
+                    <div class="flex flex-col items-center" id="video-upload-box">
+                      <i class="fas fa-cloud-upload-alt text-4xl upload-icon"></i>
+                      <span class="mt-2 text-gray-600">Klik untuk upload file atau drag & drop</span>
+                      <span class="text-sm text-gray-500">(MP4, MOV, AVI, WMV)</span>
+                    </div>
+                    <div id="preview-video" class="absolute inset-0 flex items-center justify-center"></div>
+                  </label>
                 </div>
+
 
                 <!-- Thumbnail (Opsional) -->
                 <div class="mb-6">
                   <label for="thumbnail-input" class="block text-gray-700 font-semibold mb-2">Thumbnail</label>
-                  <div class="file-upload-box relative flex items-center justify-center p-3 border border-gray-300 rounded-lg bg-gray-50" style="min-height:180px;">
+                  
+                  <!-- Jadikan seluruh box sebagai label -->
+                  <label for="thumbnail-input" 
+                        class="file-upload-box relative flex items-center justify-center p-3 border border-gray-300 rounded-lg bg-gray-50 cursor-pointer"
+                        style="min-height:180px;">
                     <div id="thumbnail-upload-box" class="flex flex-col items-center">
-                      <!-- Label membungkus teks, ikon, dan input -->
-                      <label for="thumbnail-input" class="cursor-pointer text-gray-600 hover:text-gray-900 transition-colors mt-2 flex flex-col items-center">
-                        <span id="thumbnail-filename" class="text-gray-500 mb-2">Upload Gambar (PNG, JPG, JPEG)</span>
-                        <i class="fas fa-upload text-xl"></i>
-                        <input type="file" name="thumbnail" id="thumbnail-input" style="display:none;" accept=".png,.jpg,.jpeg">
-                      </label>
+                      <span id="thumbnail-filename" class="text-gray-500 mb-2">Upload Gambar (PNG, JPG, JPEG)</span>
+                      <i class="fas fa-upload text-xl"></i>
                     </div>
-                    <!-- Preview Thumbnail (di dalam kotak upload) -->
+                    <input type="file" name="thumbnail" id="thumbnail-input" class="hidden" accept=".png,.jpg,.jpeg">
+                    <!-- Preview Thumbnail -->
                     <div id="preview-thumbnail" class="absolute inset-0 flex items-center justify-center"></div>
-                  </div>
+                  </label>
                 </div>
 
-                    <div id="loading-spinner" style="display:none;">
-                      <i class="fas fa-spinner fa-spin"></i> Uploading...
-                    </div>
+
+                <!-- Animasi Loading -->
+                <div id="loading-spinner" style="display:none;">
+                  <i class="fas fa-spinner fa-spin"></i> Uploading...
+                </div>
 
                     <!-- Tambahkan di dalam form, sebelum tombol submit -->
                         <div id="video-loading" style="display:none; text-align:center; margin-bottom:16px;">
@@ -215,6 +224,7 @@
 <script src="<?= base_url('assets/ckeditor5-builder-46.0.3/main.js') ?>"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+  
   // Toggle upload field sesuai kategori konten
   const typeSelect = document.getElementById("type");
   const fields = document.querySelectorAll(".type-field");
@@ -295,15 +305,13 @@ document.querySelector('form').addEventListener('submit', function(e) {
 });
 
 </script>
+
+<!-- JS untuk video -->
 <script>
-document.getElementById('video-upload-label').addEventListener('click', function(e) {
-    if (e.target.id !== 'video') {
-        document.getElementById('video').click();
-    }
-});
 const videoInput = document.getElementById('video');
 const previewVideo = document.getElementById('preview-video');
 const videoBox = document.getElementById('video-upload-box');
+
 if (videoInput) {
   videoInput.addEventListener('change', function(e) {
     previewVideo.innerHTML = '';
@@ -312,13 +320,14 @@ if (videoInput) {
     if (file && file.type.startsWith('video/')) {
       const url = URL.createObjectURL(file);
       previewVideo.innerHTML = `
-        <video src="${url}" controls class="preview-video" style="max-width:100%;max-height:120px;"></video>
+        <video src="${url}" controls style="max-width:100%;max-height:120px;"></video>
         <button type="button" class="remove-preview" title="Hapus" onclick="removePreview('video', 'preview-video', 'video-upload-box')">&times;</button>
       `;
       videoBox.style.opacity = '0.2';
     }
   });
 }
+
 </script>
 
 </body>
