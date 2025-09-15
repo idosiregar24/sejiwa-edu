@@ -280,3 +280,130 @@ DEBUG - 2025-09-15 15:27:48 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-09-15 15:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-09-15 15:28:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-09-15 15:28:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:28:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:29:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:29:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:29:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:29:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:29:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:29:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:29:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:30:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:32:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:40:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:43:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:44:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:44:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:46:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:46:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:48:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:50:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:54:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:55:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:56:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 15:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 16:16:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 16:16:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 16:19:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 16:22:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 16:24:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 16:24:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 16:25:07 --> Chunk 1 berhasil disimpan
+DEBUG - 2025-09-15 16:25:07 --> Chunk 2 belum ada, tunggu chunk berikutnya
+DEBUG - 2025-09-15 16:25:07 --> Chunk 2 berhasil disimpan
+DEBUG - 2025-09-15 16:25:07 --> Chunk 3 belum ada, tunggu chunk berikutnya
+DEBUG - 2025-09-15 16:25:08 --> Chunk 3 berhasil disimpan
+DEBUG - 2025-09-15 16:25:08 --> Chunk 4 belum ada, tunggu chunk berikutnya
+DEBUG - 2025-09-15 16:25:09 --> Chunk 4 berhasil disimpan
+DEBUG - 2025-09-15 16:25:09 --> Chunk 1 berhasil digabung
+DEBUG - 2025-09-15 16:25:09 --> Chunk 2 berhasil digabung
+DEBUG - 2025-09-15 16:25:09 --> Chunk 3 berhasil digabung
+DEBUG - 2025-09-15 16:25:09 --> Chunk 4 berhasil digabung
+DEBUG - 2025-09-15 16:25:09 --> File final berhasil dibuat: C:\xampp\htdocs\sejiwa\writable\uploads/final/Roblox 2025-03-01 19-54-16.mp4
+CRITICAL - 2025-09-15 16:25:46 --> Error: Call to a member function isValid() on null
+[Method: POST, Route: store]
+in APPPATH\Controllers\ContentController.php on line 85.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ContentController->store()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContentController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+DEBUG - 2025-09-15 16:27:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 16:27:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-09-15 16:27:48 --> Chunk 1 dari 4 berhasil disimpan: C:\xampp\htdocs\sejiwa\writable\uploads/temp/46692118-Roblox2025-03-0119-54-16mp4.1
+INFO - 2025-09-15 16:27:48 --> Chunk 2 dari 4 berhasil disimpan: C:\xampp\htdocs\sejiwa\writable\uploads/temp/46692118-Roblox2025-03-0119-54-16mp4.2
+INFO - 2025-09-15 16:27:48 --> Chunk 3 dari 4 berhasil disimpan: C:\xampp\htdocs\sejiwa\writable\uploads/temp/46692118-Roblox2025-03-0119-54-16mp4.3
+INFO - 2025-09-15 16:27:50 --> Chunk 4 dari 4 berhasil disimpan: C:\xampp\htdocs\sejiwa\writable\uploads/temp/46692118-Roblox2025-03-0119-54-16mp4.4
+INFO - 2025-09-15 16:27:50 --> File final berhasil digabung: C:\xampp\htdocs\sejiwa\writable\uploads/final/Roblox 2025-03-01 19-54-16.mp4
+CRITICAL - 2025-09-15 16:28:22 --> Error: Call to a member function isValid() on null
+[Method: POST, Route: store]
+in APPPATH\Controllers\ContentController.php on line 85.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ContentController->store()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContentController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+CRITICAL - 2025-09-15 16:28:47 --> Error: Call to a member function isValid() on null
+[Method: POST, Route: store]
+in APPPATH\Controllers\ContentController.php on line 85.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ContentController->store()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContentController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+CRITICAL - 2025-09-15 16:30:46 --> Error: Call to a member function isValid() on null
+[Method: POST, Route: store]
+in APPPATH\Controllers\ContentController.php on line 85.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ContentController->store()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContentController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+DEBUG - 2025-09-15 16:30:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 16:30:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 16:31:14 --> Chunk 1 berhasil disimpan
+DEBUG - 2025-09-15 16:31:14 --> Chunk 2 belum ada, tunggu chunk berikutnya
+DEBUG - 2025-09-15 16:31:14 --> Chunk 2 berhasil disimpan
+DEBUG - 2025-09-15 16:31:14 --> Chunk 3 belum ada, tunggu chunk berikutnya
+DEBUG - 2025-09-15 16:31:14 --> Chunk 3 berhasil disimpan
+DEBUG - 2025-09-15 16:31:14 --> Chunk 4 belum ada, tunggu chunk berikutnya
+DEBUG - 2025-09-15 16:31:16 --> Chunk 4 berhasil disimpan
+DEBUG - 2025-09-15 16:31:16 --> Chunk 1 berhasil digabung
+DEBUG - 2025-09-15 16:31:16 --> Chunk 2 berhasil digabung
+DEBUG - 2025-09-15 16:31:16 --> Chunk 3 berhasil digabung
+DEBUG - 2025-09-15 16:31:16 --> Chunk 4 berhasil digabung
+DEBUG - 2025-09-15 16:31:16 --> File final berhasil dibuat: C:\xampp\htdocs\sejiwa\writable\uploads/final/Roblox 2025-03-01 19-54-16.mp4
+CRITICAL - 2025-09-15 16:31:29 --> Error: Call to a member function isValid() on null
+[Method: POST, Route: store]
+in APPPATH\Controllers\ContentController.php on line 85.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ContentController->store()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContentController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+DEBUG - 2025-09-15 16:34:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 16:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 16:35:12 --> Chunk 1 berhasil disimpan
+DEBUG - 2025-09-15 16:35:12 --> Chunk 2 belum ada, tunggu chunk berikutnya
+DEBUG - 2025-09-15 16:35:12 --> Chunk 2 berhasil disimpan
+DEBUG - 2025-09-15 16:35:12 --> Chunk 3 belum ada, tunggu chunk berikutnya
+DEBUG - 2025-09-15 16:35:12 --> Chunk 3 berhasil disimpan
+DEBUG - 2025-09-15 16:35:12 --> Chunk 1 berhasil digabung
+DEBUG - 2025-09-15 16:35:12 --> Chunk 2 berhasil digabung
+DEBUG - 2025-09-15 16:35:12 --> Chunk 3 berhasil digabung
+DEBUG - 2025-09-15 16:35:12 --> File final berhasil dibuat: C:\xampp\htdocs\sejiwa\writable\uploads/final/Roblox 2025-03-01 20-13-15.mp4
+DEBUG - 2025-09-15 16:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 16:35:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 16:35:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 16:35:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 16:35:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

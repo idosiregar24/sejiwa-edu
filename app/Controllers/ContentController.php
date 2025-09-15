@@ -82,11 +82,10 @@ public function index()
         $newName = uniqid() . '_' . $file->getName();
         $file->move($uploadDir . 'infografis/', $newName);
         $filePath = 'uploads/infografis/' . $newName;
-    } elseif ($type === 'Video' && $this->request->getFile('video')->isValid()) {
-        $file = $this->request->getFile('video');
-        $newName = uniqid() . '_' . $file->getName();
-        $file->move($uploadDir . 'video/', $newName);
-        $filePath = 'uploads/video/' . $newName;    
+    } elseif ($type === 'Video') {
+    // Ambil dari hidden input yang diisi Resumable.js
+    $filePath = $this->request->getPost('video_path');
+    
     } elseif ($type === 'Audio' && $this->request->getFile('audio')->isValid()) {
         $file = $this->request->getFile('audio');
         $newName = uniqid() . '_' . $file->getName();

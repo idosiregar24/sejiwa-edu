@@ -64,3 +64,7 @@ $routes->post('content/like/(:num)', 'ContentController::like/$1');
 
 //Routes Like dan Comment
 $routes->get('content/like/(:num)', 'ContentController::like/$1');
+
+//Routes Upload chunk
+$routes->post('upload_chunk', 'Upload::upload_chunk');
+$routes->get('content/like/(:num)', 'ContentController::like/$1');

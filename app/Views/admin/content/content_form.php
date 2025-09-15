@@ -14,6 +14,7 @@
 		<link rel="apple-touch-icon" type="image/png" href="https://ckeditor.com/assets/images/favicons/180x180.png" sizes="180x180">
 		<link rel="stylesheet" href="./style.css">
 		<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/46.0.3/ckeditor5.css" crossorigin>
+    
 
   <link rel="stylesheet" href="<?= base_url('assets/css/admin/content-form.css') ?>">
 
@@ -32,6 +33,7 @@
 
 </head>
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/resumablejs@1/resumable.js"></script>
 
   <!-- Sidebar -->
   <?= $this->include('layouts/sidebar_admin') ?>
@@ -147,20 +149,20 @@
                   </div>
 
                 <!-- Upload Video -->
+                 <input type="hidden" name="video_path" id="video_path">
+                <!-- Upload Video (Resumable.js) -->
                 <div class="mb-6 type-field" id="field-video" style="display:none;">
-                  <label for="video" class="block text-gray-700 font-semibold mb-2">
+                  <label class="block text-gray-700 font-semibold mb-2">
                     Upload Video <span class="text-pink-500">*</span>
                   </label>
-                  <label for="video" class="file-upload-box block cursor-pointer relative">
-                    <input type="file" name="video" id="video" class="hidden" accept=".mp4,.mov,.avi,.wmv">
-                    <div class="flex flex-col items-center" id="video-upload-box">
-                      <i class="fas fa-cloud-upload-alt text-4xl upload-icon"></i>
-                      <span class="mt-2 text-gray-600">Klik untuk upload file atau drag & drop</span>
-                      <span class="text-sm text-gray-500">(MP4, MOV, AVI, WMV)</span>
-                    </div>
-                    <div id="preview-video" class="absolute inset-0 flex items-center justify-center"></div>
-                  </label>
+                  <div id="video-dropzone" class="p-4 border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center cursor-pointer relative">
+                    <i class="fas fa-cloud-upload-alt text-4xl text-gray-400"></i>
+                    <span class="mt-2 text-gray-600">Klik atau drag & drop file video</span>
+                    <span class="text-sm text-gray-500">(MP4, MOV, AVI, WMV)</span>
+                    <div id="video-progress" class="absolute bottom-2 left-4 text-sm text-gray-700"></div>
+                  </div>
                 </div>
+
 
 
                 <!-- Thumbnail (Opsional) -->
@@ -305,6 +307,43 @@ document.querySelector('form').addEventListener('submit', function(e) {
 });
 
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  if (document.getElementById('video-dropzone')) {
+    var r = new Resumable({
+      target: "<?= base_url('upload_chunk') ?>", // URL controller
+      chunkSize: 10 * 1024 * 1024, // 10MB per chunk
+      simultaneousUploads: 3,
+      testChunks: false,
+      query: { type: 'video' },
+      headers: { 'X-Requested-With': 'XMLHttpRequest' }
+    });
+
+    r.assignDrop(document.getElementById('video-dropzone'));
+    r.assignBrowse(document.getElementById('video-dropzone'));
+
+    r.on('fileAdded', function(file){
+      r.upload();
+    });
+
+    r.on('fileProgress', function(file){
+      var progress = Math.floor(file.progress() * 100);
+      document.getElementById('video-progress').innerText = "Progress: " + progress + "%";
+    });
+
+    r.on('fileSuccess', function(file){
+      document.getElementById('video-progress').innerText = "Upload Selesai!";
+    });
+
+    r.on('fileError', function(file, message){
+      document.getElementById('video-progress').innerText = "Error: " + message;
+    });
+  }
+});
+
+</script>
+
 
 <!-- JS untuk video -->
 <script>
