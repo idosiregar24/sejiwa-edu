@@ -77,14 +77,17 @@ public function index()
     $uploadDir = FCPATH . 'uploads/';
     $filePath = null;
 
+    $videoPath = $this->request->getPost('video_path');
+    if (!empty($videoPath)) {
+        $filePath = $videoPath;
+        $type     = 'Video';
+    }
+
     if ($type === 'Infografis' && $this->request->getFile('infographic')->isValid()) {
         $file = $this->request->getFile('infographic');
         $newName = uniqid() . '_' . $file->getName();
         $file->move($uploadDir . 'infografis/', $newName);
         $filePath = 'uploads/infografis/' . $newName;
-    } elseif ($type === 'Video') {
-    // Ambil dari hidden input yang diisi Resumable.js
-    $filePath = $this->request->getPost('video_path');
 
     } elseif ($type === 'Audio' && $this->request->getFile('audio')->isValid()) {
         $file = $this->request->getFile('audio');

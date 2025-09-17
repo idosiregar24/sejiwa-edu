@@ -10,51 +10,65 @@
 
   </head>
 <body class="bg-light">
-
+<div class="container-fluid p-0 mb-5">
+    
     <!-- Menambahkan Navbar -->
     <?= $this->include('layouts/navbar') ?>
 
-<div class="container-fluid p-0 mb-5">
   <!-- HERO SECTION -->
   <div class="hero position-relative" 
-       style="background: url('<?= base_url($content['thumbnail']) ?>') center/cover no-repeat; height: 400px;">
-    
-    <!-- Overlay gradasi -->
-    <div class="overlay position-absolute top-0 start-0 w-100 h-100" 
-         style="background: linear-gradient(to top, rgba(92,0,102,0.7), rgba(0,0,0,0.3));">
-    </div>
-    
-    <!-- Konten -->
-    <div class="hero-content position-absolute bottom-0 start-0 text-white p-5 w-100">
-      <span class="badge bg-light text-dark mb-2">Series</span>
-      <h1 class="fw-bold"><?= esc($content['title']) ?></h1>
-      <p class="small text-white-50 mb-3">
-        9 Modul • 2025 • <?= esc($content['category']) ?> • Kesehatan Mental
-      </p>
-      
-      <div class="d-flex gap-3 mb-3">
-        <button class="btn btn-outline-light rounded-pill px-4">
-          <i class="bi bi-play-circle me-2"></i> Continue Watching
-        </button>
-        <button class="btn btn-light rounded-pill px-4">
-          <i class="bi bi-plus-circle me-2"></i> Add Watchlist
-        </button>
-      </div>
-      
-      <div class="d-flex align-items-center gap-4">
-            <a href="#" class="text-decoration-none text-white share-btn">
-                <i class="bi bi-share me-1"></i> Share
-            </a>
-            <a href="<?= base_url('content/like/'.$content['id']) ?>" class="text-decoration-none text-white like-btn">
-                <i class="bi bi-heart me-1"></i>
-                <span class="like-count"><?= $content['like_count'] ?? 0 ?></span> Like
-            </a>
+       style="height: 750px;">
 
+    <!-- Thumbnail (default tampil) -->
+    <div id="thumbnail-section" 
+         style="background: url('<?= base_url($content['thumbnail']) ?>') center/cover no-repeat; height: 100%;">
+      <!-- Overlay gradasi -->
+      <div class="overlay position-absolute top-0 start-0 w-100 h-100" 
+           style="background: linear-gradient(to top, #B16B8E, rgba(0,0,0,0.3));">
+      </div>
+
+      <!-- Konten Thumbnail -->
+      <div class="hero-content position-absolute bottom-0 start-0 text-white p-5 w-100">
+        <span class="badge bg-light text-dark mb-2">Series</span>
+        <h1 class="fw-bold"><?= esc($content['title']) ?></h1>
+        <p class="small text-white-50 mb-3">
+          9 Modul • 2025 • <?= esc($content['category']) ?> • Kesehatan Mental
+        </p>
+
+        <div class="d-flex gap-3 mb-3">
+          <button id="play-btn" class="btn btn-outline-light rounded-pill px-4">
+            <i class="bi bi-play-circle me-2"></i> Continue Watching
+          </button>
+          <button class="btn btn-light rounded-pill px-4">
+            <i class="bi bi-plus-circle me-2"></i> Add Watchlist
+          </button>
         </div>
 
+        <div class="d-flex align-items-center gap-4">
+          <a href="#" class="text-decoration-none text-white share-btn">
+            <i class="bi bi-share me-1"></i> Share
+          </a>
+          <a href="<?= base_url('content/like/'.$content['id']) ?>" class="text-decoration-none text-white like-btn">
+            <i class="bi bi-heart me-1"></i>
+            <span class="like-count"><?= $content['like_count'] ?? 0 ?></span> Like
+          </a>
+        </div>
+      </div>
     </div>
+
+    <!-- Video Player (default hidden) -->
+     <?php foreach ($contents as $content): ?>
+            <div id="video-section" class="d-none position-relative" style="height: 100%;">
+                <video id="hero-video" class="w-100 h-100" controls>
+                    <source src="<?= base_url($content['file_path']) ?>" type="video/mp4">
+                    Browser Anda tidak mendukung pemutaran video.
+                </video>
+            </div>
+    <?php endforeach; ?>
+
   </div>
 </div>
+
 
 
 <!-- <div class="container">
@@ -276,6 +290,13 @@
     <?= $this->include('layouts/footer') ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('play-btn').addEventListener('click', function() {
+    document.getElementById('thumbnail-section').classList.add('d-none');
+    document.getElementById('video-section').classList.remove('d-none');
+    document.getElementById('hero-video').play();
+  });
+</script>
 <script>
    document.querySelectorAll('.like-btn').forEach(btn => {
     btn.addEventListener('click', function(e) {

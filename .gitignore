@@ -11,3 +11,5 @@
 
 # Ignore debugbar json files
 writable/debugbar/*.json
+
+/public/ci_sessions/
