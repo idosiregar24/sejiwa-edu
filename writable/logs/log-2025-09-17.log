@@ -1146,3 +1146,54 @@ DEBUG - 2025-09-17 11:46:06 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-09-17 11:46:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-09-17 11:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-09-17 11:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:11:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:12:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:12:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:12:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:13:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:13:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:13:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:13:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:13:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:13:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:13:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:13:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:15:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:17:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:17:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:17:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:18:20 --> Chunk 1 berhasil disimpan
+DEBUG - 2025-09-17 14:18:20 --> Chunk 2 belum ada, tunggu chunk berikutnya
+DEBUG - 2025-09-17 14:18:20 --> Chunk 2 berhasil disimpan
+DEBUG - 2025-09-17 14:18:20 --> Chunk 3 belum ada, tunggu chunk berikutnya
+DEBUG - 2025-09-17 14:18:21 --> Chunk 3 berhasil disimpan
+DEBUG - 2025-09-17 14:18:21 --> Chunk 4 belum ada, tunggu chunk berikutnya
+DEBUG - 2025-09-17 14:18:24 --> Chunk 4 berhasil disimpan
+DEBUG - 2025-09-17 14:18:24 --> Chunk 5 belum ada, tunggu chunk berikutnya
+DEBUG - 2025-09-17 14:18:24 --> Chunk 5 berhasil disimpan
+DEBUG - 2025-09-17 14:18:24 --> Chunk 6 belum ada, tunggu chunk berikutnya
+DEBUG - 2025-09-17 14:18:25 --> Chunk 6 berhasil disimpan
+DEBUG - 2025-09-17 14:18:25 --> Chunk 7 belum ada, tunggu chunk berikutnya
+DEBUG - 2025-09-17 14:18:27 --> Chunk 7 berhasil disimpan
+DEBUG - 2025-09-17 14:18:27 --> Chunk 8 belum ada, tunggu chunk berikutnya
+DEBUG - 2025-09-17 14:18:30 --> Chunk 8 berhasil disimpan
+DEBUG - 2025-09-17 14:18:30 --> Chunk 1 berhasil digabung
+DEBUG - 2025-09-17 14:18:30 --> Chunk 2 berhasil digabung
+DEBUG - 2025-09-17 14:18:30 --> Chunk 3 berhasil digabung
+DEBUG - 2025-09-17 14:18:30 --> Chunk 4 berhasil digabung
+DEBUG - 2025-09-17 14:18:30 --> Chunk 5 berhasil digabung
+DEBUG - 2025-09-17 14:18:30 --> Chunk 6 berhasil digabung
+DEBUG - 2025-09-17 14:18:30 --> Chunk 7 berhasil digabung
+DEBUG - 2025-09-17 14:18:30 --> Chunk 8 berhasil digabung
+DEBUG - 2025-09-17 14:18:30 --> File final berhasil dibuat: C:\xampp\htdocs\sejiwa\public\uploads/video/68cac3361592d_Roblox 2025-03-01 19-51-41.mp4
+DEBUG - 2025-09-17 14:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:21:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:21:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:22:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:26:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:26:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:26:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:27:27 --> File final berhasil dibuat: C:\xampp\htdocs\sejiwa\public\uploads/video/68cac54f31a9b_Roblox 2025-03-01 19-54-16.mp4
+DEBUG - 2025-09-17 14:27:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-17 14:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
