@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,73 +9,74 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets/css/detail_content.css') ?>">
 
-  </head>
+</head>
+
 <body class="bg-light">
-<div class="container-fluid p-0 mb-5">
-    
-    <!-- Menambahkan Navbar -->
-    <?= $this->include('layouts/navbar') ?>
+    <div class="container-fluid p-0 mb-5">
 
-  <!-- HERO SECTION -->
-  <div class="hero position-relative" 
-       style="height: 750px;">
+        <!-- Menambahkan Navbar -->
+        <?= $this->include('layouts/navbar') ?>
 
-    <!-- Thumbnail (default tampil) -->
-    <div id="thumbnail-section" 
-         style="background: url('<?= base_url($content['thumbnail']) ?>') center/cover no-repeat; height: 100%;">
-      <!-- Overlay gradasi -->
-      <div class="overlay position-absolute top-0 start-0 w-100 h-100" 
-           style="background: linear-gradient(to top, #B16B8E, rgba(0,0,0,0.3));">
-      </div>
+        <!-- HERO SECTION -->
+        <div class="hero position-relative" style="height: 750px;">
 
-      <!-- Konten Thumbnail -->
-      <div class="hero-content position-absolute bottom-0 start-0 text-white p-5 w-100">
-        <span class="badge bg-light text-dark mb-2">Series</span>
-        <h1 class="fw-bold"><?= esc($content['title']) ?></h1>
-        <p class="small text-white-50 mb-3">
-          9 Modul • 2025 • <?= esc($content['category']) ?> • Kesehatan Mental
-        </p>
+            <!-- Thumbnail (default tampil) -->
+            <div id="thumbnail-section"
+                style="background: url('<?= base_url($content['thumbnail']) ?>') center/cover no-repeat; height: 100%;">
+                <!-- Overlay gradasi -->
+                <div class="overlay position-absolute top-0 start-0 w-100 h-100"
+                    style="background: linear-gradient(to top, #B16B8E, rgba(0,0,0,0.3));">
+                </div>
 
-        <div class="d-flex gap-3 mb-3">
-          <button id="play-btn" class="btn btn-outline-light rounded-pill px-4">
-            <i class="bi bi-play-circle me-2"></i> Continue Watching
-          </button>
-          <button class="btn btn-light rounded-pill px-4">
-            <i class="bi bi-plus-circle me-2"></i> Add Watchlist
-          </button>
+                <!-- Konten Thumbnail -->
+                <div class="hero-content position-absolute bottom-0 start-0 text-white p-5 w-100">
+                    <span class="badge bg-light text-dark mb-2">Series</span>
+                    <h1 class="fw-bold"><?= esc($content['title']) ?></h1>
+                    <p class="small text-white-50 mb-3">
+                        9 Modul • 2025 • <?= esc($content['category']) ?> • Kesehatan Mental
+                    </p>
+
+                    <div class="d-flex gap-3 mb-3">
+                        <button id="play-btn" class="btn btn-outline-light rounded-pill px-4">
+                            <i class="bi bi-play-circle me-2"></i> Continue Watching
+                        </button>
+                        <button class="btn btn-light rounded-pill px-4">
+                            <i class="bi bi-plus-circle me-2"></i> Add Watchlist
+                        </button>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-4">
+                        <a href="#" class="text-decoration-none text-white share-btn">
+                            <i class="bi bi-share me-1"></i> Share
+                        </a>
+                        <a href="<?= base_url('content/like/' . $content['id']) ?>"
+                            class="text-decoration-none text-white like-btn">
+                            <i class="bi bi-heart me-1"></i>
+                            <span class="like-count"><?= $content['like_count'] ?? 0 ?></span> Like
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Player (default hidden) -->
+            <div id="video-section" class="d-none position-relative" style="height: 100%;">
+                <?php if (!empty($content['file_path'])): ?>
+                    <video id="hero-video" class="w-100 h-100" controls>
+                        <source src="<?= base_url($content['file_path']) ?>" type="video/mp4">
+                        Browser Anda tidak mendukung pemutaran video.
+                    </video>
+                <?php else: ?>
+                    <p class="text-white p-5">Video tidak tersedia</p>
+                <?php endif; ?>
+            </div>
+
+
         </div>
-
-        <div class="d-flex align-items-center gap-4">
-          <a href="#" class="text-decoration-none text-white share-btn">
-            <i class="bi bi-share me-1"></i> Share
-          </a>
-          <a href="<?= base_url('content/like/'.$content['id']) ?>" class="text-decoration-none text-white like-btn">
-            <i class="bi bi-heart me-1"></i>
-            <span class="like-count"><?= $content['like_count'] ?? 0 ?></span> Like
-          </a>
-        </div>
-      </div>
     </div>
 
-    <!-- Video Player (default hidden) -->
-    <div id="video-section" class="d-none position-relative" style="height: 100%;">
-        <?php if(!empty($content['file_path'])): ?>
-        <video id="hero-video" class="w-100 h-100" controls>
-            <source src="<?= base_url($content['file_path']) ?>" type="video/mp4">
-            Browser Anda tidak mendukung pemutaran video.
-        </video>
-        <?php else: ?>
-            <p class="text-white p-5">Video tidak tersedia</p>
-        <?php endif; ?>
-    </div>
 
 
-  </div>
-</div>
-
-
-
-<!-- <div class="container">
+    <!-- <div class="container">
     <div class="row g-5">
         <div class="col-lg-8">
             <div class="card card-custom p-4 mb-4">
@@ -292,40 +294,41 @@
     <!-- Menambahkan Footer -->
     <?= $this->include('layouts/footer') ?>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  document.getElementById('play-btn').addEventListener('click', function() {
-    document.getElementById('thumbnail-section').classList.add('d-none');
-    document.getElementById('video-section').classList.remove('d-none');
-    document.getElementById('hero-video').play();
-  });
-</script>
-<script>
-   document.querySelectorAll('.like-btn').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        const url = this.getAttribute('href');
-        const likeCountSpan = this.querySelector('.like-count');
-
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest',
-                '<?= csrf_header() ?>': '<?= csrf_hash() ?>' // jika CSRF aktif
-            }
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.success) {
-                likeCountSpan.textContent = data.like_count;
-                this.querySelector('i').classList.toggle('bi-heart-fill', data.action === 'like');
-                this.querySelector('i').classList.toggle('bi-heart', data.action === 'unlike');
-            }
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('play-btn').addEventListener('click', function () {
+            document.getElementById('thumbnail-section').classList.add('d-none');
+            document.getElementById('video-section').classList.remove('d-none');
+            document.getElementById('hero-video').play();
         });
-    });
-});
+    </script>
+    <script>
+        document.querySelectorAll('.like-btn').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                const url = this.getAttribute('href');
+                const likeCountSpan = this.querySelector('.like-count');
+
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        '<?= csrf_header() ?>': '<?= csrf_hash() ?>' // jika CSRF aktif
+                    }
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            likeCountSpan.textContent = data.like_count;
+                            this.querySelector('i').classList.toggle('bi-heart-fill', data.action === 'like');
+                            this.querySelector('i').classList.toggle('bi-heart', data.action === 'unlike');
+                        }
+                    });
+            });
+        });
 
 
-</script>
+    </script>
 </body>
+
 </html>

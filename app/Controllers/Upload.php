@@ -95,13 +95,6 @@ class Upload extends Controller
         // 🔑 Kembalikan file_path ke frontend
         $contentModel = new ContentModel();
 
-        // simpan ke database
-        $contentModel->insert([
-            'judul'      => $resumableFilename,   // kalau ada judul
-            'file_path'  => $publicPath,          // ini yang dipanggil di view
-            'created_at' => date('Y-m-d H:i:s')
-        ]);
-
         return $this->response->setJSON([
             'success'   => true,
             'file_path' => $publicPath

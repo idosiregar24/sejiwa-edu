@@ -45,8 +45,7 @@ $routes->post('forum-management', 'forumController::index');
 //Routes untuk ContentController
 $routes->get('content/content_form', 'ContentController::create');
 $routes->post('content/content_form', 'ContentController::create');
-$routes->get('store', 'ContentController::store');
-$routes->post('store', 'ContentController::store');
+$routes->post('content/store', 'ContentController::store');
 
 $routes->get('content/delete/(:num)', 'ContentController::delete/$1');
 $routes->post('content/delete/(:num)', 'ContentController::delete/$1');
