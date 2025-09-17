@@ -22,7 +22,15 @@ class ProfileController extends BaseController
         // Ambil data profil berdasarkan user_id
         $profile = $profileModel->getProfileByUserId($userId);
 
-        return view('user/profile_user', ['profile' => $profile]);
+        if (!$profile) {
+            return redirect()->to('/login')->with('error', 'Profil tidak ditemukan');
+        }
+
+        // Kirim data ke view
+        return view('user/profile_user', [
+            'profile' => $profile,
+            'photo'   => $profile['photo'] ?? 'default.png' // fallback foto
+        ]);
     }
 
     public function edit()
@@ -94,12 +102,12 @@ class ProfileController extends BaseController
             $newName = $file->getRandomName();
 
             // Pindahkan ke folder public/uploads
-            $file->move(FCPATH . 'uploads', $newName);
+            $file->move(FCPATH . 'uploads/profile_photo/', $newName);
 
             // Hapus foto lama kalau ada
             $oldPhoto = $profileModel->getProfileByUserId($userId)['photo'] ?? null;
-            if ($oldPhoto && file_exists(FCPATH . 'uploads/' . $oldPhoto)) {
-                unlink(FCPATH . 'uploads/' . $oldPhoto);
+            if ($oldPhoto && file_exists(FCPATH . 'uploads/profile_photo/' . $oldPhoto)) {
+                unlink(FCPATH . 'uploads/profile_photo/' . $oldPhoto);
             }
 
             // Update ke database pakai model
@@ -113,7 +121,6 @@ class ProfileController extends BaseController
 
             return redirect()->back()->with('success', 'Foto profil berhasil diperbarui!');
         }
-
         return redirect()->back()->with('error', 'Gagal mengunggah foto.');
     }
 }
