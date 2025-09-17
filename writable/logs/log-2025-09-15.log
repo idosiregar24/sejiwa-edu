@@ -1017,3 +1017,394 @@ DEBUG - 2025-09-15 16:59:48 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-09-15 16:59:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-09-15 16:59:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-09-15 16:59:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:38:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:38:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:38:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:38:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-15 17:38:55 --> mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php(327): mysqli->query('DELETE FROM `us...', 0)
+#1 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `us...')
+#2 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `us...')
+#3 C:\xampp\htdocs\sejiwa\system\Database\BaseBuilder.php(2848): CodeIgniter\Database\BaseConnection->query('DELETE FROM `us...', Array, false)
+#4 C:\xampp\htdocs\sejiwa\system\Model.php(521): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\sejiwa\system\BaseModel.php(1152): CodeIgniter\Model->doDelete(Array, false)
+#6 C:\xampp\htdocs\sejiwa\app\Models\UserModel.php(45): CodeIgniter\BaseModel->delete(Array)
+#7 C:\xampp\htdocs\sejiwa\app\Controllers\UserController.php(64): App\Models\UserModel->deleteUserById('14')
+#8 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(933): App\Controllers\UserController->delete('14')
+#9 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#10 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sejiwa\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\sejiwa\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\sejiwa\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\sejiwa\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-09-15 17:38:56 --> CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+[Method: GET, Route: user/delete/14]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2848): CodeIgniter\Database\BaseConnection->query('DELETE FROM `users`
+WHERE `id` IN :id:', [...], false)
+ 2 SYSTEMPATH\Model.php(521): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH\BaseModel.php(1152): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH\Models\UserModel.php(45): CodeIgniter\BaseModel->delete([...])
+ 5 APPPATH\Controllers\UserController.php(64): App\Models\UserModel->deleteUserById('14')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->delete('14')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+CRITICAL - 2025-09-15 17:38:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `users`
+WHERE `id` IN (\'14\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `users`
+WHERE `id` IN (\'14\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2848): CodeIgniter\Database\BaseConnection->query('DELETE FROM `users`
+WHERE `id` IN :id:', [...], false)
+ 4 SYSTEMPATH\Model.php(521): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH\BaseModel.php(1152): CodeIgniter\Model->doDelete([...], false)
+ 6 APPPATH\Models\UserModel.php(45): CodeIgniter\BaseModel->delete([...])
+ 7 APPPATH\Controllers\UserController.php(64): App\Models\UserModel->deleteUserById('14')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->delete('14')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+CRITICAL - 2025-09-15 17:38:56 --> [Caused by] mysqli_sql_exception: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('DELETE FROM `users`
+WHERE `id` IN (\'14\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `users`
+WHERE `id` IN (\'14\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `users`
+WHERE `id` IN (\'14\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2848): CodeIgniter\Database\BaseConnection->query('DELETE FROM `users`
+WHERE `id` IN :id:', [...], false)
+ 5 SYSTEMPATH\Model.php(521): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH\BaseModel.php(1152): CodeIgniter\Model->doDelete([...], false)
+ 7 APPPATH\Models\UserModel.php(45): CodeIgniter\BaseModel->delete([...])
+ 8 APPPATH\Controllers\UserController.php(64): App\Models\UserModel->deleteUserById('14')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->delete('14')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+DEBUG - 2025-09-15 17:39:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:39:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:39:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:39:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:39:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:39:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:39:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:39:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:39:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-15 17:39:39 --> mysqli_sql_exception: Unknown column 'updated_at_otp' in 'field list' in C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sejiwa\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `ot...', 0)
+#1 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ot...')
+#2 C:\xampp\htdocs\sejiwa\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ot...')
+#3 C:\xampp\htdocs\sejiwa\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ot...', Array, false)
+#4 C:\xampp\htdocs\sejiwa\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\sejiwa\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\sejiwa\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\sejiwa\app\Controllers\AuthController.php(141): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#9 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#10 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sejiwa\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\sejiwa\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\sejiwa\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\sejiwa\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-09-15 17:39:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at_otp' in 'field list'
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `otp_codes` (`user_id`, `otp_code`, `channel`, `purpose`, `is_used`, `expires_at`, `created_at`, `updated_at_otp`) VALUES (:user_id:, :otp_code:, :channel:, :purpose:, :is_used:, :expires_at:, :created_at:, :updated_at_otp:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\AuthController.php(141): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+CRITICAL - 2025-09-15 17:39:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at_otp' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `otp_codes` (`user_id`, `otp_code`, `channel`, `purpose`, `is_used`, `expires_at`, `created_at`, `updated_at_otp`) VALUES (15, 92927, \'email\', \'register\', 0, \'2025-09-15 17:44:39\', \'2025-09-15 17:39:39\', \'2025-09-15 17:39:39\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `otp_codes` (`user_id`, `otp_code`, `channel`, `purpose`, `is_used`, `expires_at`, `created_at`, `updated_at_otp`) VALUES (15, 92927, \'email\', \'register\', 0, \'2025-09-15 17:44:39\', \'2025-09-15 17:39:39\', \'2025-09-15 17:39:39\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `otp_codes` (`user_id`, `otp_code`, `channel`, `purpose`, `is_used`, `expires_at`, `created_at`, `updated_at_otp`) VALUES (:user_id:, :otp_code:, :channel:, :purpose:, :is_used:, :expires_at:, :created_at:, :updated_at_otp:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\AuthController.php(141): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+CRITICAL - 2025-09-15 17:39:39 --> [Caused by] mysqli_sql_exception: Unknown column 'updated_at_otp' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `otp_codes` (`user_id`, `otp_code`, `channel`, `purpose`, `is_used`, `expires_at`, `created_at`, `updated_at_otp`) VALUES (15, 92927, \'email\', \'register\', 0, \'2025-09-15 17:44:39\', \'2025-09-15 17:39:39\', \'2025-09-15 17:39:39\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `otp_codes` (`user_id`, `otp_code`, `channel`, `purpose`, `is_used`, `expires_at`, `created_at`, `updated_at_otp`) VALUES (15, 92927, \'email\', \'register\', 0, \'2025-09-15 17:44:39\', \'2025-09-15 17:39:39\', \'2025-09-15 17:39:39\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `otp_codes` (`user_id`, `otp_code`, `channel`, `purpose`, `is_used`, `expires_at`, `created_at`, `updated_at_otp`) VALUES (15, 92927, \'email\', \'register\', 0, \'2025-09-15 17:44:39\', \'2025-09-15 17:39:39\', \'2025-09-15 17:39:39\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `otp_codes` (`user_id`, `otp_code`, `channel`, `purpose`, `is_used`, `expires_at`, `created_at`, `updated_at_otp`) VALUES (:user_id:, :otp_code:, :channel:, :purpose:, :is_used:, :expires_at:, :created_at:, :updated_at_otp:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\AuthController.php(141): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+CRITICAL - 2025-09-15 17:40:40 --> ErrorException: Cannot declare class App\Database\Migrations\AddUpdatedAtToOtpCodes, because the name is already in use
+[Method: CLI, Route: migrate]
+in APPPATH\Database\Migrations\2025-09-15-104205_AddColoumnUpdateAtContent_Likes.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2025-09-15 17:40:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:40:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:40:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:41:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:41:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:41:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:41:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:41:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:41:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:41:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:41:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:41:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:42:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:42:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:42:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:42:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:42:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:42:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:42:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:43:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-15 17:43:06 --> Email: sendWithSmtp throwed ErrorException: fsockopen(): Unable to connect to smtp.gmail.com:587 (A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) in C:\xampp\htdocs\sejiwa\system\Email\Email.php:1905
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fsockopen(): Un...', 'C:\\xampp\\htdocs...', 1905)
+#1 C:\xampp\htdocs\sejiwa\system\Email\Email.php(1905): fsockopen('smtp.gmail.com', 587, NULL, NULL, 5)
+#2 C:\xampp\htdocs\sejiwa\system\Email\Email.php(1818): CodeIgniter\Email\Email->SMTPConnect()
+#3 C:\xampp\htdocs\sejiwa\system\Email\Email.php(1703): CodeIgniter\Email\Email->sendWithSmtp()
+#4 C:\xampp\htdocs\sejiwa\system\Email\Email.php(1597): CodeIgniter\Email\Email->spoolEmail()
+#5 C:\xampp\htdocs\sejiwa\app\Controllers\AuthController.php(160): CodeIgniter\Email\Email->send()
+#6 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#7 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sejiwa\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sejiwa\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sejiwa\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\sejiwa\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+ERROR - 2025-09-15 17:43:07 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-09-15 17:43:07 --> 
+DEBUG - 2025-09-15 17:43:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:43:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:43:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:43:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:43:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:43:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:43:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:43:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:43:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:43:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:43:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:43:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:44:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-09-15 17:44:09 --> Email: sendWithSmtp throwed ErrorException: fsockopen(): Unable to connect to smtp.gmail.com:587 (A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) in C:\xampp\htdocs\sejiwa\system\Email\Email.php:1905
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fsockopen(): Un...', 'C:\\xampp\\htdocs...', 1905)
+#1 C:\xampp\htdocs\sejiwa\system\Email\Email.php(1905): fsockopen('smtp.gmail.com', 587, NULL, NULL, 5)
+#2 C:\xampp\htdocs\sejiwa\system\Email\Email.php(1818): CodeIgniter\Email\Email->SMTPConnect()
+#3 C:\xampp\htdocs\sejiwa\system\Email\Email.php(1703): CodeIgniter\Email\Email->sendWithSmtp()
+#4 C:\xampp\htdocs\sejiwa\system\Email\Email.php(1597): CodeIgniter\Email\Email->spoolEmail()
+#5 C:\xampp\htdocs\sejiwa\app\Controllers\AuthController.php(160): CodeIgniter\Email\Email->send()
+#6 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#7 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\xampp\htdocs\sejiwa\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sejiwa\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sejiwa\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sejiwa\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\sejiwa\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+ERROR - 2025-09-15 17:44:09 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-09-15 17:44:09 --> 
+DEBUG - 2025-09-15 17:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:45:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:45:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:45:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:46:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:46:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:48:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:53:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:55:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:55:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:56:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:57:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 17:57:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:00:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-15 18:00:01 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: profile/edit]
+in APPPATH\Views\user\profile_edit.php on line 115.
+ 1 APPPATH\Views\user\profile_edit.php(115): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\xampp\\htdocs\\sejiwa\\app\\Views\\user\\profile_edit.php', 115)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sejiwa\\app\\Views\\user\\profile_edit.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('user/profile_edit', [], true)
+ 5 APPPATH\Controllers\ProfileController.php(39): view('user/profile_edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->edit()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+DEBUG - 2025-09-15 18:01:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-15 18:01:05 --> ErrorException: Undefined array key "username"
+[Method: GET, Route: profile/edit]
+in APPPATH\Views\user\profile_edit.php on line 123.
+ 1 APPPATH\Views\user\profile_edit.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "username"', 'C:\\xampp\\htdocs\\sejiwa\\app\\Views\\user\\profile_edit.php', 123)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sejiwa\\app\\Views\\user\\profile_edit.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('user/profile_edit', [], true)
+ 5 APPPATH\Controllers\ProfileController.php(39): view('user/profile_edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->edit()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+DEBUG - 2025-09-15 18:01:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-15 18:01:32 --> ErrorException: Undefined array key "tanggal_lahir"
+[Method: GET, Route: profile/edit]
+in APPPATH\Views\user\profile_edit.php on line 131.
+ 1 APPPATH\Views\user\profile_edit.php(131): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tanggal_lahir"', 'C:\\xampp\\htdocs\\sejiwa\\app\\Views\\user\\profile_edit.php', 131)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sejiwa\\app\\Views\\user\\profile_edit.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('user/profile_edit', [], true)
+ 5 APPPATH\Controllers\ProfileController.php(39): view('user/profile_edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->edit()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+DEBUG - 2025-09-15 18:02:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-15 18:02:42 --> ErrorException: Undefined array key "bio"
+[Method: GET, Route: profile/edit]
+in APPPATH\Views\user\profile_edit.php on line 146.
+ 1 APPPATH\Views\user\profile_edit.php(146): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "bio"', 'C:\\xampp\\htdocs\\sejiwa\\app\\Views\\user\\profile_edit.php', 146)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sejiwa\\app\\Views\\user\\profile_edit.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('user/profile_edit', [], true)
+ 5 APPPATH\Controllers\ProfileController.php(39): view('user/profile_edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->edit()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+DEBUG - 2025-09-15 18:02:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:03:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:04:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:04:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:04:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:05:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:05:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:05:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:05:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:05:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:05:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:05:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:05:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-15 18:05:55 --> CodeIgniter\Database\Exceptions\DataException: Allowed fields must be specified for model: "App\Models\ProfileModel"
+[Method: POST, Route: profile/update]
+in SYSTEMPATH\BaseModel.php on line 1332.
+ 1 SYSTEMPATH\BaseModel.php(1332): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\ProfileModel')
+ 2 SYSTEMPATH\BaseModel.php(1003): CodeIgniter\BaseModel->doProtectFields([...])
+ 3 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 4 APPPATH\Controllers\ProfileController.php(71): CodeIgniter\Model->update('17', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->update()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+DEBUG - 2025-09-15 18:07:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-15 18:07:17 --> CodeIgniter\Database\Exceptions\DataException: Allowed fields must be specified for model: "App\Models\ProfileModel"
+[Method: POST, Route: profile/update]
+in SYSTEMPATH\BaseModel.php on line 1332.
+ 1 SYSTEMPATH\BaseModel.php(1332): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\ProfileModel')
+ 2 SYSTEMPATH\BaseModel.php(1003): CodeIgniter\BaseModel->doProtectFields([...])
+ 3 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 4 APPPATH\Models\ProfileModel.php(18): CodeIgniter\Model->update('17', [...])
+ 5 APPPATH\Controllers\ProfileController.php(71): App\Models\ProfileModel->updateProfile('17', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->update()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+DEBUG - 2025-09-15 18:07:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:07:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:07:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-09-15 18:07:21 --> CodeIgniter\Database\Exceptions\DataException: Allowed fields must be specified for model: "App\Models\ProfileModel"
+[Method: POST, Route: profile/update]
+in SYSTEMPATH\BaseModel.php on line 1332.
+ 1 SYSTEMPATH\BaseModel.php(1332): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\ProfileModel')
+ 2 SYSTEMPATH\BaseModel.php(1003): CodeIgniter\BaseModel->doProtectFields([...])
+ 3 SYSTEMPATH\Model.php(860): CodeIgniter\BaseModel->update([...], [...])
+ 4 APPPATH\Models\ProfileModel.php(18): CodeIgniter\Model->update('17', [...])
+ 5 APPPATH\Controllers\ProfileController.php(71): App\Models\ProfileModel->updateProfile('17', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->update()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sejiwa\\public\\index.php')
+DEBUG - 2025-09-15 18:09:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:09:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:09:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:09:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:09:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:09:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:09:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:10:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:10:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:10:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:10:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:10:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:10:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-09-15 18:10:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -61,6 +61,10 @@ $routes->get('content/view/(:num)', 'ContentController::view/$1');
 $routes->post('content/comment/(:num)', 'ContentController::comment/$1');
 $routes->post('content/like/(:num)', 'ContentController::like/$1');
 
+// Routes untuk ProfileController
+$routes->get('profile', 'ProfileController::index');
+$routes->get('profile/edit', 'ProfileController::edit');
+$routes->post('profile/update', 'ProfileController::update');
 
 //Routes Like dan Comment
 $routes->get('content/like/(:num)', 'ContentController::like/$1');
