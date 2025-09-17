@@ -67,7 +67,7 @@
                 <div class="col-md-3 text-center profile-section">
                     <div class="position-relative d-inline-block">
                         <!-- Foto profil -->
-                        <img src="<?= base_url('uploads/' . (session()->get('photo') ?? 'default.png')) ?>"
+                        <img src="<?= base_url('uploads/profile_photo/' . $photo) ?>"
                             alt="Foto Profil"
                             class="profile-img rounded-circle">
 
