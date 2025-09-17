@@ -1,6 +1,7 @@
 /writable/logs/
 /writable/cache/
 *.log
+writable/logs/
 
 # Ignore environment file
 .env
@@ -12,4 +13,5 @@
 # Ignore debugbar json files
 writable/debugbar/*.json
 
+/public/ci_sessions/
 /public/ci_sessions/

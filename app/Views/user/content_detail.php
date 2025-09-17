@@ -57,14 +57,17 @@
     </div>
 
     <!-- Video Player (default hidden) -->
-     <?php foreach ($contents as $content): ?>
-            <div id="video-section" class="d-none position-relative" style="height: 100%;">
-                <video id="hero-video" class="w-100 h-100" controls>
-                    <source src="<?= base_url($content['file_path']) ?>" type="video/mp4">
-                    Browser Anda tidak mendukung pemutaran video.
-                </video>
-            </div>
-    <?php endforeach; ?>
+    <div id="video-section" class="d-none position-relative" style="height: 100%;">
+        <?php if(!empty($content['file_path'])): ?>
+        <video id="hero-video" class="w-100 h-100" controls>
+            <source src="<?= base_url($content['file_path']) ?>" type="video/mp4">
+            Browser Anda tidak mendukung pemutaran video.
+        </video>
+        <?php else: ?>
+            <p class="text-white p-5">Video tidak tersedia</p>
+        <?php endif; ?>
+    </div>
+
 
   </div>
 </div>

@@ -61,11 +61,11 @@
               
               <!-- Thumbnail -->
               <a href="<?= base_url('content/view/'.$video['id']) ?>">
-                <img src="<?= base_url($video['thumbnail']) ?>" 
-                    class="card-img-top" 
-                    alt="<?= esc($video['title']) ?>" 
-                    style="height:180px; object-fit:cover;">
-              </a>  
+                  <img src="<?= base_url($video['thumbnail'] ?? 'assets/img/default-thumbnail.jpg') ?>"
+                        class="card-img-top"
+                        alt="<?= esc($video['title'] ?? 'No Title') ?>"
+                        style="height:180px; object-fit:cover;">
+              </a>
               
               <div class="card-body">
                 <h6 class="fw-bold text-truncate">
@@ -154,24 +154,30 @@
 
               <!-- Container Scroll -->
               <div class="d-flex overflow-auto px-2" id="videoSlider" style="scroll-behavior:smooth; gap:1rem;">
-          <?php if (!empty($videos)): ?>
-            <?php foreach ($videos as $video): ?>
-              <div class="card shadow-sm" style="min-width:300px; flex:0 0 auto;">
-                <video class="w-100 rounded-top" height="180" controls>
-                  <source src="<?= base_url($video['file_path']) ?>" type="video/mp4">
-                  Browser Anda tidak mendukung pemutar video.
-                </video>
-                <div class="card-body">
-                  <h6 class="fw-bold"><?= esc($video['title']) ?></h6>
-                  <p class="card-text small text-muted text-truncate"><?= esc($video['body']) ?></p>
-                  <span class="badge bg-success"><?= esc($video['category']) ?></span>
-                </div>
+                  <?php if (!empty($videos)): ?>
+                      <?php foreach ($videos as $video): ?>
+                          <div class="card shadow-sm" style="min-width:300px; flex:0 0 auto;">
+                              <?php if (!empty($video['file_path'])): ?>
+                                  <video class="w-100 rounded-top" height="180" controls>
+                                      <source src="<?= base_url($video['file_path']) ?>" type="video/mp4">
+                                      Browser Anda tidak mendukung pemutar video.
+                                  </video>
+                              <?php else: ?>
+                                  <img src="<?= base_url('assets/img/default-video.png') ?>" class="w-100 rounded-top" height="180" alt="Video tidak tersedia">
+                              <?php endif; ?>
+
+                              <div class="card-body">
+                                  <h6 class="fw-bold"><?= esc($video['title'] ?? 'No Title') ?></h6>
+                                  <p class="card-text small text-muted text-truncate"><?= esc($video['body'] ?? '-') ?></p>
+                                  <span class="badge bg-success"><?= esc($video['category'] ?? '-') ?></span>
+                              </div>
+                          </div>
+                      <?php endforeach; ?>
+                  <?php else: ?>
+                      <p class="text-muted">Belum ada video yang dipublish.</p>
+                  <?php endif; ?>
               </div>
-            <?php endforeach; ?>
-          <?php else: ?>
-            <p class="text-muted">Belum ada video yang dipublish.</p>
-          <?php endif; ?>
-        </div>
+
 
         <!-- Tombol kanan -->
         <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y shadow rounded-circle"
