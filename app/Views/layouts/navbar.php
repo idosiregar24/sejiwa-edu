@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/dashboard_user.css') ?>">
 </head>
 <body>
-
-<aside class="navbar">
     <nav class="navbar navbar-expand-lg 
                  <?= session()->get('isLoggedIn') ? 'navbar-loggedin' : 'navbar-default' ?>">
                     <div class="container">
@@ -69,6 +67,5 @@
                         </div>
                     </div>
     </nav>
-</aside>
 </body>
 </html>

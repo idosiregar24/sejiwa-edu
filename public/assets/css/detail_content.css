@@ -1,71 +1,120 @@
-
-:root {
-    --bs-primary-rgb: 255, 105, 180; /* Pink-like color */
-}
-.navbar-brand {
-    font-weight: bold;
-}
+/* HERO SECTION */
 .hero {
-    background-image: url('https://via.placeholder.com/1920x800');
-    background-size: cover;
-    background-position: center;
-    height: 600px;
-    position: relative;
-    color: white;
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 3rem;
-    overflow: hidden;
+  position: relative;
+  height: 400px;
+  overflow: hidden;
 }
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
+
+/* Overlay gradasi di atas thumbnail */
+.hero .overlay {
+  background: linear-gradient( #B16B8E);
+  z-index: 1;
 }
+
+/* Konten hero (judul, tombol, dsb) */
 .hero-content {
-    position: relative;
-    z-index: 1;
-    padding: 0 2rem;
-    width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  color: #fff;
 }
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+.hero-content p {
+  font-size: .9rem;
+}
+
+/* Tombol Play & Watchlist */
+.hero-content .btn {
+  font-weight: 600;
+  transition: all .3s ease-in-out;
+}
+
+.hero-content .btn-outline-light:hover {
+  background-color: #fff;
+  color: #5c0066;
+}
+
+.hero-content .btn-light:hover {
+  background-color: #f8f9fa;
+  color: #5c0066;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Bagian like & share */
+.hero-content .share-btn,
+.hero-content .like-btn {
+  font-size: .9rem;
+  opacity: .9;
+  transition: opacity .3s ease-in-out;
+}
+
+.hero-content .share-btn:hover,
+.hero-content .like-btn:hover {
+  opacity: 1;
+}
+
+/* Video Player */
+#video-section video {
+  object-fit: cover;
+}
+
+/* CARD STYLE */
 .card-custom {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: white;
+  border: none;
+  border-radius: .75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
+
+.card-custom:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* Untuk image di card video */
 .card-img-top-video {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+  height: 150px;
+  object-fit: cover;
 }
+
+/* Cast images (rounded) */
 .cast-img {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 2px solid #eee;
 }
+
+/* Artikel & Infografis */
 .article-card-img-main {
-    height: 350px;
-    object-fit: cover;
-    border-radius: 15px;
+  height: 250px;
+  object-fit: cover;
 }
-.article-card-img-small {
-    width: 100px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 10px;
-}
+
 .infografis-card-img {
-    height: 150px;
-    object-fit: cover;
-    border-radius: 15px;
+  height: 200px;
+  object-fit: cover;
 }
-.footer-social-icons a {
-    color: #ff69b4;
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .hero {
+    height: 300px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content .btn {
+    padding: .4rem 1rem;
+    font-size: .85rem;
+  }
 }

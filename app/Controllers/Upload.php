@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
+use App\Models\ContentModel;
 
 class Upload extends Controller
 {
@@ -10,7 +11,7 @@ class Upload extends Controller
         helper('filesystem');
 
         $tempDir  = WRITEPATH . 'uploads/temp/';
-        $finalDir = WRITEPATH . 'uploads/final/';
+        $finalDir = FCPATH . 'uploads/video/';
 
         // Buat folder jika belum ada, atau kembalikan error
         if (!is_dir($tempDir) && !mkdir($tempDir, 0777, true)) {
@@ -63,29 +64,52 @@ class Upload extends Controller
 
         // Gabungkan chunk jika lengkap
         if ($allChunksExist) {
-            $finalFilePath = $finalDir . $resumableFilename;
-            $finalFile = fopen($finalFilePath, 'wb');
-            if (!$finalFile) {
-                log_message('error', 'Gagal membuat file final: ' . $finalFilePath);
-                return $this->response->setStatusCode(500)->setBody('Gagal membuat file final');
-            }
 
-            for ($i = 1; $i <= $totalChunks; $i++) {
-                $chunkPath = $tempDir . $resumableIdentifier . '.' . $i;
-                $chunk = fopen($chunkPath, 'rb');
-                if ($chunk) {
-                    stream_copy_to_stream($chunk, $finalFile);
-                    fclose($chunk);
-                    unlink($chunkPath);
-                    log_message('debug', "Chunk $i berhasil digabung");
-                } else {
-                    log_message('error', "Chunk $i tidak bisa dibuka untuk digabung");
-                }
-            }
-            fclose($finalFile);
-            log_message('debug', "File final berhasil dibuat: " . $finalFilePath);
+        $newName = uniqid() . '_' . $resumableFilename;
+
+        $finalFilePath = $finalDir . $newName;
+        $publicPath    = 'uploads/video/' . $newName; // path untuk disimpan ke DB
+
+        $finalFile = fopen($finalFilePath, 'wb');
+        if (!$finalFile) {
+            log_message('error', 'Gagal membuat file final: ' . $finalFilePath);
+            return $this->response->setStatusCode(500)
+                                ->setJSON(['success' => false, 'message' => 'Gagal membuat file final']);
         }
 
-        return $this->response->setStatusCode(200)->setBody('OK');
+        for ($i = 1; $i <= $totalChunks; $i++) {
+            $chunkPath = $tempDir . $resumableIdentifier . '.' . $i;
+            $chunk = fopen($chunkPath, 'rb');
+            if ($chunk) {
+                stream_copy_to_stream($chunk, $finalFile);
+                fclose($chunk);
+                unlink($chunkPath);
+                log_message('debug', "Chunk $i berhasil digabung");
+            } else {
+                log_message('error', "Chunk $i tidak bisa dibuka untuk digabung");
+            }
+        }
+        fclose($finalFile);
+        log_message('debug', "File final berhasil dibuat: " . $finalFilePath);
+
+        // 🔑 Kembalikan file_path ke frontend
+        $contentModel = new ContentModel();
+
+        // simpan ke database
+        $contentModel->insert([
+            'judul'      => $resumableFilename,   // kalau ada judul
+            'file_path'  => $publicPath,          // ini yang dipanggil di view
+            'created_at' => date('Y-m-d H:i:s')
+        ]);
+
+        return $this->response->setJSON([
+            'success'   => true,
+            'file_path' => $publicPath
+        ]);
+    }
+
+// Jika belum lengkap, jangan langsung "OK", cukup konfirmasi chunk diterima
+return $this->response->setJSON(['success' => true, 'chunkReceived' => $resumableChunkNumber]);
+
     }
 }
