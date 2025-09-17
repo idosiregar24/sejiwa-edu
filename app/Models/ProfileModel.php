@@ -14,6 +14,7 @@ class ProfileModel extends Model
         'date_of_birth',
         'phone',
         'password',
+        'photo',
         'updated_at'
     ];
 

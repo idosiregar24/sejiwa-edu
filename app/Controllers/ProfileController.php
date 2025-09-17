@@ -51,7 +51,7 @@ class ProfileController extends BaseController
         // Validasi input
         $validation = \Config\Services::validation();
         $validation->setRules([
-            'name' => 'required|min_length[3]',
+            'name'  => 'required|min_length[3]',
             'email' => 'required|valid_email',
             'phone' => 'permit_empty|numeric'
         ]);
@@ -62,14 +62,58 @@ class ProfileController extends BaseController
 
         // Ambil data dari form
         $data = [
-            'name'   => $this->request->getPost('name'),
-            'email'  => $this->request->getPost('email'),
+            'name'  => $this->request->getPost('name'),
+            'email' => $this->request->getPost('email'),
             'phone' => $this->request->getPost('phone'),
         ];
 
         // Update ke database
         $profileModel->updateProfile($userId, $data);
 
+        // ✅ Update juga data session biar sinkron
+        session()->set([
+            'name'  => $data['name'],
+            'email' => $data['email'],
+            'phone' => $data['phone']
+        ]);
+
         return redirect()->to('/profile')->with('success', 'Profil berhasil diperbarui');
+    }
+
+
+    public function updatePhoto()
+    {
+        $userId = session()->get('id'); // ambil id user dari session
+        $profileModel = new ProfileModel();
+
+        // Ambil file dari input
+        $file = $this->request->getFile('profile_picture');
+
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            // Nama baru random biar unik
+            $newName = $file->getRandomName();
+
+            // Pindahkan ke folder public/uploads
+            $file->move(FCPATH . 'uploads', $newName);
+
+            // Hapus foto lama kalau ada
+            $oldPhoto = $profileModel->getProfileByUserId($userId)['photo'] ?? null;
+            if ($oldPhoto && file_exists(FCPATH . 'uploads/' . $oldPhoto)) {
+                unlink(FCPATH . 'uploads/' . $oldPhoto);
+            }
+
+            // Update ke database pakai model
+            $profileModel->updateProfile($userId, [
+                'photo'      => $newName,
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+
+            // Update session biar langsung ke-refresh
+            session()->set('photo', $newName);
+
+            return redirect()->back()->with('success', 'Foto profil berhasil diperbarui!');
+        }
+
+        return redirect()->back()->with('error', 'Gagal mengunggah foto.');
     }
 }

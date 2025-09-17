@@ -65,6 +65,7 @@ $routes->post('content/like/(:num)', 'ContentController::like/$1');
 $routes->get('profile', 'ProfileController::index');
 $routes->get('profile/edit', 'ProfileController::edit');
 $routes->post('profile/update', 'ProfileController::update');
+$routes->post('profile/updatePhoto', 'ProfileController::updatePhoto');
 
 //Routes Like dan Comment
 $routes->get('content/like/(:num)', 'ContentController::like/$1');

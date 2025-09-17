@@ -11,19 +11,20 @@
     <title>Dashboard SeJiwa</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .cover-photo {
+        .header {
             background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
             background-size: cover;
-            height: 250px;
+            height: 300px;
             position: relative;
+            margin-top: -20px;
         }
 
         .profile-img {
-            width: 120px;
-            height: 120px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             border: 4px solid #fff;
-            margin-top: -60px;
+            margin-top: -90px;
         }
 
         .profile-section {
@@ -60,12 +61,29 @@
     <main>
         <!-- Menambahkan Navbar -->
         <?= $this->include('layouts/navbar') ?>
-        <div class="cover-photo"></div>
+        <div class="header"></div>
         <div class="container mt-3">
             <div class="row">
                 <!-- Profile Left -->
                 <div class="col-md-3 text-center profile-section">
-                    <img src="https://img.freepik.com/free-vector/mother-holding-baby-illustration_23-2148522372.jpg" class="profile-img" alt="profile">
+                    <div class="position-relative d-inline-block">
+                        <!-- Foto profil -->
+                        <img src="<?= base_url('uploads/' . (session()->get('photo') ?? 'default.png')) ?>"
+                            alt="Foto Profil"
+                            class="profile-img rounded-circle">
+
+                        <!-- Tombol edit foto -->
+                        <button type="button"
+                            class="btn btn-sm btn-light position-absolute bottom-0 end-0 rounded-circle shadow"
+                            onclick="document.getElementById('uploadPhoto').click()">
+                            <i class="bi bi-camera"></i>
+                        </button>
+
+                        <!-- Input file hidden -->
+                        <form action="<?= base_url('profile/updatePhoto') ?>" method="post" enctype="multipart/form-data">
+                            <input type="file" id="uploadPhoto" name="profile_picture" accept="image/*" style="display:none" onchange="this.form.submit()">
+                        </form>
+                    </div>
                     <h5 class="mt-3"><?= esc($profile['name'] ?? '-') ?></h5>
                     <p class="text-muted"><?= esc($profile['email'] ?? '-') ?></p>
 
