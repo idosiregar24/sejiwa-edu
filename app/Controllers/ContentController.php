@@ -17,12 +17,11 @@ class ContentController extends BaseController
         $this->contentModel = new ContentModel();
         $this->likeModel = new LikeModel();
         $this->commentModel = new CommentsModel();
-
     }
 
     public function index()
     {
-        $jenis = $this->request->getGet('jenis') ?? 'all';
+        $jenis  = $this->request->getGet('jenis') ?? 'all';
         $status = $this->request->getGet('status') ?? 'all';
         $search = $this->request->getGet('search') ?? '';
 
@@ -42,17 +41,17 @@ class ContentController extends BaseController
         // Filter pencarian
         if (!empty($search)) {
             $query = $query->like('title', $search)
-                ->orLike('description', $search);
+                           ->orLike('description', $search);
         }
 
         $contents = $query->findAll();
 
         $data = [
             'contents' => $contents,
-            'stats' => $this->contentModel->getContentStats(),
-            'jenis' => $jenis,
-            'status' => $status,
-            'search' => $search,
+            'stats'    => $this->contentModel->getContentStats(),
+            'jenis'    => $jenis,
+            'status'   => $status,
+            'search'   => $search,
         ];
 
         return view('admin/content/content-management', $data);
@@ -65,73 +64,70 @@ class ContentController extends BaseController
 
     public function store()
     {
-        $type = $this->request->getPost('type');
-        $title = $this->request->getPost('title');
+        $type     = $this->request->getPost('type');
+        $title    = $this->request->getPost('title');
         $category = $this->request->getPost('category');
-        $body = $this->request->getPost('body');
-        $status = $this->request->getPost('status');
+        $body     = $this->request->getPost('body');
+        $status   = $this->request->getPost('status');
 
+        // Tentukan folder upload
         $uploadDir = FCPATH . 'uploads/';
-        // $filePath = null;
-        // $thumbnailPath = null;
-
-        // ===== 1. Video via Resumable.js =====
-        // $videoPath = $this->request->getFile('video_path');
-        // if (!empty($videoPath)) {
-        //     $filePath = $videoPath;
-        //     $type = 'Video';
-        // }
-
-        $videoPath = $this->request->getPost('video_path');
         $filePath = null;
 
+        // ===== 1. Video via Resumable.js =====
+        $videoPath = $this->request->getPost('video_path');
         if (!empty($videoPath)) {
             $filePath = $videoPath;
-            $type = 'Video';
+            $type     = 'Video';
         }
 
         // ===== 2. Infografis / Audio =====
         if ($type === 'Infografis' && $this->request->getFile('infographic')->isValid()) {
             $file = $this->request->getFile('infographic');
             $newName = uniqid() . '_' . $file->getName();
-            if (!is_dir($uploadDir . 'infografis/'))
+            if (!is_dir($uploadDir . 'infografis/')) {
                 mkdir($uploadDir . 'infografis/', 0777, true);
+            }
             $file->move($uploadDir . 'infografis/', $newName);
             $filePath = 'uploads/infografis/' . $newName;
 
         } elseif ($type === 'Audio' && $this->request->getFile('audio')->isValid()) {
             $file = $this->request->getFile('audio');
             $newName = uniqid() . '_' . $file->getName();
-            if (!is_dir($uploadDir . 'audio/'))
+            if (!is_dir($uploadDir . 'audio/')) {
                 mkdir($uploadDir . 'audio/', 0777, true);
+            }
             $file->move($uploadDir . 'audio/', $newName);
             $filePath = 'uploads/audio/' . $newName;
         }
 
         // ===== 3. Thumbnail (opsional) =====
+        $thumbnailPath = null;
         if ($this->request->getFile('thumbnail')->isValid()) {
             $thumb = $this->request->getFile('thumbnail');
             $thumbName = uniqid() . '_' . $thumb->getName();
             $thumbDir = $uploadDir . 'thumbnail/';
-            if (!is_dir($thumbDir))
+            if (!is_dir($thumbDir)) {
                 mkdir($thumbDir, 0777, true);
+            }
             $thumb->move($thumbDir, $thumbName);
             $thumbnailPath = 'uploads/thumbnail/' . $thumbName;
         }
 
         // ===== 4. Simpan satu record database =====
         $this->contentModel->insertContent([
-            'title' => $title,
-            'type' => $type,
-            'category' => $category,
-            'body' => $body,
-            'status' => $status,
+            'title'     => $title,
+            'type'      => $type,
+            'category'  => $category,
+            'body'      => $body,
+            'status'    => $status,
             'file_path' => $filePath,
             'thumbnail' => $thumbnailPath,
         ]);
 
         return redirect()->to('content-management');
     }
+
     public function edit($id)
     {
         $data['content'] = $this->contentModel->getContentById($id);
@@ -141,11 +137,11 @@ class ContentController extends BaseController
     public function update($id)
     {
         $this->contentModel->updateContent($id, [
-            'title' => $this->request->getPost('title'),
-            'type' => $this->request->getPost('type'),
+            'title'    => $this->request->getPost('title'),
+            'type'     => $this->request->getPost('type'),
             'category' => $this->request->getPost('category'),
-            'body' => $this->request->getPost('body'),
-            'status' => $this->request->getPost('status'),
+            'body'     => $this->request->getPost('body'),
+            'status'   => $this->request->getPost('status'),
         ]);
 
         return redirect()->to('content-management');
@@ -164,14 +160,17 @@ class ContentController extends BaseController
 
     public function view($id)
     {
-        $content = $this->contentModel->find($id);
+        $content  = $this->contentModel->find($id);
         $comments = $this->commentModel->where('content_id', $id)->findAll();
-        $related = $this->contentModel->where('id !=', $id)->orderBy('created_at', 'DESC')->limit(5)->findAll();
+        $related  = $this->contentModel->where('id !=', $id)
+                                       ->orderBy('created_at', 'DESC')
+                                       ->limit(5)
+                                       ->findAll();
 
         return view('user/content_detail', [
-            'content' => $content,
+            'content'  => $content,
             'comments' => $comments,
-            'related' => $related
+            'related'  => $related
         ]);
     }
 
@@ -179,8 +178,8 @@ class ContentController extends BaseController
     {
         $this->commentModel->save([
             'content_id' => $id,
-            'user_id' => session()->get('id'),
-            'comment' => $this->request->getPost('comment')
+            'user_id'    => session()->get('id'),
+            'comment'    => $this->request->getPost('comment')
         ]);
         return redirect()->back();
     }
@@ -203,12 +202,9 @@ class ContentController extends BaseController
             // Jika belum like, tambah
             $this->likeModel->insert([
                 'content_id' => $id,
-                'user_id' => $userId
+                'user_id'    => $userId
             ]);
             return $this->response->setJSON(['success' => true, 'action' => 'like']);
         }
     }
-
-
-
 }
