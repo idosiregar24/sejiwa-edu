@@ -54,10 +54,11 @@
         </button>
 
         <!-- Container Scroll -->
-        <div class="row">
-        <?php foreach ($videos as $video): ?>
-          <div class="col-md-3 mb-4">
-            <div class="card shadow-sm h-100">
+          <div class="container my-4">
+          <div class="d-flex overflow-auto pb-2" style="gap: 16px; scroll-behavior: smooth;">
+          
+          <?php foreach ($videos as $video): ?>
+            <div class="card shadow-sm h-100" style="min-width: 350px; border-radius: 12px; overflow: hidden;">
               
               <!-- Thumbnail -->
               <a href="<?= base_url('content/view/'.$video['id']) ?>">
@@ -68,28 +69,27 @@
               </a>
               
               <div class="card-body">
-                <h6 class="fw-bold text-truncate">
+                <h6 class="fw-bold text-truncate mb-2">
                   <a href="<?= base_url('content/detail/'.$video['id']) ?>" 
-                    class="text-decoration-none text-dark">
+                    class="title-content">
                     <?= esc($video['title']) ?>
                   </a>
                 </h6>
                 
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="badge bg-success"><?= esc($video['category']) ?></span>
-                  <span class="text-muted small">
+                <div class="d-flex justify-content-between">
+                <span class="text-muted small">
                     <i class="bi bi-heart-fill text-danger"></i> <?= $video['like_count'] ?? 0 ?>
-                  </span>
+                  </span>  
+                <span class="badge bg-success"><?= esc($video['category']) ?></span>
+                  
                 </div>
               </div>
             </div>
+          <?php endforeach; ?>
           </div>
-        <?php endforeach; ?>
-      </div>
+          </div>
 
-
-
-              <!-- Tombol kanan -->
+          <!-- Tombol kanan -->
               <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y shadow rounded-circle"
                       onclick="slideRight()" style="z-index:10">
                 <i class="bi bi-chevron-right"></i>
@@ -152,31 +152,34 @@
                 <i class="bi bi-chevron-left"></i>
               </button>
 
-              <!-- Container Scroll -->
-              <div class="d-flex overflow-auto px-2" id="videoSlider" style="scroll-behavior:smooth; gap:1rem;">
-                  <?php if (!empty($videos)): ?>
-                      <?php foreach ($videos as $video): ?>
-                          <div class="card shadow-sm" style="min-width:300px; flex:0 0 auto;">
-                              <?php if (!empty($video['file_path'])): ?>
-                                  <video class="w-100 rounded-top" height="180" controls>
-                                      <source src="<?= base_url($video['file_path']) ?>" type="video/mp4">
-                                      Browser Anda tidak mendukung pemutar video.
-                                  </video>
-                              <?php else: ?>
-                                  <img src="<?= base_url('assets/img/default-video.png') ?>" class="w-100 rounded-top" height="180" alt="Video tidak tersedia">
-                              <?php endif; ?>
+            <!-- Container Scroll Audio -->
+           <div class="d-flex overflow-auto px-2" id="audioSlider" style="scroll-behavior:smooth; gap:1rem;">
+            <?php if (!empty($audios)): ?>
+                <?php foreach ($audios as $audio): ?>
+                    <a href="<?= base_url('content/view/' . $audio['id']) ?>" 
+                      class="text-decoration-none text-dark">
+                        <div class="card shadow-sm" 
+                            style="min-width:250px; flex:0 0 auto; border-radius:12px; overflow:hidden;">
+                            
+                            <!-- Thumbnail -->
+                            <img src="<?= base_url($audio['thumbnail'] ?? 'assets/img/default-audio.png') ?>"
+                                class="card-img-top"
+                                alt="<?= esc($audio['title']) ?>"
+                                style="height:150px; object-fit:cover;">
 
-                              <div class="card-body">
-                                  <h6 class="fw-bold"><?= esc($video['title'] ?? 'No Title') ?></h6>
-                                  <p class="card-text small text-muted text-truncate"><?= esc($video['body'] ?? '-') ?></p>
-                                  <span class="badge bg-success"><?= esc($video['category'] ?? '-') ?></span>
-                              </div>
-                          </div>
-                      <?php endforeach; ?>
-                  <?php else: ?>
-                      <p class="text-muted">Belum ada video yang dipublish.</p>
-                  <?php endif; ?>
-              </div>
+                            <!-- Body -->
+                            <div class="card-body">
+                                <h6 class="fw-bold text-truncate"><?= esc($audio['title'] ?? 'No Title') ?></h6>
+                                <p class="card-text small text-muted text-truncate"><?= esc($audio['body'] ?? '-') ?></p>
+                                <span class="badge bg-primary"><?= esc($audio['category'] ?? '-') ?></span>
+                            </div>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p class="text-muted">Belum ada audio yang dipublish.</p>
+            <?php endif; ?>
+        </div>
 
 
         <!-- Tombol kanan -->

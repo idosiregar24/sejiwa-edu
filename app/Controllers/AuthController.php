@@ -107,8 +107,7 @@ class AuthController extends BaseController
             $email = null;
             $phone = null;
 
-            //
-
+            // Tentukan apakah input email atau phone
             $channel = '';
             if (filter_var($emailOrPhone, FILTER_VALIDATE_EMAIL)) {
                 $userData['email'] = $emailOrPhone;

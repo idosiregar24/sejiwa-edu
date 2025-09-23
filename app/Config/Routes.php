@@ -7,7 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 //Routes Untuk AuthController
-$routes->get('/', 'Home::index');
+$routes->get('/', 'UserController::dashboard');
 $routes->get('register', 'AuthController::register');
 $routes->post('register', 'AuthController::register');
 $routes->get('login', 'AuthController::login');

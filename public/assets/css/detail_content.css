@@ -60,6 +60,16 @@
   opacity: 1;
 }
 
+
+/* Title Content */
+.title-content {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
 /* Video Player */
 #video-section video {
   object-fit: cover;

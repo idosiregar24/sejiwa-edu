@@ -118,17 +118,18 @@
           </div>
 
           <div class="mb-6 type-field" id="field-audio" style="display:none;">
-            <label for="audio" class="block text-gray-700 font-semibold mb-2">Upload Audio <span class="text-pink-500">*</span></label>
-            <label class="file-upload-box block cursor-pointer relative">
-              <input type="file" name="audio" id="audio" class="hidden" accept=".mp3,.wav,.aac,.ogg">
-              <div class="flex flex-col items-center" id="infografis-upload-box">
-                <i class="fas fa-cloud-upload-alt text-4xl upload-icon"></i>
-                <span class="mt-2 text-gray-600">Klik untuk upload file atau drag & drop</span>
-                <span class="text-sm text-gray-500">(mp3, WAV, AAC)</span>
-              </div>
-              <div id="preview-audio" class="absolute inset-0 flex items-center justify-center"></div>
-            </label>
-          </div>
+  <label class="block text-gray-700 font-semibold mb-2">
+    Upload Audio <span class="text-pink-500">*</span>
+  </label>
+  <div id="audio-dropzone" class="p-4 border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center cursor-pointer relative">
+    <i class="fas fa-cloud-upload-alt text-4xl text-gray-400"></i>
+    <span class="mt-2 text-gray-600">Klik atau drag & drop file audio</span>
+    <span class="text-sm text-gray-500">(MP3, WAV, AAC, OGG)</span>
+    <input type="hidden" name="audio_path" id="audio_path">
+    <div id="audio-progress" class="absolute bottom-2 left-4 text-sm text-gray-700"></div>
+  </div>
+</div>
+
 
           <input type="hidden" name="video_path" id="video_path">
 
@@ -189,7 +190,7 @@
           <div class="flex justify-end space-x-4 mt-8">
             <a href="<?= base_url('content-management') ?>" class="btn px-6 py-3 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400 transition-colors">Batal</a>
             <button type="submit" name="status" value="Draft" class="btn px-6 py-3 bg-gray-400 text-white rounded-lg hover:bg-gray-500 transition-colors">Save as Draft</button>
-            <button type="submit" name="status" value="Publish" id="submit-btn" class="btn px-6 py-3 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-colors">Simpan</button>
+            <button type="submit" name="status" value="Published" id="submit-btn" class="btn px-6 py-3 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-colors">Simpan</button>
           </div>
         </form>
       </div>
@@ -332,6 +333,51 @@
     });
     console.log("Video path:", document.getElementById('video_path'));
   </script>
+
+  <!-- audio -->
+   <script>
+    if (document.getElementById('audio-dropzone')) {
+  var audioUploader = new Resumable({
+    target: "<?= base_url('upload_chunk') ?>", // URL controller untuk handle chunk audio
+    chunkSize: 10 * 1024 * 1024, // 10MB
+    simultaneousUploads: 3,
+    testChunks: false,
+    query: { type: 'audio' },
+    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+  });
+
+  audioUploader.assignDrop(document.getElementById('audio-dropzone'));
+  audioUploader.assignBrowse(document.getElementById('audio-dropzone'));
+
+  audioUploader.on('fileAdded', function(file) {
+    audioUploader.upload();
+  });
+
+  audioUploader.on('fileProgress', function(file) {
+    var progress = Math.floor(file.progress() * 100);
+    document.getElementById('audio-progress').innerText = "Progress: " + progress + "%";
+  });
+
+  audioUploader.on('fileSuccess', function(file, response) {
+    let res = {};
+    try {
+      res = JSON.parse(response);
+    } catch (e) {
+      console.error("Response bukan JSON:", response);
+      return;
+    }
+    if (res.file_path) {
+      document.getElementById('audio_path').value = res.file_path;
+      document.getElementById('audio-progress').innerText = "Upload Audio Selesai!";
+    }
+  });
+
+  audioUploader.on('fileError', function(file, message) {
+    document.getElementById('audio-progress').innerText = "Error: " + message;
+  });
+}
+
+   </script>
 
 </body>
 

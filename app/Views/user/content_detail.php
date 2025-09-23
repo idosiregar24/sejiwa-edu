@@ -25,13 +25,15 @@
                 style="background: url('<?= base_url($content['thumbnail']) ?>') center/cover no-repeat; height: 100%;">
                 <!-- Overlay gradasi -->
                 <div class="overlay position-absolute top-0 start-0 w-100 h-100"
-                    style="background: linear-gradient(to top, #B16B8E, rgba(0,0,0,0.3));">
+                    style="background: linear-gradient(to top, #B16B8E, rgba(0,0,0,0));">
                 </div>
 
                 <!-- Konten Thumbnail -->
                 <div class="hero-content position-absolute bottom-0 start-0 text-white p-5 w-100">
                     <span class="badge bg-light text-dark mb-2">Series</span>
-                    <h1 class="fw-bold"><?= esc($content['title']) ?></h1>
+                    <div class="title-content">
+                        <?= esc($content['title']) ?>
+                    </div>
                     <p class="small text-white-50 mb-3">
                         9 Modul • 2025 • <?= esc($content['category']) ?> • Kesehatan Mental
                     </p>

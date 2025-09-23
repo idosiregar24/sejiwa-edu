@@ -91,14 +91,23 @@ class ContentController extends BaseController
             $file->move($uploadDir . 'infografis/', $newName);
             $filePath = 'uploads/infografis/' . $newName;
 
-        } elseif ($type === 'Audio' && $this->request->getFile('audio')->isValid()) {
-            $file = $this->request->getFile('audio');
-            $newName = uniqid() . '_' . $file->getName();
-            if (!is_dir($uploadDir . 'audio/')) {
-                mkdir($uploadDir . 'audio/', 0777, true);
+        } elseif ($type === 'Audio') {
+    // Ambil path dari Resumable.js
+            $audioPath = $this->request->getPost('audio_path');
+            if (!empty($audioPath)) {
+                $filePath = $audioPath;
+            } else {
+                // fallback kalau upload manual
+                $file = $this->request->getFile('audio');
+                if ($file && $file->isValid()) {
+                    $newName = uniqid() . '_' . $file->getName();
+                    if (!is_dir($uploadDir . 'audio/')) {
+                        mkdir($uploadDir . 'audio/', 0777, true);
+                    }
+                    $file->move($uploadDir . 'audio/', $newName);
+                    $filePath = 'uploads/audio/' . $newName;
+                }
             }
-            $file->move($uploadDir . 'audio/', $newName);
-            $filePath = 'uploads/audio/' . $newName;
         }
 
         // ===== 3. Thumbnail (opsional) =====

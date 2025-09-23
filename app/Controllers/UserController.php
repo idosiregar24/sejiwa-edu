@@ -116,6 +116,14 @@ class UserController extends BaseController
             ->where('status', 'Published')
             ->findAll();
 
-        return view('user/dashboard_user', ['videos' => $videos]);
+        $audios = $this->contentModel
+            ->where('type', 'Audio')
+            ->where('status', 'Published')
+            ->findAll();
+
+        return view('user/dashboard_user', [
+        'videos' => $videos,
+        'audios' => $audios
+    ]);
     }
 }

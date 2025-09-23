@@ -233,11 +233,19 @@ transition: transform 0.3s ease;
     border-radius: 1cap;
 }
 
+.d-flex::-webkit-scrollbar {
+  display: none; /* sembunyikan scrollbar di Chrome/Safari */
+}
+.d-flex {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+  cursor: grab;
+}
+
 
 /* Content Card */
 .horizontal-scroll-container {
   display: flex;
-  gap: 20px;
   overflow-x: auto;
   padding: 1px;
   scroll-snap-type: x mandatory;
@@ -279,6 +287,10 @@ transition: transform 0.3s ease;
   color: #444;
 }
 
+.title-content {
+  text-decoration: none;
+  color: #B16B8E;
+}
 
 /* Cards */
 .card {
@@ -352,7 +364,7 @@ transition: transform 0.3s ease;
 }
 
 .btn:hover {
-  background: rgba(0,0,0,0.8);
+  background: rgba(237, 0, 91, 0.8);
 }
 
 
