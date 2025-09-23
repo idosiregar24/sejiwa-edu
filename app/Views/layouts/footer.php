@@ -14,11 +14,10 @@
       <!-- Menu Navigasi -->
       <div class="col-md-8 text-center text-md-start mb-3 mb-md-0">
         <ul class="footer-menu list-inline mb-2">
-          <li class="list-inline-item"><a href="#">Home</a></li>
-          <li class="list-inline-item"><a href="#">Community</a></li>
-          <li class="list-inline-item"><a href="#">Affirmation</a></li>
-          <li class="list-inline-item"><a href="#">About Us</a></li>
-          <li class="list-inline-item"><a href="<?= base_url('register') ?>">Register with Us</a></li>
+          <li class="list-inline-item"><a href="<?= base_url('dashboard') ?>">Home</a></li>
+          <li class="list-inline-item"><a href="<?= base_url('artikel') ?>">Artikel</a></li>
+          <li class="list-inline-item"><a href="<?= base_url('about') ?>">Tentang Kami</a></li>
+          <li class="list-inline-item"><a href="<?= base_url('register') ?>">Daftar</a></li>
           <li class="list-inline-item"><a href="#">Education</a></li>
           <li class="list-inline-item"><a href="#">Relaxation</a></li>
           <li class="list-inline-item"><a href="#">Privacy Policy</a></li>

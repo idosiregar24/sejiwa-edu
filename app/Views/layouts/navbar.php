@@ -23,13 +23,13 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="<?= base_url('dashboard') ?>">Home</a>
+                                    <a class="nav-link active" href="<?= base_url('dashboard') ?>">Beranda</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?= base_url('about') ?>">About Us</a>
+                                    <a class="nav-link" href="<?= base_url('about') ?>">Tentang</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?= base_url('komunitas') ?>">Komunitas</a>
+                                    <a class="nav-link" href="<?= base_url('artikel') ?>">Artikel</a>
                                 </li>
                             </ul>
 

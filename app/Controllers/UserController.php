@@ -132,4 +132,11 @@ class UserController extends BaseController
         return view('user/about', [
     ]);
     }
+
+    public function artikel()
+    {
+        return view('user/artikel', [
+    ]);
+    }
+
 }

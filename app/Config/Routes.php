@@ -29,6 +29,9 @@ $routes->post('dashboard', 'UserController::dashboard');
 $routes->get('about', 'UserController::about');
 $routes->post('about', 'UserController::about');
 
+$routes->get('artikel', 'UserController::artikel');
+$routes->post('artikel', 'UserController::artikel');
+
 $routes->get('user_management', 'UserController::index');
 $routes->get('user/addForm', 'UserController::addForm');
 $routes->post('/user/store', 'UserController::store');
