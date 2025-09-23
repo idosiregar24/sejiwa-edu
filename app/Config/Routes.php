@@ -11,7 +11,7 @@ $routes->get('/', 'UserController::dashboard');
 $routes->get('register', 'AuthController::register');
 $routes->post('register', 'AuthController::register');
 $routes->get('login', 'AuthController::login');
-$routes->post('login', 'Authcontroller::login');
+$routes->post('login', 'AuthController::login');
 $routes->get('verify', 'AuthController::verifyOtp');
 $routes->post('verify', 'AuthController::verifyOtp');
 $routes->get('verifyOtp', 'AuthController::verifyOtp');
@@ -25,6 +25,10 @@ $routes->post('resendVerification', 'AuthController::resendVerification');
 //Routes Untuk UserController
 $routes->get('dashboard', 'UserController::dashboard');
 $routes->post('dashboard', 'UserController::dashboard');
+
+$routes->get('about', 'UserController::about');
+$routes->post('about', 'UserController::about');
+
 $routes->get('user_management', 'UserController::index');
 $routes->get('user/addForm', 'UserController::addForm');
 $routes->post('/user/store', 'UserController::store');

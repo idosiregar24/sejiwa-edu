@@ -190,7 +190,7 @@
       </div>
     </section>
 
-    <!-- Menambahkan Navbar -->
+    <!-- Menambahkan Footer -->
     <?= $this->include('layouts/footer') ?>
   </main>
 </body>

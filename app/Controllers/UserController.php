@@ -126,4 +126,10 @@ class UserController extends BaseController
         'audios' => $audios
     ]);
     }
+
+    public function about()
+    {
+        return view('user/about', [
+    ]);
+    }
 }
