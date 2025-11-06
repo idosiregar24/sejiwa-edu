@@ -46,8 +46,8 @@
           <h6 class="text-muted">Tempat teduh untuk ibu belajar, mengenal, dan memahami dengan kasih</h6>
         </div>
         <a href="<?= base_url('videos') ?>" class="btn btn-outline-secondary btn-sm">
-  Lihat Video Selengkapnya  <i class="bi bi-arrow-right-circle-fill"></i>
-</a>
+          Lihat Video Selengkapnya <i class="bi bi-arrow-right-circle-fill"></i>
+        </a>
 
       </div>
 
