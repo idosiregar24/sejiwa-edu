@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="<?= base_url('assets/css/dashboard_user.css') ?>">
-  <title>Dashboard SEJIWA</title>
+  <title>Beranda SEJIWA</title>
 </head>
 
 <body>
@@ -27,7 +27,10 @@
         </div>
         <h5><i> "Bersama Sejiwa, Tiap Ibu Punya Ruang Aman dan Hangat untuk Didengar dan Berdaya"</i></h5>
         <br>
-        <button class="btn btn-about-2">Tentang Kami</button>
+        <a href="<?= base_url('about') ?>">
+          <button class="btn btn-about-2">Tentang Kami</button>
+        </a>
+
       </div>
       <div class="hero-image">
         <img src="<?= base_url('assets/img/ilustrasi_ibu_dan_anak.svg') ?>" alt="Ilustrasi Ibu dan Anak" />
