@@ -183,6 +183,14 @@ class ContentController extends BaseController
         ]);
     }
 
+    public function daftarVideos()
+    {
+        $videoModel = new contentModel();
+        $data['videos'] = $videoModel->findAll(); // ambil semua video dari database
+
+        return view('user/daftar-video', $data);
+    }
+
     public function comment($id)
     {
         $this->commentModel->save([

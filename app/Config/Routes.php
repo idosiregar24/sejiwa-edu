@@ -66,6 +66,8 @@ $routes->post('content/update/(:num)', 'ContentController::update/$1');
 $routes->get('content/view/(:num)', 'ContentController::view/$1');
 $routes->post('content/comment/(:num)', 'ContentController::comment/$1');
 $routes->post('content/like/(:num)', 'ContentController::like/$1');
+$routes->get('videos', 'ContentController::daftarVideos');
+
 
 // Routes untuk ProfileController
 $routes->get('profile', 'ProfileController::index');

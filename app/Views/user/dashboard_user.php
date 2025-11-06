@@ -45,7 +45,10 @@
           <h2 class="fw-bold">Ruang Edukatif Sejiwa</h2>
           <h6 class="text-muted">Tempat teduh untuk ibu belajar, mengenal, dan memahami dengan kasih</h6>
         </div>
-        <a href="#" class="btn btn-outline-secondary btn-sm">See All <i class="bi bi-chevron-down"></i></a>
+        <a href="<?= base_url('videos') ?>" class="btn btn-outline-secondary btn-sm">
+  Lihat Video Selengkapnya  <i class="bi bi-arrow-right-circle-fill"></i>
+</a>
+
       </div>
 
       <!-- Slider Section -->
@@ -61,32 +64,31 @@
           <div class="d-flex overflow-auto pb-2" style="gap: 16px; scroll-behavior: smooth;">
 
             <?php foreach ($videos as $video): ?>
-              <div class="card shadow-sm h-100" style="min-width: 350px; border-radius: 12px; overflow: hidden;">
-
-                <!-- Thumbnail -->
-                <a href="<?= base_url('content/view/' . $video['id']) ?>">
+              <!-- Card sebagai link ke detail -->
+              <a href="<?= base_url('content/detail/' . $video['id']) ?>" class="text-decoration-none text-dark"
+                style="min-width: 350px;">
+                <div class="card shadow-sm h-100 rounded-3 overflow-hidden">
+                  <!-- Thumbnail -->
                   <img src="<?= base_url($video['thumbnail'] ?? 'assets/img/default-thumbnail.jpg') ?>"
                     class="card-img-top" alt="<?= esc($video['title'] ?? 'No Title') ?>"
-                    style="height:180px; object-fit:cover;">
-                </a>
+                    style="height:180px; object-fit:cover; transition: transform 0.3s ease;">
 
-                <div class="card-body">
-                  <h6 class="fw-bold text-truncate mb-2">
-                    <a href="<?= base_url('content/detail/' . $video['id']) ?>" class="title-content">
-                      <?= esc($video['title']) ?>
-                    </a>
-                  </h6>
+                  <div class="card-body d-flex flex-column justify-content-between">
+                    <!-- Judul -->
+                    <h6 class="fw-bold text-truncate mb-2"><?= esc($video['title']) ?></h6>
 
-                  <div class="d-flex justify-content-between">
-                    <span class="text-muted small">
-                      <i class="bi bi-heart-fill text-danger"></i> <?= $video['like_count'] ?? 0 ?>
-                    </span>
-                    <span class="badge bg-success"><?= esc($video['category']) ?></span>
-
+                    <!-- Like & Kategori -->
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="text-muted small">
+                        <i class="bi bi-heart-fill text-danger"></i> <?= $video['like_count'] ?? 0 ?>
+                      </span>
+                      <span class="badge bg-success"><?= esc($video['category']) ?></span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
             <?php endforeach; ?>
+
           </div>
         </div>
 
