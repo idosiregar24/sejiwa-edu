@@ -100,43 +100,170 @@
       </div>
     </section>
 
-    <!-- Bisikan Bunda -->
-    <section class="content-section py-2">
-      <div class="bisikan-section">
+    <section class="content-section py-4">
+      <div class="bisikan-section position-relative">
 
         <!-- Header -->
         <div class="d-flex justify-content-between align-items-center mb-4">
           <div>
             <h3 class="fw-bold">Bisikan Bunda</h3>
+            <small class="text-muted">Total bisikan: <span id="total-bisikan">0</span></small>
           </div>
         </div>
 
-        <!-- Tombol Navigasi -->
+        <!-- Tombol Navigasi Kiri -->
         <button class="nav-btn nav-left">&lt;</button>
 
-        <!-- Card Testimoni -->
-        <div class="testimonial-card">
-          <div class="d-flex align-items-center">
-            <img src="https://i.pravatar.cc/100?img=32" alt="avatar">
-            <div>
-              <h6 class="mb-0 fw-bold">Dazzle Healer</h6>
-              <small class="text-muted">Front End Developer</small>
+        <!-- Slider Bisikan -->
+        <div class="d-flex overflow-auto pb-2 bisikan-slider" style="gap:16px; scroll-behavior:smooth; padding:0 50px;">
+
+          <!-- Dummy Cards -->
+          <div class="card testimonial-card shadow-sm"
+            style="min-width:280px; border-radius:12px; overflow:hidden; background-color:#fff0f5;">
+            <div class="d-flex align-items-center p-3">
+              <img src="https://i.pravatar.cc/100?img=32" alt="avatar" class="rounded-circle me-2"
+                style="width:50px;height:50px;object-fit:cover;">
+              <div>
+                <h6 class="mb-0 fw-bold">Ibu Siti</h6>
+                <small class="text-muted">Guru TK</small>
+              </div>
             </div>
+            <hr class="my-2">
+            <p class="testimonial-text p-3 mb-0" style="font-style:italic;">
+              “Pelukanmu menjadi jeda yang menenangkan di hari yang penuh tantangan.”
+            </p>
           </div>
-          <hr>
-          <p class="testimonial-text">
-            “Saat dunia terasa terlalu terang, terlalu keras, atau terlalu cepat...<br>
-            pelukanmu menjadi jeda yang menyelamatkan.”
-          </p>
+
+          <div class="card testimonial-card shadow-sm"
+            style="min-width:280px; border-radius:12px; overflow:hidden; background-color:#fff0f5;">
+            <div class="d-flex align-items-center p-3">
+              <img src="https://i.pravatar.cc/100?img=33" alt="avatar" class="rounded-circle me-2"
+                style="width:50px;height:50px;object-fit:cover;">
+              <div>
+                <h6 class="mb-0 fw-bold">Ibu Rina</h6>
+                <small class="text-muted">Ibu Rumah Tangga</small>
+              </div>
+            </div>
+            <hr class="my-2">
+            <p class="testimonial-text p-3 mb-0" style="font-style:italic;">
+              “Saat lelah dan bingung, aku menemukan ketenangan di ruang kecil ini.”
+            </p>
+          </div>
+
+          <div class="card testimonial-card shadow-sm"
+            style="min-width:280px; border-radius:12px; overflow:hidden; background-color:#fff0f5;">
+            <div class="d-flex align-items-center p-3">
+              <img src="https://i.pravatar.cc/100?img=34" alt="avatar" class="rounded-circle me-2"
+                style="width:50px;height:50px;object-fit:cover;">
+              <div>
+                <h6 class="mb-0 fw-bold">Ibu Lina</h6>
+                <small class="text-muted">Perawat</small>
+              </div>
+            </div>
+            <hr class="my-2">
+            <p class="testimonial-text p-3 mb-0" style="font-style:italic;">
+              “Di sini aku bisa berbagi cerita dan merasa didengar tanpa takut dinilai.”
+            </p>
+          </div>
+
+          <div class="card testimonial-card shadow-sm"
+            style="min-width:280px; border-radius:12px; overflow:hidden; background-color:#fff0f5;">
+            <div class="d-flex align-items-center p-3">
+              <img src="https://i.pravatar.cc/100?img=35" alt="avatar" class="rounded-circle me-2"
+                style="width:50px;height:50px;object-fit:cover;">
+              <div>
+                <h6 class="mb-0 fw-bold">Ibu Ana</h6>
+                <small class="text-muted">Ibu Rumah Tangga</small>
+              </div>
+            </div>
+            <hr class="my-2">
+            <p class="testimonial-text p-3 mb-0" style="font-style:italic;">
+              “Mendengar cerita dari ibu lain membuatku merasa lebih kuat dan tenang.”
+            </p>
+          </div>
+
+          <div class="card testimonial-card shadow-sm"
+            style="min-width:280px; border-radius:12px; overflow:hidden; background-color:#fff0f5;">
+            <div class="d-flex align-items-center p-3">
+              <img src="https://i.pravatar.cc/100?img=36" alt="avatar" class="rounded-circle me-2"
+                style="width:50px;height:50px;object-fit:cover;">
+              <div>
+                <h6 class="mb-0 fw-bold">Ibu Maya</h6>
+                <small class="text-muted">Ibu Profesional</small>
+              </div>
+            </div>
+            <hr class="my-2">
+            <p class="testimonial-text p-3 mb-0" style="font-style:italic;">
+              “Setiap kata yang dibagikan memberi ketenangan di tengah rutinitas yang padat.”
+            </p>
+          </div>
+
         </div>
 
         <!-- Gambar Ibu -->
-        <img src="<?= base_url('assets/img/bisikan-bunda.svg') ?>" alt="mom" class="bg-mom">
+        <img src="<?= base_url('assets/img/bisikan-bunda.svg') ?>" alt="mom" class="bg-mom"
+          style="position:absolute; bottom:0; right:0; opacity:0.2; width:180px; z-index:0;">
 
-        <!-- Tombol Navigasi -->
+        <!-- Tombol Navigasi Kanan -->
         <button class="nav-btn nav-right">&gt;</button>
+
       </div>
+
+      <style>
+        .testimonial-text {
+          font-family: 'Georgia', serif;
+          line-height: 1.5;
+          color: #333;
+        }
+
+        .bisikan-section .card:hover {
+          transform: translateY(-5px);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: none;
+          background-color: #fff0f5;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 10;
+          cursor: pointer;
+        }
+
+        .nav-left {
+          left: 0;
+        }
+
+        .nav-right {
+          right: 0;
+        }
+
+        .nav-btn:hover {
+          background-color: #ffccf2;
+        }
+      </style>
+
+      <script>
+        const slider = document.querySelector('.bisikan-slider');
+        const leftBtn = document.querySelector('.nav-left');
+        const rightBtn = document.querySelector('.nav-right');
+
+        leftBtn.addEventListener('click', () => slider.scrollBy({ left: -300, behavior: 'smooth' }));
+        rightBtn.addEventListener('click', () => slider.scrollBy({ left: 300, behavior: 'smooth' }));
+
+        // Update total bisikan otomatis
+        document.getElementById('total-bisikan').innerText = slider.children.length;
+      </script>
     </section>
+
 
     <br>
 
@@ -144,6 +271,22 @@
     <?= $this->include('layouts/footer') ?>
   </main>
 </body>
+
+<script>
+  const leftBtn = document.querySelector('.nav-left');
+  const rightBtn = document.querySelector('.nav-right');
+  const slider = document.querySelector('.bisikan-section .d-flex');
+
+  leftBtn.addEventListener('click', () => {
+    slider.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+  rightBtn.addEventListener('click', () => {
+    slider.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+
+  // Update total bisikan otomatis
+  document.getElementById('total-bisikan').innerText = slider.children.length;
+</script>
 
 <script>
   // Ambil container scroll
