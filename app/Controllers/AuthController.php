@@ -113,11 +113,12 @@ class AuthController extends BaseController
                 $userData['email'] = $emailOrPhone;
                 $email = $emailOrPhone;
                 $channel = 'email';
-            } else {
-                $phone = preg_replace('/^0/', '62', $emailOrPhone);
-                $userData['phone'] = $phone;
-                $channel = 'phone';
-            }
+            } 
+            // else {
+            //     $phone = preg_replace('/^0/', '62', $emailOrPhone);
+            //     $userData['phone'] = $phone;
+            //     $channel = 'phone';
+            // }
 
             // Insert dan cek hasilnya`
             $userId = $model->insert($userData);

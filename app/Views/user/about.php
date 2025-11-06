@@ -40,7 +40,6 @@
                             terhubung, mendapat informasi yang terpercaya, dan ruang untuk menenangkan diri dari
                             tekanan yang dihadapi setiap hari.
             </p>
-          <a href="#team" class="btn btn-dark">Home</a>
         </div>
         <div class="col-md-6 text-center">
           <img src="<?= base_url('assets/img/ilustrasi_ibu_dan_anak.svg')?>" class="img-fluid rounded" alt="Sejiwa Team">

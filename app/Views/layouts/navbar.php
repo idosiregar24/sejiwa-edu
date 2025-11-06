@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navbar Admin Sejiwa</title>
+  <title>SEJIWA</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets/css/dashboard_user.css') ?>">
 </head>
@@ -12,7 +12,7 @@
                  <?= session()->get('isLoggedIn') ? 'navbar-loggedin' : 'navbar-default' ?>">
                     <div class="container">
                         <!-- Brand -->
-                        <a class="navbar-brand" href="<?= base_url('dashboard') ?>">Sejiwa</a>
+                        <a class="navbar-brand" href="<?= base_url('dashboard') ?>">SEJIWA</a>
 
                         <!-- Toggler (mobile) -->
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -23,7 +23,7 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="<?= base_url('dashboard') ?>">Beranda</a>
+                                    <a class="nav-link" href="<?= base_url('dashboard') ?>">Beranda</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?= base_url('about') ?>">Tentang</a>
@@ -60,8 +60,8 @@
                                         </ul>
                                     </div>
                                 <?php else: ?>
-                                    <a href="<?= base_url('login') ?>" class="btn btn-login">Login</a>
-                                    <a href="<?= base_url('register') ?>" class="btn btn-register">Register</a>
+                                    <a href="<?= base_url('login') ?>" class="btn btn-login">Masuk</a>
+                                    <a href="<?= base_url('register') ?>" class="btn btn-register">Daftar</a>
                                 <?php endif; ?>
                             </div>
                         </div>

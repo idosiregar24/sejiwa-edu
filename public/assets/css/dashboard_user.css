@@ -13,6 +13,10 @@ body {
   padding: 0;
 }
 
+
+
+
+
 /* Default navbar (belum login) */
 .navbar-default {
     background: rgba(255, 255, 255, 0.8); /* putih transparan */
@@ -61,8 +65,9 @@ body {
 .nav-link {
     color: #333 !important;
     margin: 0 8px;
-    position: relative;
+    position: relative;  /* penting untuk ::after */
     font-weight: 500;
+    text-decoration: none; /* pastikan tidak ada garis default */
 }
 
 .nav-item :hover{
@@ -77,11 +82,11 @@ transition: transform 0.3s ease;
 .nav-link.active::after {
     content: "";
     position: absolute;
-    bottom: -6px;
+    bottom: -4px;       /* jarak dari teks */
     left: 0;
     width: 100%;
-    height: 2px;
-    background-color: var(--primary);
+    height: 3px;        /* tebal garis */
+    background-color: var(--primary);  /* warna garis */
     border-radius: 2px;
 }
 
@@ -179,7 +184,7 @@ transition: transform 0.3s ease;
 }
 
 .subjudul h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-weight: 1500px;
     line-height: 1.2;
     color: #343D42;
