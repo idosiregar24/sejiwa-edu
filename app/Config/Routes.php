@@ -21,7 +21,6 @@ $routes->post('logout', 'AuthController::logout');
 $routes->get('resendVerification', 'AuthController::resendVerification');
 $routes->post('resendVerification', 'AuthController::resendVerification');
 
-
 //Routes Untuk UserController
 $routes->get('dashboard', 'UserController::dashboard');
 $routes->post('dashboard', 'UserController::dashboard');
@@ -81,3 +80,4 @@ $routes->get('content/like/(:num)', 'ContentController::like/$1');
 //Routes Upload chunk
 $routes->post('upload_chunk', 'Upload::upload_chunk');
 $routes->get('content/like/(:num)', 'ContentController::like/$1');
+

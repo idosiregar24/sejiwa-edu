@@ -14,8 +14,6 @@
 <body>
   <main>
     <section class="hero-section">
-
-
       <!-- Menambahkan Navbar -->
       <?= $this->include('layouts/navbar') ?>
 
@@ -37,67 +35,77 @@
       </div>
     </section>
 
-    <!-- Content Section -->
-    <section class="content-section py-4">
-      <!-- Header -->
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <div>
-          <h2 class="fw-bold">Ruang Edukatif Sejiwa</h2>
-          <h6 class="text-muted">Tempat teduh untuk ibu belajar, mengenal, dan memahami dengan kasih</h6>
+    <?php if (session()->has('isLoggedIn') && session('isLoggedIn') == 1): ?>
+      <!-- SECTION: Video hanya muncul jika user sudah login -->
+      <section class="content-section py-4">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h2 class="fw-bold">Ruang Edukatif Sejiwa</h2>
+            <h6 class="text-muted">Tempat teduh untuk ibu belajar, mengenal, dan memahami dengan kasih</h6>
+          </div>
+          <a href="<?= base_url('videos') ?>" class="btn btn-outline-secondary btn-sm">
+            Lihat Video Selengkapnya <i class="bi bi-arrow-right-circle-fill"></i>
+          </a>
         </div>
-        <a href="<?= base_url('videos') ?>" class="btn btn-outline-secondary btn-sm">
-          Lihat Video Selengkapnya <i class="bi bi-arrow-right-circle-fill"></i>
-        </a>
-      </div>
 
-      <!-- Slider Section -->
-      <div class="position-relative">
-        <!-- Tombol kiri -->
-        <button class="btn btn-light position-absolute top-50 start-0 translate-middle-y shadow rounded-circle"
-          onclick="slideLeft()" style="z-index:10">
-          <i class="bi bi-chevron-left"></i>
-        </button>
+        <!-- Slider Section -->
+        <div class="position-relative">
+          <!-- Tombol kiri -->
+          <button class="btn btn-light position-absolute top-50 start-0 translate-middle-y shadow rounded-circle"
+            onclick="slideLeft()" style="z-index:10">
+            <i class="bi bi-chevron-left"></i>
+          </button>
 
-        <!-- Container Scroll -->
-        <div class="container my-4">
-          <div class="d-flex overflow-auto pb-2" style="gap: 16px; scroll-behavior: smooth;">
-
-            <?php foreach ($videos as $video): ?>
-              <!-- Card sebagai link ke detail -->
-              <a href="<?= base_url('content/detail/' . $video['id']) ?>" class="text-decoration-none text-dark"
-                style="min-width: 350px;">
-                <div class="card shadow-sm h-100 rounded-3 overflow-hidden">
-                  <!-- Thumbnail -->
-                  <img src="<?= base_url($video['thumbnail'] ?? 'assets/img/default-thumbnail.jpg') ?>"
-                    class="card-img-top" alt="<?= esc($video['title'] ?? 'No Title') ?>"
-                    style="height:180px; object-fit:cover; transition: transform 0.3s ease;">
-
-                  <div class="card-body d-flex flex-column justify-content-between">
-                    <!-- Judul -->
-                    <h6 class="fw-bold text-truncate mb-2"><?= esc($video['title']) ?></h6>
-
-                    <!-- Like & Kategori -->
-                    <div class="d-flex justify-content-between align-items-center mt-auto">
-                      <span class="text-muted small">
-                        <i class="bi bi-heart-fill text-danger"></i> <?= $video['like_count'] ?? 0 ?>
-                      </span>
-                      <span class="badge bg-success"><?= esc($video['category']) ?></span>
+          <!-- Container Scroll -->
+          <div class="container my-4">
+            <div class="d-flex overflow-auto pb-2" style="gap: 16px; scroll-behavior: smooth;">
+              <?php foreach ($videos as $video): ?>
+                <a href="<?= base_url('content/view/' . $video['id']) ?>" class="text-decoration-none text-dark"
+                  style="min-width: 350px;">
+                  <div class="card shadow-sm h-100 rounded-3 overflow-hidden">
+                    <img src="<?= base_url($video['thumbnail'] ?? 'assets/img/default-thumbnail.jpg') ?>"
+                      class="card-img-top" alt="<?= esc($video['title'] ?? 'No Title') ?>"
+                      style="height:180px; object-fit:cover; transition: transform 0.3s ease;">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                      <h6 class="fw-bold text-truncate mb-2"><?= esc($video['title']) ?></h6>
+                      <div class="d-flex justify-content-between align-items-center mt-auto">
+                        <span class="text-muted small">
+                          <i class="bi bi-heart-fill text-danger"></i> <?= $video['like_count'] ?? 0 ?>
+                        </span>
+                        <span class="badge bg-success"><?= esc($video['category']) ?></span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </a>
-            <?php endforeach; ?>
-
+                </a>
+              <?php endforeach; ?>
+            </div>
           </div>
-        </div>
 
-        <!-- Tombol kanan -->
-        <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y shadow rounded-circle"
-          onclick="slideRight()" style="z-index:10">
-          <i class="bi bi-chevron-right"></i>
-        </button>
-      </div>
-    </section>
+          <!-- Tombol kanan -->
+          <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y shadow rounded-circle"
+            onclick="slideRight()" style="z-index:10">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </section>
+
+    <?php else: ?>
+      <!-- SECTION: Tampilan untuk pengunjung belum login -->
+      <section class="content-section py-5 text-center bg-light">
+        <div class="container">
+          <h2 class="fw-bold mb-3">Ruang Edukatif Sejiwa</h2>
+          <p class="text-muted mb-4">
+            Akses video edukatif hanya tersedia untuk pengguna yang sudah login.
+            Silakan masuk untuk menjelajahi berbagai konten bermanfaat bagi para ibu.
+          </p>
+          <a href="<?= base_url('login') ?>" class="btn btn-primary">
+            <i class="bi bi-box-arrow-in-right"></i> Login untuk Melihat Video
+          </a>
+        </div>
+      </section>
+    <?php endif; ?>
+
 
     <!-- Content Section -->
     <section class="Bisikan Ibu-section py-4">

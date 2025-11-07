@@ -31,7 +31,7 @@
                 <!-- Konten Thumbnail -->
                 <div class="hero-content position-absolute bottom-0 start-0 text-white p-5 w-100">
                     <span class="badge bg-light text-dark mb-2">Series</span>
-                    <div class="title-content text-white fw-bold">
+                    <div class="title-content">
                         <?= esc($content['title']) ?>
                     </div>
                     <p class="small text-white-50 mb-3">

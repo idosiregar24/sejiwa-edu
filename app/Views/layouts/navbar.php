@@ -26,10 +26,13 @@
                                     <a class="nav-link" href="<?= base_url('dashboard') ?>">Beranda</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?= base_url('about') ?>">Tentang</a>
+                                    <a class="nav-link" href="<?= base_url('videos') ?>">Daftar Video</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?= base_url('artikel') ?>">Artikel</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?= base_url('about') ?>">Tentang</a>
                                 </li>
                             </ul>
 
