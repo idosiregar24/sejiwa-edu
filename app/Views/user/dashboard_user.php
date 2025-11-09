@@ -107,27 +107,29 @@
     <?php endif; ?>
 
 
-    <!-- Content Section -->
-    <section class="Bisikan Ibu-section py-4">
+    <!-- Bisikan Ibu Content Section -->
+    <section class="Bisikan-Ibu-section py-4 position-relative">
       <div class="bisikan-section position-relative">
 
         <!-- Header -->
         <div class="d-flex justify-content-between align-items-center mb-4">
           <div>
             <h2 class="fw-bold">Bisikan Ibu</h2>
-            <h6 class="text-muted">Bisikan Ibu adalah fitur yang menampilkan pesan afirmasi dan refleksi positif dari
-              sesama ibu pengguna, dirancang untuk memberikan dukungan emosional dan rasa kebersamaan.</h6>
+            <h6 class="text-muted">
+              Bisikan Ibu adalah fitur yang menampilkan pesan afirmasi dan refleksi positif dari sesama ibu pengguna,
+              dirancang untuk memberikan dukungan emosional dan rasa kebersamaan.
+            </h6>
           </div>
         </div>
 
         <!-- Tombol Navigasi Kiri -->
-        <button class="nav-btn nav-left">&lt;</button>
+        <button class="nav-btn nav-left" type="button">&lt;</button>
 
         <!-- Slider Wrapper -->
-        <div class="bisikan-slider-container">
+        <div class="bisikan-slider-container position-relative">
           <div class="bisikan-slider d-flex overflow-auto pb-2">
 
-            <!-- Card Example -->
+            <!-- Contoh Card -->
             <div class="card testimonial-card shadow-sm">
               <div class="d-flex align-items-center p-3">
                 <img src="https://i.pravatar.cc/100?img=32" alt="avatar" class="rounded-circle me-2">
@@ -155,7 +157,6 @@
                 “Saat lelah dan bingung, aku menemukan ketenangan di ruang kecil ini.”
               </p>
             </div>
-
             <div class="card testimonial-card shadow-sm">
               <div class="d-flex align-items-center p-3">
                 <img src="https://i.pravatar.cc/100?img=33" alt="avatar" class="rounded-circle me-2">
@@ -169,36 +170,22 @@
                 “Saat lelah dan bingung, aku menemukan ketenangan di ruang kecil ini.”
               </p>
             </div>
-
-            <div class="card testimonial-card shadow-sm">
-              <div class="d-flex align-items-center p-3">
-                <img src="https://i.pravatar.cc/100?img=33" alt="avatar" class="rounded-circle me-2">
-                <div>
-                  <h6 class="mb-0 fw-bold">Ibu Rina</h6>
-                  <small class="text-muted">Ibu Rumah Tangga</small>
-                </div>
-              </div>
-              <hr class="my-2">
-              <p class="testimonial-text p-3 mb-0">
-                “Saat lelah dan bingung, aku menemukan ketenangan di ruang kecil ini.”
-              </p>
-            </div>
-
 
           </div>
         </div>
 
         <!-- Tombol Navigasi Kanan -->
-        <button class="nav-btn nav-right">&gt;</button>
+        <button class="nav-btn nav-right" type="button">&gt;</button>
 
         <!-- Background Image -->
         <img src="<?= base_url('assets/img/bisikan-bunda.svg') ?>" alt="mom" class="bg-mom">
-
       </div>
 
       <style>
         .bisikan-slider-container {
-          padding: 0 50px;
+          padding: 0 60px;
+          position: relative;
+          z-index: 2;
         }
 
         .bisikan-slider {
@@ -250,10 +237,11 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          z-index: 10;
+          z-index: 5;
           cursor: pointer;
           font-weight: bold;
           font-size: 20px;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
         }
 
         .nav-btn:hover {
@@ -261,20 +249,21 @@
         }
 
         .nav-left {
-          left: 0;
+          left: 10px;
         }
 
         .nav-right {
-          right: 0;
+          right: 10px;
         }
 
         .bg-mom {
           position: absolute;
           bottom: 0;
           right: 0;
-          opacity: 0.2;
+          opacity: 0.15;
           width: 180px;
-          z-index: 0;
+          z-index: 1;
+          pointer-events: none;
         }
       </style>
 
@@ -284,21 +273,26 @@
           const leftBtn = document.querySelector('.nav-left');
           const rightBtn = document.querySelector('.nav-right');
 
-          // Update total bisikan otomatis
-          document.getElementById('total-bisikan').innerText = slider.children.length;
+          // Cek tombol ditemukan
+          if (!slider || !leftBtn || !rightBtn) return;
 
-          // Tombol navigasi
-          leftBtn.addEventListener('click', () => slider.scrollBy({ left: -300, behavior: 'smooth' }));
-          rightBtn.addEventListener('click', () => slider.scrollBy({ left: 300, behavior: 'smooth' }));
+          // Navigasi kiri/kanan
+          leftBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: -300, behavior: 'smooth' });
+          });
 
-          // Drag/swipe support
+          rightBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: 300, behavior: 'smooth' });
+          });
+
+          // Drag support
           let isDown = false;
           let startX;
           let scrollLeft;
 
           slider.addEventListener('mousedown', (e) => {
             isDown = true;
-            startX = e.pageX - slider.getBoundingClientRect().left;
+            startX = e.pageX - slider.offsetLeft;
             scrollLeft = slider.scrollLeft;
           });
           slider.addEventListener('mouseleave', () => isDown = false);
@@ -306,21 +300,118 @@
           slider.addEventListener('mousemove', (e) => {
             if (!isDown) return;
             e.preventDefault();
-            const x = e.pageX - slider.getBoundingClientRect().left;
-            slider.scrollLeft = scrollLeft - (x - startX) * 1.5;
-          });
-
-          slider.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].pageX - slider.getBoundingClientRect().left;
-            scrollLeft = slider.scrollLeft;
-          });
-          slider.addEventListener('touchmove', (e) => {
-            const x = e.touches[0].pageX - slider.getBoundingClientRect().left;
-            slider.scrollLeft = scrollLeft - (x - startX) * 1.5;
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            slider.scrollLeft = scrollLeft - walk;
           });
         });
       </script>
     </section>
+
+    <!-- Artikel Section -->
+    <div class="container mt-5">
+      <h2 class="text-center fw-bold mb-5">Artikel Kesehatan Terbaru</h2>
+
+      <div class="row">
+        <!-- Artikel 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm h-100 border-0">
+            <img src="<?= base_url('assets/img/artikel1.png') ?>" class="card-img-top"
+              alt="Kesehatan Mental">
+            <div class="card-body">
+              <h5 class="card-title">Pentingnya Menjaga Kesehatan Mental di Era Digital</h5>
+              <p class="card-text text-muted">
+                Di tengah tekanan sosial media dan tuntutan hidup yang tinggi, kesehatan mental menjadi hal yang sering
+                diabaikan.
+                Pelajari bagaimana cara sederhana menjaga pikiran tetap sehat dan tenang.
+              </p>
+              <a href="#" class="btn btn-outline-primary btn-sm">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artikel 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm h-100 border-0">
+            <img src="<?= base_url('assets/img/artikel2.png') ?>" class="card-img-top"
+              alt="Gizi Seimbang">
+            <div class="card-body">
+              <h5 class="card-title">Tips Makan Sehat dan Gizi Seimbang untuk Tubuh Bugar</h5>
+              <p class="card-text text-muted">
+                Gizi seimbang bukan berarti makan mahal, tetapi bagaimana tubuh mendapatkan nutrisi yang cukup.
+                Simak panduan sederhana untuk menerapkan pola makan sehat setiap hari.
+              </p>
+              <a href="#" class="btn btn-outline-primary btn-sm">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artikel 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm h-100 border-0">
+            <img src="<?= base_url('assets/img/artikel3.png') ?>" class="card-img-top"
+              alt="Tidur Berkualitas">
+            <div class="card-body">
+              <h5 class="card-title">Rahasia Tidur Berkualitas untuk Hidup Lebih Produktif</h5>
+              <p class="card-text text-muted">
+                Tidur yang cukup dan berkualitas adalah kunci utama kesehatan.
+                Ketahui durasi tidur ideal dan kebiasaan malam yang bisa membantu tubuh beristirahat maksimal.
+              </p>
+              <a href="#" class="btn btn-outline-primary btn-sm">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artikel 4 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm h-100 border-0">
+            <img src="<?= base_url('assets/img/ilustrasi_relaksasi.svg') ?>" class="card-img-top"
+              alt="Olahraga Ringan">
+            <div class="card-body">
+              <h5 class="card-title">Manfaat Olahraga Ringan untuk Kesehatan Tubuh</h5>
+              <p class="card-text text-muted">
+                Tidak perlu olahraga berat, cukup dengan berjalan kaki 30 menit sehari bisa menjaga jantung tetap sehat
+                dan meningkatkan imunitas tubuh.
+              </p>
+              <a href="#" class="btn btn-outline-primary btn-sm">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artikel 5 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm h-100 border-0">
+            <img src="<?= base_url('assets/img/ilustrasi_sumber_daya.svg') ?>" class="card-img-top"
+              alt="Hidrasi Tubuh">
+            <div class="card-body">
+              <h5 class="card-title">Kenapa Tubuh Kita Butuh Cukup Air Setiap Hari</h5>
+              <p class="card-text text-muted">
+                Air adalah sumber kehidupan. Kekurangan cairan bisa menyebabkan kelelahan dan menurunkan fokus.
+                Temukan berapa banyak air yang ideal untuk diminum setiap harinya.
+              </p>
+              <a href="#" class="btn btn-outline-primary btn-sm">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artikel 6 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm h-100 border-0">
+            <img src="<?= base_url('assets/img/ilustrasi_komunitas.svg') ?>" class="card-img-top"
+              alt="Kesehatan Pencernaan">
+            <div class="card-body">
+              <h5 class="card-title">Menjaga Kesehatan Pencernaan dengan Pola Hidup Sederhana</h5>
+              <p class="card-text text-muted">
+                Sistem pencernaan yang sehat membantu penyerapan nutrisi dengan baik.
+                Mulai dari kebiasaan makan perlahan hingga konsumsi serat, semuanya berpengaruh besar.
+              </p>
+              <a href="#" class="btn btn-outline-primary btn-sm">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <br>
 
