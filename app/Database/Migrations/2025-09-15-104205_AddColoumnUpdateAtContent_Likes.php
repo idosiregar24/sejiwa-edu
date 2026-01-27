@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class AddUpdatedAtToOtpCodes extends Migration
+class AddColoumnUpdateAtContent_Likes extends Migration
 {
     public function up()
     {
