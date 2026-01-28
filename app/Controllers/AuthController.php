@@ -17,7 +17,7 @@ class AuthController extends BaseController
 
     public function __construct()
     {
-        $this->session   = session();
+        $this->session = session();
         $this->userModel = new UserModel();
     }
 
@@ -26,7 +26,7 @@ class AuthController extends BaseController
     {
         helper('url');
         if (strtolower($this->request->getMethod()) === 'post') {
-            $email    = $this->request->getPost('email');
+            $email = $this->request->getPost('email');
             $password = $this->request->getPost('password');
 
             $user = $this->userModel->where('email', $email)->first();
@@ -70,16 +70,17 @@ class AuthController extends BaseController
 
     public function register()
     {
-        $model = new \App\Models\UserModel();
+        $userModel = new \App\Models\UserModel();
         $otpModel = new \App\Models\OtpModel();
 
 
         if (strtolower($this->request->getMethod()) === 'post') {
+
             $rules = [
-                'name'           => 'required|min_length[3]',
+                'name' => 'required|min_length[3]',
                 'email_or_phone' => 'required',
                 'date_of_birth' => 'required',
-                'password'       => 'required|min_length[6]'
+                'password' => 'required|min_length[6]'
             ];
 
             if (!$this->validate($rules)) {
@@ -87,33 +88,32 @@ class AuthController extends BaseController
                     'validation' => $this->validator
                 ]);
             }
+
             $emailOrPhone = $this->request->getPost('email_or_phone');
             $password = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
 
-            // Cek sudah terdaftar
-            if ($model->where('email', $emailOrPhone)->orWhere('phone', $emailOrPhone)->first()) {
+            // Cek Email Or Phone sudah ada
+            if ($userModel->isEmailOrPhoneExist($emailOrPhone)) {
                 return redirect()->back()->with('error', 'Email atau nomor sudah terdaftar.');
             }
 
-            // Dibawah ini untuk proses simpan data
+            // Proses Membuat User Baru
             $userData = [
-                'name'          => $this->request->getPost('name'),
+                'name' => $this->request->getPost('name'),
                 'date_of_birth' => $this->request->getPost('date_of_birth'),
-                'password'      => $password,
-                'role'          => 'user',
-                'is_verified'   => 0
+                'password' => $password,
+                'role' => 'user',
+                'is_verified' => 0
             ];
 
-            $email = null;
-            $phone = null;
+            $emailService = \Config\Services::email();
+            $channel = 'email';
 
-            // Tentukan apakah input email atau phone
-            $channel = '';
             if (filter_var($emailOrPhone, FILTER_VALIDATE_EMAIL)) {
                 $userData['email'] = $emailOrPhone;
                 $email = $emailOrPhone;
                 $channel = 'email';
-            } 
+            }
             // else {
             //     $phone = preg_replace('/^0/', '62', $emailOrPhone);
             //     $userData['phone'] = $phone;
@@ -121,9 +121,11 @@ class AuthController extends BaseController
             // }
 
             // Insert dan cek hasilnya`
-            $userId = $model->insert($userData);
-            $newUser = $model->find($userId);
+            $newUser = $userModel->createUser($userData);
 
+            if (!$newUser) {
+                return redirect()->back()->with('error', 'Gagal membuat akun.');
+            }
 
             // Generate OTP
             $otpCode = random_int(10000, 99999);
@@ -132,18 +134,18 @@ class AuthController extends BaseController
 
             $this->session->set([
                 'otp_user_id' => $newUser['id'],
-                'otp_email'   => $newUser['email'] ?? null,
-                'otp_phone'   => $newUser['phone'] ?? null,
+                'otp_email' => $newUser['email'] ?? null,
+                'otp_phone' => $newUser['phone'] ?? null,
                 'otp_channel' => $channel,
             ]);
 
             // Simpan ke tabel otp_codes
             $otpModel->insert([
-                'user_id'    => $userId,
-                'otp_code'   => $otpCode,
-                'channel'    => $channel,
-                'purpose'    => 'register',
-                'is_used'    => 0,
+                'user_id' => $newUser['id'],
+                'otp_code' => $otpCode,
+                'channel' => $channel,
+                'purpose' => 'register',
+                'is_used' => 0,
                 'expires_at' => date('Y-m-d H:i:s', strtotime('+5 minutes')),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_otp_code' => date('Y-m-d H:i:s')
@@ -151,13 +153,12 @@ class AuthController extends BaseController
 
             // Kirim OTP
             if ($channel === 'email') {
-                $email = \Config\Services::email();
-                $email->setTo($emailOrPhone);
-                $email->setFrom('noreply@yourapp.com', 'Aplikasi Sejiwa');
-                $email->setSubject('Kode OTP Verifikasi');
-                $email->setMessage("Kode OTP Anda adalah: <b>$otpCode</b>");
-                $email->setMailType('html');
-                $email->send();
+                $emailService->setTo($emailOrPhone);
+                $emailService->setFrom('noreply@yourapp.com', 'Aplikasi Sejiwa');
+                $emailService->setSubject('Kode OTP Verifikasi');
+                $emailService->setMessage("Kode OTP Anda adalah: <b>$otpCode</b>");
+                $emailService->setMailType('html');
+                $emailService->send();
             } else {
                 $this->sendWhatsappOtp($emailOrPhone, $otpCode);
             }
@@ -199,7 +200,7 @@ class AuthController extends BaseController
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, [
-            'target'  => $phone,
+            'target' => $phone,
             'message' => "Kode OTP Anda adalah: *$otp* (berlaku 5 menit)."
         ]);
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
@@ -222,15 +223,15 @@ class AuthController extends BaseController
 
             // Ambil OTP (bisa dari 1 field "otp" atau array "otp[]")
             $otpInput = $this->request->getPost('otp');
-            $otp      = is_array($otpInput) ? implode('', $otpInput) : trim((string)$otpInput);
+            $otp = is_array($otpInput) ? implode('', $otpInput) : trim((string) $otpInput);
 
             // Ambil user dari session
-            $userId  = session()->get('otp_user_id');
+            $userId = session()->get('otp_user_id');
             $channel = session()->get('otp_channel');
 
             if (!$userId) {
                 return $this->response->setJSON([
-                    'status'  => 'error',
+                    'status' => 'error',
                     'message' => 'Sesi verifikasi tidak ditemukan. Silakan daftar ulang.'
                 ]);
             }
@@ -238,41 +239,41 @@ class AuthController extends BaseController
             $user = $this->userModel->find($userId);
             if (!$user) {
                 return $this->response->setJSON([
-                    'status'  => 'error',
+                    'status' => 'error',
                     'message' => 'User tidak ditemukan.'
                 ]);
             }
 
             // Ambil OTP terbaru yang belum dipakai
             $otpModel = new \App\Models\OtpModel();
-            $otpData  = $otpModel->where('user_id', $userId)
+            $otpData = $otpModel->where('user_id', $userId)
                 ->where('is_used', 0)
                 ->orderBy('id', 'DESC')
                 ->first();
 
             if (!$otpData) {
                 return view('auth/verify', [
-                    'user'    => $user,
+                    'user' => $user,
                     'channel' => $channel ?? ($user['email'] ? 'email' : 'phone'),
-                    'error'   => 'OTP tidak ditemukan. Silakan kirim ulang.',
+                    'error' => 'OTP tidak ditemukan. Silakan kirim ulang.',
                 ]);
             }
 
             // Cek kadaluarsa berdasarkan expires_at
             if (time() > strtotime($otpData['expires_at'])) {
                 return view('auth/verify', [
-                    'user'    => $user,
+                    'user' => $user,
                     'channel' => $channel ?? ($user['email'] ? 'email' : 'phone'),
-                    'error'   => 'Kode OTP telah kedaluwarsa.',
+                    'error' => 'Kode OTP telah kedaluwarsa.',
                 ]);
             }
 
             // Cocokkan OTP
             if ($otp !== $otpData['otp_code']) {
                 return view('auth/verify', [
-                    'user'    => $user,
+                    'user' => $user,
                     'channel' => $channel ?? ($user['email'] ? 'email' : 'phone'),
-                    'error'   => 'Kode OTP salah.',
+                    'error' => 'Kode OTP salah.',
                 ]);
             }
 
@@ -285,14 +286,14 @@ class AuthController extends BaseController
             session()->remove(['otp_user_id', 'otp_email', 'otp_phone', 'otp_channel']);
 
             return $this->response->setJSON([
-                'status'  => 'success',
+                'status' => 'success',
                 'message' => 'Verifikasi berhasil! Silakan login.',
                 'redirect' => base_url('login')
             ]);
         }
 
         // GET: tampilkan form verify dari session (agar $channel tidak undefined)
-        $userId  = session()->get('otp_user_id');
+        $userId = session()->get('otp_user_id');
         $channel = session()->get('otp_channel');
 
         if (!$userId) {
@@ -302,7 +303,7 @@ class AuthController extends BaseController
         $user = $this->userModel->find($userId);
 
         return view('auth/verify', [
-            'user'    => $user,
+            'user' => $user,
             'channel' => $channel ?? ($user['email'] ? 'email' : 'phone'),
         ]);
     }
@@ -310,10 +311,10 @@ class AuthController extends BaseController
     private function setSession($userData)
     {
         $data = [
-            'id'         => $userData['id'],
-            'name'       => $userData['name'],
-            'email'      => $userData['email'],
-            'role'       => $userData['role'],
+            'id' => $userData['id'],
+            'name' => $userData['name'],
+            'email' => $userData['email'],
+            'role' => $userData['role'],
             'isLoggedIn' => true
         ];
 
@@ -327,7 +328,7 @@ class AuthController extends BaseController
 
         if ($this->request->getMethod() === 'post') {
             $email = $this->request->getPost('email');
-            $user  = $this->userModel->where('email', $email)->first();
+            $user = $this->userModel->where('email', $email)->first();
 
             if (!$user) {
                 return redirect()->back()->with('error', 'Email tidak terdaftar.');
@@ -344,7 +345,7 @@ class AuthController extends BaseController
             $otpModel = new \App\Models\OtpModel();
             $otpModel->save([
                 'user_id' => $user['id'],
-                'token'   => $token,
+                'token' => $token,
                 'expired_at' => date('Y-m-d H:i:s', strtotime('+10 minutes'))
             ]);
 
