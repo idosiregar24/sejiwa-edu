@@ -1,60 +1,63 @@
-# CodeIgniter 4 Framework
+# 🌿 SEJIWA – Sentra Edukasi Jiwa Ibu Welas Asih
+### Web-Based Mental Health Support System for Mothers with Special Needs Children (ABK)
 
-## What is CodeIgniter?
+---
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+# 👨‍💻 MAIN DEVELOPER
+## - ⭐ Ido Refael Siregar | 2457301067 | Sistem Informasi
+## - ⭐ Rudio Winaldo | 2457301128 | Sistem Informasi
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+**Full-Stack Web Developer**
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+Saya adalah **pengembang utama (Main Developer)** dari aplikasi **SEJIWA** dan bertanggung jawab penuh atas **perancangan arsitektur sistem, pengembangan backend–frontend, integrasi database, serta implementasi kebutuhan fungsional sistem** berdasarkan pendekatan **Human-Centered Design (HCD)** dan dokumen **Spesifikasi Kebutuhan Perangkat Lunak (SKPL)**.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+> ⚠️ Seluruh implementasi kode utama dalam repository ini dikembangkan langsung oleh saya,  
+> kecuali library pihak ketiga yang digunakan secara eksplisit.
 
-## Important Change with index.php
+---
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## 🌱 What is SEJIWA?
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+**SEJIWA (Sentra Edukasi Jiwa Ibu Welas Asih)** adalah aplikasi berbasis web yang dirancang sebagai **platform pendukung kesehatan mental ibu pascapersalinan**, khususnya ibu yang memiliki **anak berkebutuhan khusus (ABK)**.  
+Aplikasi ini dikembangkan untuk menjawab masalah **kurangnya akses dukungan emosional, edukatif, dan komunitas yang empatik** bagi ibu-ibu dalam kondisi rentan.
 
-**Please** read the user guide for a better explanation of how CI4 works!
+SEJIWA dibangun dengan pendekatan **Human-Centered Design (HCD)**, yang menempatkan pengguna sebagai pusat desain, pengembangan, dan evaluasi sistem.
 
-## Repository Management
+### 🎯 Tujuan Utama SEJIWA
+- Menyediakan **ruang aman dan tidak menghakimi** bagi ibu ABK
+- Memberikan **konten edukasi kesehatan mental berbasis eviden**
+- Menyediakan **fitur relaksasi & afirmasi harian** untuk regulasi emosi
+- Membangun **komunitas dukungan daring yang terkelola**
+- Memudahkan akses bantuan mental melalui **platform web ringan & inklusif**
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+---
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+## 🧩 Pilar Layanan SEJIWA
 
-## Contributing
+1. **Komunitas Dukungan Daring**  
+   Forum privat terkelola untuk berbagi cerita, saling menguatkan, dan validasi pengalaman sesama ibu ABK.
 
-We welcome contributions from the community.
+2. **Edukasi Kesehatan Mental**  
+   Artikel, infografik, dan video edukatif yang disusun bersama psikolog, bidan, dan peneliti.
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+3. **Relaksasi & Afirmasi Digital**  
+   Audio meditasi, pernapasan terpandu, dan afirmasi positif harian yang dapat diakses kapan saja.
 
-## Server Requirements
+---
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+## 🧠 Peran Developer dalam Proyek Ini
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+Dalam proyek SEJIWA, saya berperan sebagai:
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+- **Perancang arsitektur sistem (MVC – CodeIgniter 4)**
+- **Full-stack developer (backend, frontend, database)**
+- Penerjemah kebutuhan riset ke **implementasi teknis**
+- Penjaga konsistensi antara **nilai empati, desain, dan fungsi sistem**
+- Developer yang memastikan aplikasi **ringan, aman, dan mudah diakses oleh pengguna awam**
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+SEJIWA bukan hanya proyek teknis, tetapi juga **produk berbasis empati, riset, dan dampak sosial**.
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+---
+
+> **SEJIWA – Untuk Ibu, Dari Hati, Dengan Welas Asih**  
+> _Because every mother deserves to be heard._
