@@ -4,15 +4,74 @@
 ---
 
 # 👨‍💻 MAIN DEVELOPER
-## - ⭐ Ido Refael Siregar | 2457301067 | Sistem Informasi
-## - ⭐ Rudio Winaldo | 2457301128 | Sistem Informasi
+- ⭐ **Ido Refael Siregar** | 2457301067 | Sistem Informasi  
+- ⭐ **Rudio Winaldo** | 2457301128 | Sistem Informasi  
 
-**Full-Stack Web Developer**
+**Full-Stack Web Developer Team**
 
-Saya adalah **pengembang utama (Main Developer)** dari aplikasi **SEJIWA** dan bertanggung jawab penuh atas **perancangan arsitektur sistem, pengembangan backend–frontend, integrasi database, serta implementasi kebutuhan fungsional sistem** berdasarkan pendekatan **Human-Centered Design (HCD)** dan dokumen **Spesifikasi Kebutuhan Perangkat Lunak (SKPL)**.
+Pengembangan aplikasi **SEJIWA** dilakukan oleh kami sebagai **tim developer utama**, dengan mengacu secara penuh pada **dokumen Spesifikasi Kebutuhan Perangkat Lunak (SKPL)** yang telah disusun dan disediakan oleh **Ibu Indah Lestari (System Analyst & QA)**.
 
-> ⚠️ Seluruh implementasi kode utama dalam repository ini dikembangkan langsung oleh saya,  
-> kecuali library pihak ketiga yang digunakan secara eksplisit.
+Seluruh proses development—mulai dari perancangan arsitektur sistem, implementasi backend–frontend, integrasi database, hingga pengujian fungsional—dilaksanakan **berdasarkan kebutuhan yang telah terdefinisi secara formal di dalam dokumen SKPL**, serta mengikuti pendekatan **Human-Centered Design (HCD)** yang menjadi dasar penelitian aplikasi ini.
+
+---
+
+## 🔧 Ruang Lingkup Pengembangan
+Kami bertanggung jawab atas:
+- Implementasi **arsitektur MVC menggunakan CodeIgniter 4**
+- Pengembangan **backend logic dan database MySQL**
+- Pembuatan **antarmuka frontend yang responsif dan ramah pengguna**
+- Implementasi fitur utama (komunitas, edukasi, relaksasi, autentikasi)
+- Penyesuaian sistem berdasarkan **validasi & arahan System Analyst**
+- Pengujian fungsional sesuai spesifikasi kebutuhan
+
+---
+
+## 📘 Dasar Pengembangan & Metodologi
+
+Pengembangan SEJIWA dilakukan menggunakan **pendekatan rekayasa perangkat lunak terstruktur**. Seluruh implementasi sistem diturunkan langsung dari dokumen analisis dan perancangan yang telah divalidasi.
+
+Dasar pengembangan meliputi:
+- Dokumen **SKPL SEJIWA v1.0**
+- Kebutuhan fungsional & non-fungsional
+- Diagram UML (Use Case, Sequence, Class, Activity)
+- Traceability kebutuhan → implementasi
+- Arahan teknis dari **Ibu Indah Lestari selaku System Analyst & QA**
+
+---
+
+## 📐 Penggunaan Diagram dalam Pengembangan Sistem
+
+Pengembangan aplikasi **SEJIWA** dilakukan berdasarkan model **UML (Unified Modeling Language)** untuk memastikan konsistensi antara kebutuhan pengguna, desain sistem, dan implementasi kode.
+
+### 1. Use Case Diagram
+Digunakan untuk memetakan interaksi antara **aktor (Ibu Pengguna & Admin)** dengan sistem.  
+Menjadi dasar penentuan fitur utama, modul sistem, dan batasan pengembangan.
+
+### 2. Use Case Scenario
+Digunakan untuk mendeskripsikan alur detail setiap use case, termasuk:
+- Alur normal
+- Alur alternatif
+- Validasi
+- Exception handling  
+Skenario ini menjadi acuan implementasi controller dan pengujian fungsional.
+
+### 3. Sequence Diagram
+Digunakan untuk memodelkan **alur interaksi antar objek secara berurutan** (request–response).  
+Diagram ini diterjemahkan langsung ke dalam:
+- Alur controller CodeIgniter
+- Pemanggilan model
+- Response view
+
+### 4. Class Diagram
+Digunakan untuk merancang **struktur data dan relasi database** sebelum implementasi.
+Menjadi dasar pembuatan:
+- Tabel database
+- Model CI4
+- Migration
+- Relasi antar entitas
+
+### 5. Activity Diagram
+Digunakan untuk memetakan **alur aktivitas pengguna (UX flow)** dan memastikan navigasi sistem sederhana serta tidak membingungkan pengguna awam.
 
 ---
 
